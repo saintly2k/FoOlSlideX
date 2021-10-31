@@ -2,14 +2,21 @@
     font-family: 'Nunito', sans-serif;
 }
 
+body {}
+
 #outter-rim {
     background: black;
+    min-height: 100vh;
 }
 
 #menu {
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
+}
+
+#chapter-select {
+    width: 20px;
 }
 
 nav.top {
@@ -23,11 +30,10 @@ nav.bottom {
 }
 
 #container {
-    min-height: 100vh;
+    min-height: 86vh;
 }
 
 #content {
-    min-height: 50vh;
     width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -61,10 +67,6 @@ a {
     content: "";
     clear: both;
     display: table;
-}
-
-[class*="col-"] {
-    float: left;
 }
 
 .col-1 {

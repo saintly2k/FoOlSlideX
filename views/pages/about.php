@@ -7,7 +7,10 @@
         Credits:<br>
         - Saintly for the main Work<br>
         - Shin for the Front-end<br>
-        - Samnabi for Login-System <!-- https://github.com/samnabi/Flat-File-Login --><br>
+        - Samnabi for Login-System
+        <!-- https://github.com/samnabi/Flat-File-Login --><br>
+        - zombat for the Image-display
+        <!-- https://stackoverflow.com/a/885064 --><br>
         - PHP7 as engine<br>
         - MySQL as the Database<br>
         - Boostrap and their Icons<br>

@@ -8,7 +8,7 @@ require("core/overlord.php");
 
 $page = $_GET["page"];
 if(!isset($page)) {
-    $page = "home";
+    $page = $config["home"];
 }
 
 include("views/templates/header.php");
