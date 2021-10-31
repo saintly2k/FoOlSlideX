@@ -7,6 +7,8 @@ $config["logo"] = "logo.png"; // Logo file (300x50), located in the "img" folder
 $config["url"]  = "http://localhost/FoOlSlideX"; // Site URL (WITH slash ending!!, if you're in a folder, add it too)
 $config["home"] = "home"; // What is the page that shows up, if no page is set?
 $config["theme"] = "RoriconScans"; // Themes located in /assets/themes/, CASE SENSITIVE!!
+$config["hero"] = "10"; // How many images should be shown on the home page on the hero slider?
+$config["chapters"] = "20"; // How many chapters should be shown on the home page right to the hero slider?
 
 // Reader Configs
 $reader["type"] = "strip"; // strip or page WIPPP!!
