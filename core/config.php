@@ -3,8 +3,10 @@
 // Basic Configuration
 
 $config["name"] = "FoOlSlideX"; // Site name
+$config["logo"] = "logo.png"; // Logo file (300x50), located in the "img" folder of your theme (default: /assets/themes/RoriconScans/img/logo.png)
 $config["url"]  = "http://localhost/FoOlSlideX"; // Site URL (WITH slash ending!!, if you're in a folder, add it too)
 $config["home"] = "home"; // What is the page that shows up, if no page is set?
+$config["theme"] = "RoriconScans"; // Themes located in /assets/themes/, CASE SENSITIVE!!
 
 // Reader Configs
 $reader["type"] = "strip"; // strip or page WIPPP!!
