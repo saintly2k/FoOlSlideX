@@ -68,7 +68,7 @@ $result3 = $conn->query($sql3);
 
 if ($result3->num_rows > 0) {
     while($crow = $result3->fetch_assoc()) {
-        echo "Chapter ".$crow["chapter"]." - <a href='?page=view&chapter=".$crow["url"]."'>".$crow["title"]."</a> <span class='align-right'>".$crow["date"];
+        echo "<a href='?page=view&chapter=".$crow["url"]."'>Chapter ".$crow["chapter"]." - ".$crow["title"]."</a> <span class='align-right'>".$crow["date"];
         if(isset($_SESSION["username"])) {
             echo " | <a href='?page=view&chapter=".$crow["url"]."&action=edit'><i class='bi bi-pencil'></i> Edit Chapter</a>";
         }
