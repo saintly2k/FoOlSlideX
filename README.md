@@ -1,3 +1,4 @@
+![banner](https://github.com/saintly2k/FoOlSlideX/blob/main/assets/img/banner.png?raw=true)
 # FoOlSlideX
 The new, most powerful Comic Reader ever created by the human race.
 
