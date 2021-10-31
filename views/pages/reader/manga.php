@@ -27,7 +27,7 @@ if ($result2->num_rows > 0) {
 ?>
 
 <div id="content" style="height:100%;background:cornsilk;">
-<title><?php echo $manga["title"]; ?> .::. <?php echo $config["name"]; ?></title>
+    <title><?php echo $manga["title"]; ?> .::. <?php echo $config["name"]; ?></title>
 
     <div class="row">
 
@@ -42,12 +42,15 @@ if ($result2->num_rows > 0) {
             <?php } ?>
             <?php if(isset($_SESSION["username"])) { ?>
             <li class="nav-item dropdown" style="list-style:none">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
                     <i class="bi bi-cpu"></i> Admin Tools
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="?page=view&manga=<?php echo $manga["url"]; ?>&action=edit"><i class="bi bi-pencil"></i> Edit Manga</a>
-                    <a class="dropdown-item" href="?page=view&manga=<?php echo $manga["url"]; ?>&action=add"><i class="bi bi-file-earmark-plus"></i> Add Chapter</a>
+                    <a class="dropdown-item" href="?page=view&manga=<?php echo $manga["url"]; ?>&action=edit"><i
+                            class="bi bi-pencil"></i> Edit Manga</a>
+                    <a class="dropdown-item" href="?page=view&manga=<?php echo $manga["url"]; ?>&action=add"><i
+                            class="bi bi-file-earmark-plus"></i> Add Chapter</a>
                 </div>
             </li>
             <?php } ?>

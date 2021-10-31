@@ -11,8 +11,10 @@
     }
     ?>
 
-    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)" style="border-radius:5px;">&#10094;</button>
-    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)" style="border-radius:5px;">&#10095;</button>
+    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)"
+        style="border-radius:5px;">&#10094;</button>
+    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)"
+        style="border-radius:5px;">&#10095;</button>
 </div>
 
 <script>

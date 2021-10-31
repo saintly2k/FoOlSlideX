@@ -43,26 +43,28 @@ if ($chapterResult->num_rows > 0) {
     <div id="content" style="height:100%;background:cornsilk;">
 
         <style>
-            span.currManga {
-                color: orange;
-            }
-
+        span.currManga {
+            color: orange;
+        }
         </style>
         <div class="row">
             <div class="col-10">
                 <h3><?php echo $mTITLE; ?> - Chapter <?php echo $chapterNumber; ?>: <?php echo $chapterTitle; ?></h3>
                 <?php include("views/pages/reader/images.php"); ?>
             </div>
-            <div class="col-2" id="chapter-select" style="position: sticky; top: 0;padding-top:25%;height:min-content;border-radius:5px;width:100px;">
+            <div class="col-2" id="chapter-select"
+                style="position: sticky; top: 0;padding-top:25%;height:min-content;border-radius:5px;width:100px;">
 
                 <li class="nav-item dropdown" style="list-style:none;">
-                    <a href="?page=view&manga=<?php echo $mID; ?>" class="nav-link" role="button"><i class="bi bi-arrow-return-right"></i> Back to Manga</a>
+                    <a href="?page=view&manga=<?php echo $mID; ?>" class="nav-link" role="button"><i
+                            class="bi bi-arrow-return-right"></i> Back to Manga</a>
                     <div class="dropdown-menu"></div>
                 </li>
 
 
                 <li class="nav-item dropdown" style="list-style:none;">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="bi bi-list-ol"></i> Chapter Select
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -90,7 +92,8 @@ if ($chapterResult->num_rows > 0) {
                 </li>
             </div>
         </div>
-        
-<title><?php echo $mTITLE; ?> - Chapter <?php echo $chapterNumber; ?>: <?php echo $chapterTitle; ?> .::. <?php echo $config["name"]; ?></title>
+
+        <title><?php echo $mTITLE; ?> - Chapter <?php echo $chapterNumber; ?>: <?php echo $chapterTitle; ?> .::.
+            <?php echo $config["name"]; ?></title>
 
     </div>
