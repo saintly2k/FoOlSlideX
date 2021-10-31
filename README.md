@@ -1,5 +1,5 @@
-# RoriconManga
-A simple MangaCMS for Scanlation groups. Features Reading, Uploading, and some more features.
+# FoOlSlideX
+The new, most powerful Comic Reader ever created by the human race.
 
 # Requirements
 PHP greater than 7.0 and everything related to MySQL.<br>
