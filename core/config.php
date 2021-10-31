@@ -2,8 +2,8 @@
 
 // Basic Configuration
 
-$config["name"] = "RoriconScans"; // Site name
-$config["url"]  = "http://localhost/"; // Site URL (WITH slash ending!!)
+$config["name"] = "FoOlSlideX"; // Site name
+$config["url"]  = "http://localhost/FoOlSlideX"; // Site URL (WITH slash ending!!, if you're in a folder, add it too)
 $config["home"] = "home"; // What is the page that shows up, if no page is set?
 
 // Reader Configs
@@ -26,7 +26,7 @@ $chagen["slug"] = "w"; // WIP
 // DataBase details
 $based["host"] = "localhost"; // Host for Database
 $based["user"]= "root"; // User for Database
-$based["pass"] = "root"; // Password for Database user
-$based["table"] = "roriconscans"; // Table where you imported "roriconscans.sql"
+$based["pass"] = ""; // Password for Database user
+$based["table"] = "foolslidex"; // Table where you imported "roriconscans.sql"
 
 ?>
