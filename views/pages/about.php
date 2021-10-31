@@ -11,6 +11,8 @@
         <!-- https://github.com/samnabi/Flat-File-Login --><br>
         - zombat for the Image-display
         <!-- https://stackoverflow.com/a/885064 --><br>
+        - W3 Schools for Hero-slider
+        <!-- https://www.w3schools.com/w3css/w3css_slideshow.asp -->
         - PHP7 as engine<br>
         - MySQL as the Database<br>
         - Boostrap and their Icons<br>

@@ -1,7 +1,12 @@
 <div id="menu">
     <nav class="navbar top navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="<?php echo $config["url"]; ?>"><i class="bi bi-lightning-charge"></i>
-            <?php echo $config["name"]; ?></a>
+        <a class="navbar-brand" href="<?php echo $config["url"]; ?>">
+            <?php if(empty($config["logo"])) { ?>
+            <i class="bi bi-lightning-charge"></i> <?php echo $config["name"]; ?>
+            <?php } else { ?>
+            <img src="assets/themes/<?php echo $config["theme"]; echo "/img/"; echo $config["logo"]; ?>" height="50px" width="300px" alt="<?php echo $config["name"]; ?> Logo">
+            <?php } ?>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
