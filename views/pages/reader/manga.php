@@ -27,6 +27,7 @@ if ($result2->num_rows > 0) {
 ?>
 
 <div id="content" style="height:100%;background:cornsilk;">
+<title><?php echo $manga["title"]; ?> .::. <?php echo $config["name"]; ?></title>
 
     <div class="row">
 

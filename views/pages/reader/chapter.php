@@ -90,5 +90,7 @@ if ($chapterResult->num_rows > 0) {
                 </li>
             </div>
         </div>
+        
+<title><?php echo $mTITLE; ?> - Chapter <?php echo $chapterNumber; ?>: <?php echo $chapterTitle; ?> .::. <?php echo $config["name"]; ?></title>
 
     </div>

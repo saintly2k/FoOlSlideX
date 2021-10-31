@@ -1,4 +1,5 @@
 <div id="content">
+    <title>Latest Releases .::. <?php echo $config["name"]; ?></title>
     <?php
         
 $latestSQL = "SELECT * FROM chapters ORDER BY date DESC";

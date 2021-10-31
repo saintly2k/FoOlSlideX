@@ -1,4 +1,5 @@
 <div id="content">
+  <title>Login .::. <?php echo $config["name"]; ?></title>
 
     <?php
 
