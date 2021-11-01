@@ -54,10 +54,19 @@ nav.bottom {
     bottom: 0;
 }
 
+
+/* DOESNT WORK DUE TO BOOTSTRAP :(
+    
 a {
     color: rebeccapurple;
-    text-decoration: dotted;
+    text-decoration: none;
 }
+
+a:hover {
+    color: darkmagenta;
+    transition: .2s;
+    text-decoration: none;
+} */
 
 .align-right {
     float: right;
