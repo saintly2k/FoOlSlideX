@@ -22,10 +22,12 @@
                 echo '<div class="card">';
                 echo '<div style="height:250px;background:url(assets/covers/'.$mrow["cover"].');background-position: center; background-size: cover;" class="card-img-top" alt="..."></div>';
                 echo '<div class="card-body">';
-                echo '<h5 class="card-title">'.$mrow["title"].'</h5>';
-                echo '<a href="?page=view&manga='.$mrow["url"].'">';
-                echo '<p class="card-text">Read</p>';
-                echo '</a>';
+                echo '<h5 class="card-title"> '.$mrow["title"].'</h5>';
+                echo '<p class="card-text"><a href="?page=view&manga='.$mrow["url"].'"><i class="bi bi-book"></i> Read</a>';
+                if(isset($_SESSION["username"])) {
+                    echo '<span class="align-right"><a href="?page=view&manga='.$mrow["url"].'&action=edit"><i class="bi bi-pencil-fill"></i> Edit</a>';
+                }
+                echo '</p>';
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';

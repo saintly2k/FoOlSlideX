@@ -5,6 +5,7 @@
 
     <!-- Custom Styles here -->
     <link type="text/css" rel="stylesheet" href="assets/themes/<?php echo $config["theme"]; ?>/css/main.css">
+    <link type="text/css" rel="stylesheet" href="assets/themes/<?php echo $config["theme"]; ?>/css/w3.css">
 
     <!-- External Styles here -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"

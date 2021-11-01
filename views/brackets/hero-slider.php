@@ -1,5 +1,4 @@
 <div class="w3-content w3-display-container">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <?php
     $heroImages = $config["hero"];
     $heroSQL = "SELECT * FROM mangas ORDER BY RAND() LIMIT $heroImages";
