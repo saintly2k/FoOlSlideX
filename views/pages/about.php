@@ -1,12 +1,11 @@
 <div id="content">
-    <title>About .::. <?php echo $config["name"]; ?></title>
-    <h3>About RoriconScans</h3>
+    <title>About FoOlSlideX .::. <?php echo $config["name"]; ?></title>
+    <h3>About FoOlSlideX</h3>
     <p>
-        RoriconScans is a project that I started because I wanted my own, very simple Manga CMS that I can run locally
-        for my Scanlation group.<br><br>
+        FoOlSlideX is a project that I started because I wanted my own, very simple Manga CMS that I can run locally for my Scanlation group.<br><br>
         Credits:<br>
         - Saintly for the main Work<br>
-        - Shin for the Front-end<br>
+        - Shin for some of the Front-end<br>
         - Samnabi for Login-System
         <!-- https://github.com/samnabi/Flat-File-Login --><br>
         - zombat for the Image-display
@@ -17,7 +16,7 @@
         - MySQL as the Database<br>
         - Boostrap and their Icons<br>
         <br>
-        Have fun Scanlating :D
+        Have fun Scanlating and don't forget to check out the GitHub: <a href="https://saintly2k.github.io/FoOlSlideX">saintly2k/FoOlSlideX</a>
     </p>
 
 </div>
