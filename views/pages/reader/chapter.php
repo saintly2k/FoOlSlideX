@@ -49,7 +49,7 @@ if ($chapterResult->num_rows > 0) {
         </style>
         <div class="row">
             <div class="col-10">
-                <h3><?php echo $mTITLE; ?> - Chapter <?php echo $chapterNumber; ?>: <?php echo $chapterTitle; ?></h3>
+                <h3><?php echo $mTITLE; ?> - Chapter <?php echo $chapterNumber; ?>: <?php echo $chapterTitle; ?> <?php if(isset($_SESSION["username"])) { echo " - <a href='?page=view&chapter=".$chID."&action=edit'><i class='bi bi-pencil-fill'></i> Edit</a>"; } ?></h3>
                 <?php include("views/pages/reader/images.php"); ?>
             </div>
             <div class="col-2" id="chapter-select"
