@@ -1,37 +1,24 @@
-## Welcome to GitHub Pages
+![banner](banner.png)
+## Welcome to the Documentation of FoOlSlideX!
+This is a small webpage with all the information you need, to set up your own Manga-reader for your Scanaltion group. This guide features:
+- Screenshots of FoOlSlideX in action
+- Documentation of Features & functions
+- A fully detailed setup guide
+- And more useless Information you'll never need
+So let's get started, shall we?
 
-You can use the [editor on GitHub](https://github.com/saintly2k/FoOlSlideX/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## History
+[FoOlSlide](https://github.com/FoolCode/FoOlSlide) was first released by [FoOlCode](github.com/FoOlCode/) and is very old, so it doesn't work with technologie nowadays (PHP 7, etc) anymore. So they came up with [FoOlSlide2](https://github.com/FoolCode/FoolSlide2). However, this is now older. Then, some guy named [chocolatekey](https://github.com/chocolatkey) decided to remake it and his version can be found [here](https://github.com/chocolatkey/FoOlSlide2). However, this doesn't work anymore, too! So I decided, why not recreate the worlds most powerful Manga/Comic-reader ever created by the human race?! Well, here I am now.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Screenshots
+Please see [this page](/screens/).
 
-### Markdown
+## Setup
+Please refer to [this page](/setup/).
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Documentation
+Please refer to [those pages](/docs/).
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/saintly2k/FoOlSlideX/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## Contributions
+...are **always** welcome! Please keep the code somewhat clean and not like DDoSing the server where you host the MySQL Database :)
+Well, just give it your best. However, if you have any ideas, please post them in the [Discussions-tab](https://github.com/saintly2k/FoOlSlideX/discussions) on GitHub, or if you found errors or bugs, post them in the [Issues-tab](https://github.com/saintly2k/FoOlSlideX/issues).
