@@ -1,5 +1,9 @@
 <div id="content">
-  <title>Login .::. <?php echo $config["name"]; ?></title>
+    <title>Login .::. <?php echo $config["name"]; ?></title>
+    <link type="text/css" href="assets/themes/<?php echo $config["theme"]; ?>/css/login.css" rel="stylesheet">
+
+    <style>
+    </style>
 
     <?php
 
@@ -14,9 +18,17 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
 
 if (!isset($_POST['username'])) {
 echo '<form name="login" method="post" action="">
-Username: <input type="text" name="username"><br>
-Password: <input type="password" name="password"><br>
-<input type="submit" value="Login!">
+<div class="row">
+<div class="col-6">
+<input type="text" id="login-name" name="username" placeholder="Username" value="Username"><br><br>
+</div>
+<div class="col-6">
+<input type="password" id="login-password" name="password" placeholder="Password"><br><br>
+</div>
+<div class="col-12">
+<input id="submit" type="submit" value="Login!">
+</div>
+</div>
 </form>';
 } else {
    if (in_array($_POST['username'], $usernames))  {
