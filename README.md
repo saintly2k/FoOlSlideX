@@ -1,4 +1,7 @@
 ![banner](https://github.com/saintly2k/FoOlSlideX/blob/main/assets/img/banner.png?raw=true)
+[![saintly2k - FoOlSlideX](https://img.shields.io/static/v1?label=saintly2k&message=FoOlSlideX&color=blue&logo=github)](https://github.com/saintly2k/FoOlSlideX)
+[![stars - FoOlSlideX](https://img.shields.io/github/stars/saintly2k/FoOlSlideX?style=social)](https://github.com/saintly2k/FoOlSlideX)
+[![forks - FoOlSlideX](https://img.shields.io/github/forks/saintly2k/FoOlSlideX?style=social)](https://github.com/saintly2k/FoOlSlideX)
 # FoOlSlideX
 The new, most powerful Comic Reader ever created by the human race. Reworked by an Otaku.
 
