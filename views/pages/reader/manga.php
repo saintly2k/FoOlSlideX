@@ -1,5 +1,10 @@
 <?php
 
+$action = $_GET["action"];
+if(empty($action)) {
+    $action = "view";
+}
+
 $mangaURL = $_GET["manga"];
 
 $sql2 = "SELECT * FROM mangas WHERE url='$mangaURL'";
@@ -27,6 +32,12 @@ if ($result2->num_rows > 0) {
 ?>
 
 <div id="content" style="height:100%;background:cornsilk;">
+
+    <?php if($action=="add") { ?>
+ww
+    <?php } elseif($action=="edit") { ?>
+        <?php include("views/pages/reader/edit/manga.php"); ?>
+    <?php } elseif($action=="view") { ?>
     <title><?php echo $manga["title"]; ?> .::. <?php echo $config["name"]; ?></title>
 
     <div class="row">
@@ -85,5 +96,7 @@ if ($result3->num_rows > 0) {
         </div>
 
     </div>
+
+    <?php } ?>
 
 </div>
