@@ -10,6 +10,11 @@ $config["theme"] = "RoriconScans"; // Themes located in /assets/themes/, CASE SE
 $config["hero"] = "10"; // How many images should be shown on the home page on the hero slider?
 $config["chapters"] = "20"; // How many chapters should be shown on the home page right to the hero slider?
 
+// Items per page shown (for pagination)
+$perpage["manga"] = "25"; // How many Mangas should be shown on the Manga page per page?
+$perpage["latest"] = "25"; // How many Chapters should be shown on the Latest page per page?
+$perpage["list"] = "50"; // How many Chapters should be shown on a Manga entry as chapterlist?
+
 // Reader Configs
 $reader["type"] = "strip"; // strip or page WIPPP!!
 
