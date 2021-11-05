@@ -34,7 +34,7 @@ if ($result2->num_rows > 0) {
 <div id="content" style="height:100%;background:cornsilk;">
 
     <?php if($action=="add") { ?>
-ww
+        <?php include("views/pages/reader/edit/achapter.php"); ?>
     <?php } elseif($action=="edit") { ?>
         <?php include("views/pages/reader/edit/manga.php"); ?>
     <?php } elseif($action=="view") { ?>
