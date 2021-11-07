@@ -1,62 +1,119 @@
 <?php
-    if(isset($_FILES['image'])){
-        $errors= array();
-        $file_name = $_FILES['image']['name'];
-        $file_size =$_FILES['image']['size'];
-        $file_tmp =$_FILES['image']['tmp_name'];
-        $file_type=$_FILES['image']['type'];
-        $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
-      
-        $extensions= array("jpeg","jpg","png");
-      
-        if(in_array($file_ext,$extensions)=== false){
-            $errors[]="Dateiendung ungültig. Bitte lade nur ein .png, .jpg oder .jpeg Datei hoch.";
-        }
-      
-        if($file_size > 1009000007152){
-            $errors[]='Dein Bild ist zu groß.';
-        }
-      
-        if(empty($errors)==true){
-            if(!isset($kami)){
-                $n=15;
-                function getRandomString($n) {
-                    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                    $randomString = '';
+
+function uploadFile ($file_field = null, $check_image = false, $random_name = false) {
+
+    //Config Section    
+    //Set file upload path
+    $path = 'assets/covers/'; //with trailing slash
+    //Set max file size in bytes
+    $max_size = 1000000;
+    //Set default file extension whitelist
+    $whitelist_ext = array('jpeg','jpg','png','gif');
+    //Set default file type whitelist
+    $whitelist_type = array('image/jpeg', 'image/jpg', 'image/png','image/gif');
     
-                    for ($i = 0; $i < $n; $i++) {
-                        $index = rand(0, strlen($characters) - 1);
-                        $randomString .= $characters[$index];
-                    }
+    //The Validation
+    // Create an array to hold any output
+    $out = array('error'=>null);
     
-                    return $randomString;
-                }
-                $overkill = getRandomString($n);
-                move_uploaded_file($file_tmp,"assets/covers/".$overkill.".".$file_ext);
-                $kami = $overkill.".".$file_ext;
-            }
-        } else {
-            print_r($errors);
-        }
+    if (!$file_field) {
+      $out['error'][] = "Please specify a valid form field name";           
     }
-?>
-<html>
+    
+    if (!$path) {
+      $out['error'][] = "Please specify a valid upload path";               
+    }
+    
+    if (count($out['error'])>0) {
+      return $out;
+    }
+    
+    //Make sure that there is a file
+    if((!empty($_FILES[$file_field])) && ($_FILES[$file_field]['error'] == 0)) {
+    
+    // Get filename
+    $file_info = pathinfo($_FILES[$file_field]['name']);
+    $name = $file_info['filename'];
+    $ext = $file_info['extension'];
+    
+    //Check file has the right extension           
+    if (!in_array($ext, $whitelist_ext)) {
+      $out['error'][] = "Invalid file Extension";
+    }
+    
+    //Check that the file is of the right type
+    if (!in_array($_FILES[$file_field]["type"], $whitelist_type)) {
+      $out['error'][] = "Invalid file Type";
+    }
+    
+    //Check that the file is not too big
+    if ($_FILES[$file_field]["size"] > $max_size) {
+      $out['error'][] = "File is too big";
+    }
+    
+    //If $check image is set as true
+    if ($check_image) {
+      if (!getimagesize($_FILES[$file_field]['tmp_name'])) {
+        $out['error'][] = "Uploaded file is not a valid image";
+      }
+    }
+    
+    //Create full filename including path
+    if ($random_name) {
+      // Generate random filename
+      $tmp = str_replace(array('.',' '), array('',''), microtime());
+    
+      if (!$tmp || $tmp == '') {
+        $out['error'][] = "File must have a name";
+      }     
+      $newname = $tmp.'.'.$ext;                                
+    } else {
+        $newname = $name.'.'.$ext;
+    }
+    
+    //Check if file already exists on server
+    if (file_exists($path.$newname)) {
+      $out['error'][] = "A file with this name already exists";
+    }
+    
+    if (count($out['error'])>0) {
+      //The file has not correctly validated
+      return $out;
+    } 
+    
+    if (move_uploaded_file($_FILES[$file_field]['tmp_name'], $path.$newname)) {
+      //Success
+      $out['filepath'] = $path;
+      $out['filename'] = $newname;
+      $kami = $newname;
+      return $out;
+    } else {
+      $out['error'][] = "Server Error!";
+    }
+    
+     } else {
+      $out['error'][] = "No file uploaded";
+      return $out;
+     }      
+    }
+    
+    
+    if (isset($_POST['submit'])) {
+     $file = uploadFile('file', true, true);
+     if (is_array($file['error'])) {
+      $message = '';
+      foreach ($file['error'] as $msg) {
+      $message .= '<p>'.$msg.'</p>';    
+     }
+    } else {
+     $message = "File uploaded successfully".$newname;
+    }
+     echo $message;
+    }
 
-<body>
-<br>
-    <?php if(!isset($kami)) : ?>
-    <p><b>Upload Cover-image</b></p>
-    <?php endif; ?>
+    ?>
 
-    <form action="" method="POST" enctype="multipart/form-data">
-        <?php if(isset($kami)) : ?>
-        <img src="assets/covers/<?php echo $kami; ?>" style="width:150px;border-radius: 5px;"><br>
-        <?php endif; if(!isset($kami)) : ?>
-        <input type="file" name="image" />
-        <input type="submit" value="Upload Cover! (Do first, unsaved changes will get lost!)"/>
-        <?php endif; ?>
-    </form>
-
-</body>
-
-</html>
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data" name="form1" id="form1">
+    <input name="file" type="file" id="imagee" />
+    <input name="submit" type="submit" value="Upload" />
+</form>
