@@ -10,6 +10,7 @@ $mangaResult = $conn->query($mangaSQL);
 if ($mangaResult->num_rows > 0) {
     while($mrow = $mangaResult->fetch_assoc()) {
         $mID2 = $mrow["manga"];
+        $chapterDirectory = $mrow["images"];
         $chapterTitle = $mrow["title"];
         $chapterNumber = $mrow["chapter"];
     }
@@ -45,7 +46,7 @@ if ($chapterResult->num_rows > 0) {
     <div id="content" style="height:100%;background:cornsilk;">
 
         <?php if($action=="edit") { ?>
-
+            <?php include("views/pages/reader/edit/echapter.php"); ?>
         <?php } else { ?>
 
         <style>
