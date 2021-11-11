@@ -18,10 +18,16 @@ if ($result2->num_rows > 0) {
         $manga["alternates"] = $mrow["alternates"];
         $manga["scanlating"] = $mrow["scanlating"];
         $manga["description"] = $mrow["description"];
-        if($manga["scanlating"]=="1") {
-            $manga["scanlating"] = "Scanlating (In work)";
+        if($manga["scanlating"]=="0") {
+            $manga["scanlating"] = "Planned to Scanlate";
+        } elseif($manga["scanlating"]=="1") {
+            $manga["scanlating"] = "Scanlating (In Work)";
+        } elseif($manga["scanlating"]=="2") {
+            $manga["scanlating"] =  "On Hiatus (Paused)";
+        } elseif($manga["scanlating"]=="3") {
+            $manga["scanlating"] = "Finished!";
         } else {
-            $manga["scanlating"] = "Paused/Finished";
+            $manga["scanlating"] = "Dropped/Canceled";
         }
         $mID = $mrow["id"];
     }
@@ -34,9 +40,9 @@ if ($result2->num_rows > 0) {
 <div id="content" style="height:100%;background:cornsilk;">
 
     <?php if($action=="add") { ?>
-        <?php include("views/pages/reader/edit/achapter.php"); ?>
+    <?php include("views/pages/reader/edit/achapter.php"); ?>
     <?php } elseif($action=="edit") { ?>
-        <?php include("views/pages/reader/edit/manga.php"); ?>
+    <?php include("views/pages/reader/edit/manga.php"); ?>
     <?php } elseif($action=="view") { ?>
     <title><?php echo $manga["title"]; ?> .::. <?php echo $config["name"]; ?></title>
 
@@ -53,15 +59,12 @@ if ($result2->num_rows > 0) {
             <?php } ?>
             <?php if(isset($_SESSION["username"])) { ?>
             <li class="nav-item dropdown" style="list-style:none">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="bi bi-cpu"></i> Admin Tools
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="?page=view&manga=<?php echo $manga["url"]; ?>&action=edit"><i
-                            class="bi bi-pencil"></i> Edit Manga</a>
-                    <a class="dropdown-item" href="?page=view&manga=<?php echo $manga["url"]; ?>&action=add"><i
-                            class="bi bi-file-earmark-plus"></i> Add Chapter</a>
+                    <a class="dropdown-item" href="?page=view&manga=<?php echo $manga["url"]; ?>&action=edit"><i class="bi bi-pencil"></i> Edit Manga</a>
+                    <a class="dropdown-item" href="?page=view&manga=<?php echo $manga["url"]; ?>&action=add"><i class="bi bi-file-earmark-plus"></i> Add Chapter</a>
                 </div>
             </li>
             <?php } ?>

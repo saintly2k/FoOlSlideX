@@ -4,7 +4,7 @@
 
 $config["name"] = "FoOlSlideX"; // Site name
 $config["logo"] = "logo.png"; // Logo file (300x50), located in the "img" folder of your theme (default: /assets/themes/RoriconScans/img/logo.png)
-$config["url"]  = "http://localhost/FoOlSlideX"; // Site URL (WITH slash ending!!, if you're in a folder, add it too)
+$config["url"]  = "http://localhost/"; // Site URL (WITH slash ending!!, if you're in a folder, add it too)
 $config["home"] = "home"; // What is the page that shows up, if no page is set?
 $config["theme"] = "RoriconScans"; // Themes located in /assets/themes/, CASE SENSITIVE!!
 $config["hero"] = "10"; // How many images should be shown on the home page on the hero slider?
@@ -35,7 +35,7 @@ $chagen["slug"] = "w"; // WIP
 // DataBase details
 $based["host"] = "localhost"; // Host for Database
 $based["user"]= "root"; // User for Database
-$based["pass"] = ""; // Password for Database user
+$based["pass"] = "root"; // Password for Database user
 $based["table"] = "foolslidex"; // Table where you imported "roriconscans.sql"
 
 ?>

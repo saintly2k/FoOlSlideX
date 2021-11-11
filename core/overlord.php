@@ -12,6 +12,19 @@ function generateURL($length = 5) {
 
 $ranSlug = generateURL(5)."-".generateURL(5)."-".generateURL(5)."-".generateURL(5);
 
+if(isset($_POST["edit-chapter"])) {
+    $title = mysqli_real_escape_string($conn, $_POST["chapter_title"]);
+    $number = mysqli_real_escape_string($conn, $_POST["chapter_number"]);
+    $manga = mysqli_real_escape_string($conn, $_POST["manga_url"]);
+    $chapter_url = mysqli_real_escape_string($conn, $_POST["chapter_url"]);
+    $mid = mysqli_real_escape_string($conn, $_POST["manga_id"]);
+    $img_directory = mysqli_real_escape_string($conn, $_POST["chapter_directory"]);
+    
+    $query = "UPDATE `chapters` SET `title`='$title', `chapter`='$number', `images`='$img_directory' WHERE `manga`='$mid' AND `url`='$chapter_url'";
+    mysqli_query($conn, $query);
+    echo "<script type='text/javascript'> document.location = 'index.php?page=view&manga=$manga'; </script>";
+}
+
 if(isset($_POST["add-chapter"])) {
     $title = mysqli_real_escape_string($conn, $_POST["chapter_title"]);
     $number = mysqli_real_escape_string($conn, $_POST["chapter_number"]);

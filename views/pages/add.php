@@ -20,10 +20,26 @@ if(isset($_SESSION["username"])) { ?>
     <form name="add-manga" method="post" action="">
         <div class="row">
             <div class="col-12">
-                <input type="text" name="manga_title" style="width:100%;" placeholder="[Required] Manga Title"><br><br>
-                <textarea type="textfield" name="manga_alternates" style="width:100%;" placeholder="Alternative Titles (Other Languages, Romaji, Original Japanese, etc)"></textarea><br><br>
-                <input type="text" name="manga_scanlating" style="width:100%;" placeholder="[Required] Status of scanlation (1 for Scanlating, 0 for Dropped or Finished)"><br><br>
-                <textarea type="textfield" name="manga_description" style="width:100%;" placeholder="Description of Manga"></textarea><br><br>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Manga Title*</span>
+                    <input type="text" class="form-control" name="manga_title" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text">Alternative Titles</span>
+                    <textarea type="textfield" name="manga_alternates" class="form-control"></textarea>
+                </div><br>
+                <select class="form-select" name="manga_scanlating" aria-label="Default select example">
+                    <option selected>Scanlation Status*</option>
+                    <option value="0">Planned</option>
+                    <option value="1">In Work</option>
+                    <option value="2">Hiatus</option>
+                    <option value="3">Finished</option>
+                    <option value="4">Dropped</option>
+                </select><br><br>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Description</span>
+                    <textarea type="textfield" name="manga_description" class="form-control"></textarea>
+                </div>
                 <input value="<?php echo $_GET["file"]; ?>" style="display:none" name="manga_cover">
             </div>
             <div class="col-12">

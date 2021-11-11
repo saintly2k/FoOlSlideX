@@ -24,17 +24,30 @@ if ($editResult->num_rows > 0) {
 
 <form name="edit-manga" method="POST" action="">
     <div class="row">
-        <div class="col-3">
-            <?php include("views/pages/mini/upload.php"); ?>
-        </div>
-        <div class="col-9">
+        <div class="col-12">
             <h3>Update Manga Info for <a href="?page=view&manga=<?php echo $mURL; ?>"><?php echo $mTITLE; ?></a></h3>
-            <input type="text" name="manga_title" placeholder="Manga Title" value="<?php echo $mTITLE; ?>"><br><br>
-            <textarea name="manga_alternates" placeholder="Alternate Manga Titles" style="width:100%;"><?php echo $mALTER; ?></textarea><br><br>
-            <input type="text" name="manga_scanlating" placeholder="Scanlation Status (1 for Scanlating, 0 for Dropped/Finished)" value="<?php echo $mSCANL; ?>"><br><br>
-            <textarea name="manga_description" placeholder="Manga Description" style="width:100%;"><?php echo $mDESC; ?></textarea><br><br>
-            <input type="text" name="manga_url" value="<?php echo $mURL; ?>" style="display:none"><br><br>
-            <input type="text" name="manga_cover" value="<?php echo $kami; ?>" style="display:none"><br><br>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Manga Title</span>
+                <input type="text" name="manga_title" value="<?php echo $mTITLE; ?>" class="form-control" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group">
+                <span class="input-group-text">Alternative Titles</span>
+                <textarea type="textfield" name="manga_alternates" class="form-control"><?php echo $mALTER; ?></textarea>
+            </div><br>
+            <select class="form-select" name="manga_scanlating" aria-label="Default select example">
+                <option value="0">Scanlation Status*</option>
+                <option <?php if($mSCANL=="0") { echo "selected"; } ?> value="0">Planned</option>
+                <option <?php if($mSCANL=="1") { echo "selected"; } ?> value="1">In Work</option>
+                <option <?php if($mSCANL=="2") { echo "selected"; } ?> value="2">Hiatus</option>
+                <option <?php if($mSCANL=="3") { echo "selected"; } ?> value="3">Finished</option>
+                <option <?php if($mSCANL=="4") { echo "selected"; } ?> value="4">Dropped</option>
+            </select><br><br>
+            <div class="input-group">
+                <span class="input-group-text">Description<br>[Supports HTML]</span>
+                <textarea type="textfield" name="manga_description" class="form-control"><?php echo $mDESC; ?></textarea>
+            </div>
+            <input type="text" name="manga_url" value="<?php echo $mURL; ?>" style="display:none">
+            <input type="text" name="manga_cover" value="<?php echo $kami; ?>" style="display:none"><br>
         </div>
         <div class="col-12">
             <input id="submit" type="submit" name="edit-manga" value="Update Manga!">
