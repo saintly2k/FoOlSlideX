@@ -12,6 +12,14 @@ function generateURL($length = 5) {
 
 $ranSlug = generateURL(5)."-".generateURL(5)."-".generateURL(5)."-".generateURL(5);
 
+if(isset($_POST["delete-manga"])) {
+    $manga = mysqli_real_escape_string($conn, $_POST["manga_url"]);
+    
+    $query = "DELETE FROM `mangas` WHERE `url`='$manga'";
+    mysqli_query($conn, $query);
+    echo "<script type='text/javascript'> document.location = 'index.php?page=home'; </script>";
+}
+
 if(isset($_POST["edit-chapter"])) {
     $title = mysqli_real_escape_string($conn, $_POST["chapter_title"]);
     $number = mysqli_real_escape_string($conn, $_POST["chapter_number"]);

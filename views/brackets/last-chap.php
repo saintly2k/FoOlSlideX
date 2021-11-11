@@ -26,18 +26,18 @@ if ($latestResult->num_rows > 0) {
             }
         }
         if($nextManga!==$currManga) {
-            echo "<b><a href='?page=view&manga=".$mangaURL."'><i class='bi bi-book'></i> ".$mangaTITLE."</b></a><span class='align-right'>";
+            echo "<b><div class='last-item-title'><a href='?page=view&manga=".$mangaURL."'><i class='bi bi-book'></i> ".$mangaTITLE."</b></a><span class='align-right'>";
             if(isset($_SESSION["username"])) {
                 echo "<a href='?page=view&manga=".$mangaURL."&action=edit'><i class='bi bi-pencil-fill'></i> Edit Manga</a>&#8192";
             }
-            echo "</span><br>";
+            echo "</span></div>";
         }
-        echo "<li><a href='?page=view&chapter=".$lrow["url"]."'>Chapter ".$lrow["chapter"].": ".$lrow["title"]."</a>";
+        echo "<b class='last-item-chapter'><a href='?page=view&chapter=".$lrow["url"]."'>Chapter ".$lrow["chapter"]."<span id='hide-on-mobile'>: ".$lrow["title"]."</span></a>";
         echo "<span class='align-right'>".$lrow["date"];
         if(isset($_SESSION["username"])) {
-            echo " | <a href='?page=view&chapter=".$lrow["url"]."&action=edit'><i class='bi bi-pencil'></i> Edit Chapter</a>";
+            echo "<span id='hide-on-mobile'> | <a href='?page=view&chapter=".$lrow["url"]."&action=edit'><i class='bi bi-pencil'></i> Edit Chapter</a></span>";
         }
-        echo "</span></li>";
+        echo "</span></b><br>";
     }
 } else {
     echo "Manga Error";

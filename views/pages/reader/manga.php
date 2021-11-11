@@ -37,12 +37,14 @@ if ($result2->num_rows > 0) {
 
 ?>
 
-<div id="content" style="height:100%;background:cornsilk;">
+<div id="content">
 
     <?php if($action=="add") { ?>
     <?php include("views/pages/reader/edit/achapter.php"); ?>
     <?php } elseif($action=="edit") { ?>
     <?php include("views/pages/reader/edit/manga.php"); ?>
+    <?php } elseif($action=="delete") { ?>
+    <?php include("views/pages/reader/edit/delete-ma.php"); ?>
     <?php } elseif($action=="view") { ?>
     <title><?php echo $manga["title"]; ?> .::. <?php echo $config["name"]; ?></title>
 
@@ -65,6 +67,8 @@ if ($result2->num_rows > 0) {
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="?page=view&manga=<?php echo $manga["url"]; ?>&action=edit"><i class="bi bi-pencil"></i> Edit Manga</a>
                     <a class="dropdown-item" href="?page=view&manga=<?php echo $manga["url"]; ?>&action=add"><i class="bi bi-file-earmark-plus"></i> Add Chapter</a>
+                    <div class="dropdown-divider"></div>
+                    <a style="color:red" class="dropdown-item" href="?page=view&manga=<?php echo $manga["url"]; ?>&action=delete"><i class="bi bi-file-earmark-plus"></i> Delete Manga</a>
                 </div>
             </li>
             <?php } ?>
