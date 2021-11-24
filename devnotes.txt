@@ -1,0 +1,13 @@
+.: - FoOlSlideX DevNotes - :.
+
+[USERGROUPS]
+- 1 = Administrator
+- 2 = Uploader
+- 3 = Reader
+
+[SCAN STATUS]
+- 1 = Planned
+- 2 = Scanlating
+- 3 = Hiatus
+- 4 = Finished
+- 5 = Dropped
