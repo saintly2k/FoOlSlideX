@@ -1,6 +1,3 @@
-# Important Notice
-I am currently very busy with school, so I am not able to work much on this. Also, I need to rework the complete UI since it's not responsive and I want to have it responsive. I'll work on this ASAP, just can't do any promises. To support me to make development faster, consider donating: https://paypal.me/WOLFRAMEdev :)
-
 ![banner](https://github.com/saintly2k/FoOlSlideX/blob/main/assets/images/banner.png?raw=true)
 # FoOlSlideX
 The new, most powerful Comic Reader ever created by the human race. Reworked by an Otaku.
@@ -10,6 +7,10 @@ The new, most powerful Comic Reader ever created by the human race. Reworked by 
 [![forks - FoOlSlideX](https://img.shields.io/github/forks/saintly2k/FoOlSlideX?style=social)](https://github.com/saintly2k/FoOlSlideX)
 ![maintained - yes](https://img.shields.io/badge/maintained-yes-blue)
 ![contributions - welcome](https://img.shields.io/badge/contributions-welcome-blue)
+
+# Helping me out
+Simply post what you want to see here: https://github.com/saintly2k/FoOlSlideX/discussions<br>
+And consider donating, if you like my Project :P https://paypal.me/WOLFRAMEdev
 
 # Requirements
 PHP greater than 7.0 and everything related to MySQL.<br>
