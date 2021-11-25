@@ -1,0 +1,23 @@
+Options +FollowSymLinks
+RewriteEngine On
+ 
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+ 
+RewriteRule ^releases?/?(.+)?$ ./?page=releases&pagination=$1
+RewriteRule ^login/?$ ./?page=login
+RewriteRule ^signup/?$ ./?page=signup
+RewriteRule ^about/?$ ./?page=about
+RewriteRule ^mangas?/?(.+)/?$ ./?page=mangas&pagination=$1
+RewriteRule ^project/(.+)/?$ ./?page=project&manga=$1
+RewriteRule ^credits/?$ ./?page=credits
+RewriteRule ^logout/?$ ./?page=logout
+ 
+ErrorDocument 400 /errors/400.html
+ErrorDocument 403 /errors/403.html
+ErrorDocument 404 /errors/404.html
+ErrorDocument 429 /errors/429.html
+ErrorDocument 451 /errors/451.html
+ErrorDocument 500 /errors/500.html
+ 
+Options -Indexes
