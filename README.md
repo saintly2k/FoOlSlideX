@@ -1,6 +1,7 @@
 # Important Notice
 I am currently very busy with school, so I am not able to work much on this. Also, I need to rework the complete UI since it's not responsive and I want to have it responsive. I'll work on this ASAP, just can't do any promises. To support me to make development faster, consider donating: https://paypal.me/WOLFRAMEdev :)
-![banner](https://github.com/saintly2k/FoOlSlideX/blob/main/assets/img/banner.png?raw=true)
+
+![banner](https://github.com/saintly2k/FoOlSlideX/blob/main/assets/images/banner.png?raw=true)
 # FoOlSlideX
 The new, most powerful Comic Reader ever created by the human race. Reworked by an Otaku.
 
