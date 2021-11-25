@@ -64,7 +64,7 @@ if ($stmt = $conn->prepare('SELECT * FROM `mangas` ORDER BY `name` LIMIT ?,?')) 
                     </tr>
                     <?php }
                     } else {
-                        echo "No Mangas found.";
+                        echo "<p>No Mangas found.</p>";
                     }
                     ?>
                 </tbody>

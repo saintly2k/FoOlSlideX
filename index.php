@@ -21,7 +21,7 @@ if($rPage=="logout") {
     session_destroy();
     session_unset();
     setcookie("stayLogged", "", time() - 3600);
-    header("location: ".$config["url"]."home");
+    header("location: ".$config["url"]."");
 }
 
 ?>
@@ -59,7 +59,7 @@ if($rPage=="logout") {
 
             </div>
 
-            <!--<div class="col-sm-2">
+            <!--<div class="col-sm-2"> Don't need a sidebar yet
 
                 <?php include("templates/sidebar.temp.php"); ?>
 
