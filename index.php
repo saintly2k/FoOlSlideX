@@ -7,9 +7,21 @@ require("includes/conn.inc.php");
 require("includes/deamon.inc.php");
 
 if(!isset($_GET["page"])) {
-    $rPage = $config["home"];
+    header("location: ".$config["home"]."");
 } else {
     $rPage = $_GET["page"];
+}
+
+
+if(!empty($_COOKIE["loggedincookie"])) {
+    $_SESSION["username"] = $_COOKIE["loggedincookie"];
+}
+
+if($rPage=="logout") {
+    session_destroy();
+    session_unset();
+    setcookie("stayLogged", "", time() - 3600);
+    header("location: ".$config["url"]."home");
 }
 
 ?>
@@ -41,17 +53,17 @@ if(!isset($_GET["page"])) {
 
             <?php } ?>
 
-            <div class="col-sm-10">
+            <div class="col-sm-12">
 
                 <?php include("pages/$rPage.req.php"); ?>
 
             </div>
 
-            <div class="col-sm-2">
+            <!--<div class="col-sm-2">
 
                 <?php include("templates/sidebar.temp.php"); ?>
 
-            </div>
+            </div>-->
 
             <div class="col-sm-12">
 

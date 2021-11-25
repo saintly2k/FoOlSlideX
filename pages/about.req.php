@@ -1,4 +1,5 @@
-<div class="panel panel-default">
+<title>About | <?= $config["name"] ?></title>
+<div class="panel panel-success">
     <div class="panel-heading">
         <h3 class="panel-title">About <?php echo $config["name"]; ?></h3>
     </div>

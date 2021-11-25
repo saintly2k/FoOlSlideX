@@ -11,8 +11,8 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav" id="nav_links">
-                <li class="<?php if($rPage=="home") { echo "active"; } ?>" id="titles">
-                    <a href="<?php echo $config["url"]; ?>home"><i class="bi bi-clock-history"></i> Releases</a>
+                <li class="<?php if($rPage=="releases") { echo "active"; } ?>" id="titles">
+                    <a href="<?php echo $config["url"]; ?>releases"><i class="bi bi-clock-history"></i> Releases</a>
                 </li>
                 <li class="<?php if($rPage=="mangas") { echo "active"; } ?>" id="titles">
                     <a href="<?php echo $config["url"]; ?>mangas"><i class="bi bi-book"></i> Mangas</a>

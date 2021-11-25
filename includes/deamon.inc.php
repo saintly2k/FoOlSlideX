@@ -32,10 +32,10 @@ if (isset($_POST['reg_user'])) {
         $destination = 'uploads/avatars/'.$latestID.'.jpg'; 
         
         if(!copy($source, $destination)) { 
-            echo "File couldn't be copied! \n"; 
+            echo "Avatar couldn't be created! \n"; 
         } 
         else { 
-            echo "File has been copied! \n"; 
+            echo "Avatar has been created! \n"; 
         }
 
         $query = "INSERT INTO `users` (`id`, `username`, `password`, `usergroup`, `theme`, `image`) VALUES (NULL,'$username', '$password', '3', '1', 'jpg')";
@@ -55,7 +55,7 @@ if(isset($_POST["login_user"])) {
         if($staylogged=="1") {
             setcookie("loggedincookie", $username, time()+(86400*30), "/");
         }
-        header('location: '.$config["url"].'home');
+        header('location: '.$config["url"].'');
     } else {
         echo '<div class="container"><div id="announcement" class="alert alert-danger alert-dismissible text-center" role="alert"><strong>Error:</strong> Your Login-details are wrong!</div></div>';
     }

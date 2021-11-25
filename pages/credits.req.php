@@ -1,4 +1,5 @@
-<div class="panel panel-default">
+<title>Creits | <?= $config["name"] ?></title>
+<div class="panel panel-info">
     <div class="panel-heading">
         <h3 class="panel-title">Credits of this Site</h3>
     </div>
