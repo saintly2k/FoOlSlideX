@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6deb5ubuntu0.5
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Feb 26, 2022 at 12:32 PM
--- Server version: 5.7.37-0ubuntu0.18.04.1
--- PHP Version: 7.3.33-1+ubuntu18.04.1+deb.sury.org+1
+-- Host: 127.0.0.1
+-- Erstellungszeit: 26. Feb 2022 um 22:51
+-- Server-Version: 10.4.22-MariaDB
+-- PHP-Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,13 +18,84 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `saintslide`
+-- Datenbank: `saintslide`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Tabellenstruktur für Tabelle `chapter`
+--
+
+CREATE TABLE `chapter` (
+  `id` int(11) NOT NULL,
+  `manga` int(11) NOT NULL,
+  `number` int(11) NOT NULL,
+  `user` int(11) NOT NULL,
+  `url` varchar(23) NOT NULL,
+  `uploaded` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `project`
+--
+
+CREATE TABLE `project` (
+  `id` int(11) NOT NULL,
+  `title` varchar(250) NOT NULL,
+  `description` text DEFAULT NULL,
+  `status` int(11) NOT NULL,
+  `raw` text DEFAULT NULL,
+  `official` text DEFAULT NULL,
+  `created` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `project_bookmarks`
+--
+
+CREATE TABLE `project_bookmarks` (
+  `id` int(11) NOT NULL,
+  `manga` int(11) NOT NULL,
+  `user` int(11) NOT NULL,
+  `created` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `project_comments`
+--
+
+CREATE TABLE `project_comments` (
+  `id` int(11) NOT NULL,
+  `manga` int(11) NOT NULL,
+  `content` text NOT NULL,
+  `written` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `project_reading`
+--
+
+CREATE TABLE `project_reading` (
+  `id` int(11) NOT NULL,
+  `user` int(11) NOT NULL,
+  `manga` int(11) NOT NULL,
+  `chapter` int(11) NOT NULL,
+  `created` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `user`
 --
 
 CREATE TABLE `user` (
@@ -39,80 +111,128 @@ CREATE TABLE `user` (
   `public_watchlist` int(11) NOT NULL,
   `read_announce` int(11) NOT NULL,
   `forum_signature` varchar(500) DEFAULT NULL,
-  `banned` tinyint(1) NOT NULL DEFAULT '0',
-  `banned_reason` text,
-  `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `banned` tinyint(1) NOT NULL DEFAULT 0,
+  `banned_reason` text DEFAULT NULL,
+  `created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id`, `level`, `username`, `password`, `email`, `image`, `theme`, `lang`, `public_profile`, `public_watchlist`, `read_announce`, `forum_signature`, `banned`, `banned_reason`, `created`) VALUES
-(1, 0, 'saintly', '$2y$10$Pi8CtNrFXOUmQzwN4TIvSuyzDM6bdX9pwr/aJf0kBSu6oGo0P948u', 'ninefreaks@yandex.com', 'http://localhost/assets/img/default.jpeg', 4, 'en', 1, 1, 0, NULL, 0, NULL, '2022-02-26 00:22:37');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_forgot`
+-- Tabellenstruktur für Tabelle `user_forgot`
 --
 
 CREATE TABLE `user_forgot` (
   `user` varchar(250) NOT NULL,
   `token` text NOT NULL,
-  `from` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `from` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_tokens`
+-- Tabellenstruktur für Tabelle `user_tokens`
 --
 
 CREATE TABLE `user_tokens` (
   `token` text NOT NULL,
   `user` varchar(250) NOT NULL,
-  `from` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `from` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `user_tokens`
---
-
-INSERT INTO `user_tokens` (`token`, `user`, `from`) VALUES
-('6f2f5b8d19f67c314880f9374d6c0ec7', 'saintly', '2022-02-26 00:45:43');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_verification`
+-- Tabellenstruktur für Tabelle `user_verification`
 --
 
 CREATE TABLE `user_verification` (
   `user` varchar(250) NOT NULL,
   `token` text NOT NULL,
-  `from` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `from` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Indexes for dumped tables
+-- Indizes der exportierten Tabellen
 --
 
 --
--- Indexes for table `user`
+-- Indizes für die Tabelle `chapter`
+--
+ALTER TABLE `chapter`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `project`
+--
+ALTER TABLE `project`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `project_bookmarks`
+--
+ALTER TABLE `project_bookmarks`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `project_comments`
+--
+ALTER TABLE `project_comments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `project_reading`
+--
+ALTER TABLE `project_reading`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT für exportierte Tabellen
 --
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT für Tabelle `chapter`
+--
+ALTER TABLE `chapter`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `project`
+--
+ALTER TABLE `project`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `project_bookmarks`
+--
+ALTER TABLE `project_bookmarks`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `project_comments`
+--
+ALTER TABLE `project_comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `project_reading`
+--
+ALTER TABLE `project_reading`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

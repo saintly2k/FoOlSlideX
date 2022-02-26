@@ -75,4 +75,36 @@ function convert_theme($theme) {
     return $theme;
 }
 
+function ago($datetime, $full = false) {
+
+    require("core/config.php");
+    require("langs/en.php");
+    $now = new DateTime;
+    $ago = new DateTime($datetime);
+    $diff = $now->diff($ago);
+    
+    $diff->w = floor($diff->d / 7);
+    $diff->d -= $diff->w * 7;
+    
+    $string = array(
+        'y' => $lang["ago"]["year"],
+        'm' => $lang["ago"]["month"],
+        'w' => $lang["ago"]["week"],
+        'd' => $lang["ago"]["day"],
+        'h' => $lang["ago"]["hour"],
+        'i' => $lang["ago"]["minute"],
+        's' => $lang["ago"]["second"],
+    );
+    foreach($string as $k => &$v) {
+        if($diff->$k) {
+            $v = $diff->$k.' '.$v.($diff->$k > 1 ? $lang["ago"]["plural"]." " : ' ');
+        } else {
+            unset($string[$k]);
+        }
+    }
+    
+    if(!$full) $string = array_slice($string, 0, 1);
+    return $string ? implode(', ', $string)." ".$lang["ago"]["ago"] : " ".$lang["ago"]["now"];
+}
+
 ?>

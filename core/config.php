@@ -12,6 +12,11 @@ $config = [
     "email" => "admin@foolscanz.org",
 ];
 
+$upload = [
+    "img_dir" => "uploads/chapters/",  
+    "cover_dir" => "uploads/covers/",  
+];
+
 $group = [
     "name" => "FoOlScanZ",
     "founded" => "2000",

@@ -21,9 +21,39 @@ $lang = [
         "title" => "Releases",
     ],
     
+    "manga" => [
+        "title" => "Manga",
+        "description" => "Description",
+        "desc_empty" => "This Manga has no description yet.",
+        "more" => "More Links",
+        "raw_yes" => "Link to the Raw Source",
+        "raw_no" => "There is no raw source entered",
+        "official_yes" => "Link to Buy/Read the official release!",
+        "official_no" => "There is no official version available.",
+        "actions" => [
+            "title" => "Actions",
+            "bookmark" => "Bookmark this Manga",
+            "unbookmark" => "Remove this Manga from Bookmarks",
+            "nonbookmark" => "A verified account is required, to bookmark!",
+            "unavailable" => "You cannot Bookmark a Manga with no chapters!",
+            "edit" => "Edit Manga",
+            "chapter" => "Add a new Chapter!",
+        ],
+        "error" => "Manga not found!",
+    ],
+    
     "projects" => [
         "title" => "Projects",
+        "cover" => "Cover Image",
+        "manga" => "Manga Title",
+        "bookmarks" => "Bookmarks",
+        "comments" => "Comments",
+        "updated" => "Last Updated",
         "new" => "Add a new Project!",
+    ],
+    
+    "edit" => [
+        "title" => "Edit",  
     ],
     
     "user" => [
@@ -41,10 +71,46 @@ $lang = [
     "new" => [
         "project" => [
             "title" => "Add a new Title!",
+            "form" => [
+                "title" => "Manga Title", 
+                "title_input" => "Title of the Manga",
+                "cover" => "Cover Image",
+                "description" => "Synopsis",
+                "description_input" => "What is this Manga about? Supports HTML5.",
+                "status" => "Status of Scanlation",
+                "status" => [
+                    "title" => "Status of Scanlation",
+                    "select" => "Select Status...",
+                    0 => "Planned to Scanlate",
+                    1 => "Currently Scanlating",
+                    2 => "On Hiatus (Paused)",
+                    3 => "Scanlation Canceled",
+                    4 => "Scanlation Canceled due to Licensation",
+                ],
+                "raw" => "Manga Raw",
+                "raw_input" => "If available, URL to Manga Raw source",
+                "official" => "Read/Buy Official",
+                "official_input" => "If available, URL to Manga buy/read the Official Translation",
+                "submit" => "Add new Project!",
+            ],
         ],
         "chapter" => [
             "title" => "Add a new Chapter!",
         ],
+    ],
+    
+    "ago" => [
+        "year" => "Year",
+        "month" => "Month",
+        "week" => "Week",
+        "day" => "Day",
+        "hour" => "Hour",
+        "minute" => "Minute",
+        "second" => "Second",
+        "plural" => "s",
+        "ago" => "ago",
+        "now" => "Just now",
+        "never" => "Never updated",
     ],
     
     "theme" => [
