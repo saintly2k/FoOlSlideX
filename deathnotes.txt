@@ -1,0 +1,23 @@
+[ Type (varchar) ]
+Normal Style:
+    Manga,
+    Manwha,
+    Manhua
+Text Style:
+    Novel
+
+[ Raw-Status (int) ]
+1 - Unknown
+2 - Announced
+3 - Ongoing
+4 - Hiatus
+5 - Completed
+6 - Canceled
+
+[ Scan-Status (int) ]
+1 - Plan to Scan
+2 - In Work
+3 - Scan on Hiatus
+4 - Forced Hiatus (due to exposure)
+5 - Completed
+6 - Dropped
