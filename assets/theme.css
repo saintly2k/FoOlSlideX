@@ -226,5 +226,6 @@ textarea.comment-box {
     resize: vertical;
 }
 
-.readable {
+.loading {
+    background: transparent url('loading.gif') center no-repeat;
 }
