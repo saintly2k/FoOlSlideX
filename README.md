@@ -1,5 +1,5 @@
 
-![FoOlSlideX Logo](https://cdn.henai.eu/assets/images/fsx-logo.png)
+![FoOlSlideX Logo](https://cdn.henai.eu/assets/images/foolslidex-logo.png)
 
 
 # FoOlSlideX
