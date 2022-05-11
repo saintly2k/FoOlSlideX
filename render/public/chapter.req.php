@@ -26,8 +26,8 @@ if(isset($_COOKIE[$config["title"]."_bookmark-".$manga["slug"]])) {
 
 $chapters = $conn->query("SELECT * FROM `chapters` WHERE `mid`='$mid' ORDER BY `chapter`ASC");
 
-$next_chapter = $conn->query("SELECT * FROM `chapters` WHERE `mid`='$mid' AND `chapter`>'".$chapter["chapter"]."' LIMIT 1");
-$prev_chapter = $conn->query("SELECT * FROM `chapters` WHERE `mid`='$mid' AND `chapter`<'".$chapter["chapter"]."' LIMIT 1");
+$next_chapter = $conn->query("SELECT * FROM `chapters` WHERE `mid`='$mid' AND `chapter`>'".$chapter["chapter"]."' ORDER BY `chapter` ASC LIMIT 1");
+$prev_chapter = $conn->query("SELECT * FROM `chapters` WHERE `mid`='$mid' AND `chapter`<'".$chapter["chapter"]."' ORDER BY LENGTH(`chapter`) DESC, `chapter` DESC LIMIT 1");
 $next_chapter = mysqli_fetch_assoc($next_chapter);
 $prev_chapter = mysqli_fetch_assoc($prev_chapter);
 
@@ -217,12 +217,24 @@ if(isset($_POST["update_bookmark"])) {
                         <h1 class="text-center"><?= $manga["title"] ?> - <?php if(empty($chapter["volume"]) && empty($chapter["chapter"])) { ?> <?= $chapter["title"] ?> <?php } elseif(empty($chapter["volume"]) && !empty($chapter["chapter"])) { ?> Ch. <?= $chapter["chapter"] ?> <?php } else { ?> Vol. <?= $chapter["volume"] ?> Ch. <?= $chapter["chapter"] ?> <?php } ?></h1>
                     </div>
 
+                    <div class="col-sm-6">
+                        <a href="<?php if(!empty($prev_chapter["id"])) { echo $config["url"]."chapter/".$prev_chapter["slug"]; } ?>" class="btn btn-primary <?php if(empty($prev_chapter["id"])) echo 'disabled'; ?>" style="width:100%"><?= $lang["chapter"]["prev"] ?></a>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <a href="<?php if(!empty($next_chapter["id"])) { echo $config["url"]."chapter/".$next_chapter["slug"]; } ?>" class="btn btn-primary <?php if(empty($next_chapter["id"])) echo 'disabled'; ?>" style="width:100%"><?= $lang["chapter"]["next"] ?></a>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <br>
+                    </div>
+
                     <div class="col-sm-2"></div>
 
                     <div class="col-sm-8">
                         <?php $i = 1; ?>
                         <?php foreach($files as $image) { ?>
-                        <img src="<?= $config["url"] ?>data/chapters/<?= $chapter["slug"] ?>/<?= $image ?>" alt="<?= $manga["title"] ?> <?php if(empty($chapter["volume"]) && empty($chapter["chapter"])) { ?> <?= $chapter["title"] ?> <?php } elseif(empty($chapter["volume"]) && !empty($chapter["chapter"])) { ?> Ch. <?= $chapter["chapter"] ?> <?php } else { ?> Vol. <?= $chapter["volume"] ?> Ch. <?= $chapter["chapter"] ?> <?php } ?> - Page <?= $i ?>" style="width:100%" class="scroll">
+                        <img src="<?= $config["url"] ?>data/chapters/<?= $chapter["slug"] ?>/<?= $image ?>" title="<?= $image ?>" alt="<?= $manga["title"] ?> <?php if(empty($chapter["volume"]) && empty($chapter["chapter"])) { ?> <?= $chapter["title"] ?> <?php } elseif(empty($chapter["volume"]) && !empty($chapter["chapter"])) { ?> Ch. <?= $chapter["chapter"] ?> <?php } else { ?> Vol. <?= $chapter["volume"] ?> Ch. <?= $chapter["chapter"] ?> <?php } ?> - Page <?= $i ?>" style="width:100%" class="scroll">
                         <?php $i++; ?>
                         <?php } ?>
                     </div>
@@ -233,11 +245,11 @@ if(isset($_POST["update_bookmark"])) {
                     </div>
 
                     <div class="col-sm-6">
-                        Previous Chapter
+                        <a href="<?php if(!empty($prev_chapter["id"])) { echo $config["url"]."chapter/".$prev_chapter["slug"]; } ?>" class="btn btn-primary <?php if(empty($prev_chapter["id"])) echo 'disabled'; ?>" style="width:100%"><?= $lang["chapter"]["prev"] ?></a>
                     </div>
 
                     <div class="col-sm-6">
-                        Next Chapter
+                        <a href="<?php if(!empty($next_chapter["id"])) { echo $config["url"]."chapter/".$next_chapter["slug"]; } ?>" class="btn btn-primary <?php if(empty($next_chapter["id"])) echo 'disabled'; ?>" style="width:100%"><?= $lang["chapter"]["next"] ?></a>
                     </div>
 
                     <div class="col-sm-12">
