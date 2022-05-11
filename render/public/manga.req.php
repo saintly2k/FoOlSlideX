@@ -90,7 +90,7 @@ if(isset($_POST["remove_bookmark"])) {
 
     <div class="col-sm-3">
         <a href="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" target="_blank">
-            <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" width="100%" alt="<?= $manga["title"] ?>">
+            <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" width="100%" alt="<?= $manga["title"] ?>" class="loading">
         </a>
     </div>
 

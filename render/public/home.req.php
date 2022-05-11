@@ -29,7 +29,7 @@ $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC"
 <?php if(!isset($_COOKIE[$config["title"]."_cookie-consent"]) || empty($_COOKIE[$config["title"]."_cookie-consent"])) { include("../parts/cookies.php"); } ?>
 
 <div class="row">
-
+    
     <div class="col-sm-4">
         <div id="manga-carousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -45,7 +45,7 @@ $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC"
                 <?php $q = 1; foreach($carousels as $item) { ?>
                 <div class="item <?php if($q==1) { ?>active<?php } ?>">
                     <a href="<?= $config["url"] ?>manga/<?= $item["slug"] ?>">
-                        <img src="data/covers/<?= $item["cover"] ?>" alt="<?= $item["title"] ?>">
+                        <img src="data/covers/<?= $item["cover"] ?>" alt="<?= $item["title"] ?>" class="loading">
                         <div class="carousel-caption">
                             <?= $item["title"] ?>
                         </div>

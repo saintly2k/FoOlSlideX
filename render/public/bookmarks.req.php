@@ -29,7 +29,7 @@ $titles = $conn->query("SELECT * FROM `titles` ORDER BY `title` ASC");
         <div class="row">
             <div class="col-sm-2">
                 <a href="<?= $config["url"] ?>manga/<?= $manga["slug"] ?>">
-                    <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" width="100%" alt="<?= $manga["title"] ?>" title="<?= $manga["title"] ?>">
+                    <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" class="loading" width="100%" alt="<?= $manga["title"] ?>" title="<?= $manga["title"] ?>">
                 </a>
             </div>
             <div class="col-sm-8">

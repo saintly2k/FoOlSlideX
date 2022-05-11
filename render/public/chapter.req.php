@@ -234,7 +234,7 @@ if(isset($_POST["update_bookmark"])) {
                     <div class="col-sm-8">
                         <?php $i = 1; ?>
                         <?php foreach($files as $image) { ?>
-                        <img src="<?= $config["url"] ?>data/chapters/<?= $chapter["slug"] ?>/<?= $image ?>" title="<?= $image ?>" alt="<?= $manga["title"] ?> <?php if(empty($chapter["volume"]) && empty($chapter["chapter"])) { ?> <?= $chapter["title"] ?> <?php } elseif(empty($chapter["volume"]) && !empty($chapter["chapter"])) { ?> Ch. <?= $chapter["chapter"] ?> <?php } else { ?> Vol. <?= $chapter["volume"] ?> Ch. <?= $chapter["chapter"] ?> <?php } ?> - Page <?= $i ?>" style="width:100%" class="scroll">
+                        <img src="<?= $config["url"] ?>data/chapters/<?= $chapter["slug"] ?>/<?= $image ?>" title="<?= $image ?>" alt="<?= $manga["title"] ?> <?php if(empty($chapter["volume"]) && empty($chapter["chapter"])) { ?> <?= $chapter["title"] ?> <?php } elseif(empty($chapter["volume"]) && !empty($chapter["chapter"])) { ?> Ch. <?= $chapter["chapter"] ?> <?php } else { ?> Vol. <?= $chapter["volume"] ?> Ch. <?= $chapter["chapter"] ?> <?php } ?> - Page <?= $i ?>" style="width:100%" class="loading">
                         <?php $i++; ?>
                         <?php } ?>
                     </div>

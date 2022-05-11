@@ -57,7 +57,7 @@ $titles_6 = $conn->query("SELECT * FROM `titles` WHERE `scan-status`='6' ORDER B
                         <?php if(isset($_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]==$manga["slug"]) echo glyph("bookmark","Bookmarked"); ?>
                         <?= $manga["title"] ?>
                     </p>
-                    <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" width="100%" alt="<?= $manga["title"] ?>" title="<?= $manga["title"] ?>">
+                    <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" width="100%" alt="<?= $manga["title"] ?>" title="<?= $manga["title"] ?>" class="loading">
                 </a>
             </div>
             <?php } ?>
@@ -76,7 +76,7 @@ $titles_6 = $conn->query("SELECT * FROM `titles` WHERE `scan-status`='6' ORDER B
                         <?php if(isset($_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]==$manga["slug"]) echo glyph("bookmark","Bookmarked"); ?>
                         <?= $manga["title"] ?>
                     </p>
-                    <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" width="100%" alt="<?= $manga["title"] ?>" title="<?= $manga["title"] ?>">
+                    <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" width="100%" alt="<?= $manga["title"] ?>" title="<?= $manga["title"] ?>" class="loading">
                 </a>
             </div>
             <?php } ?>
@@ -95,7 +95,7 @@ $titles_6 = $conn->query("SELECT * FROM `titles` WHERE `scan-status`='6' ORDER B
                         <?php if(isset($_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]==$manga["slug"]) echo glyph("bookmark","Bookmarked"); ?>
                         <?= $manga["title"] ?>
                     </p>
-                    <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" width="100%" alt="<?= $manga["title"] ?>" title="<?= $manga["title"] ?>">
+                    <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" width="100%" alt="<?= $manga["title"] ?>" title="<?= $manga["title"] ?>" class="loading">
                 </a>
             </div>
             <?php } ?>
@@ -114,7 +114,7 @@ $titles_6 = $conn->query("SELECT * FROM `titles` WHERE `scan-status`='6' ORDER B
                         <?php if(isset($_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]==$manga["slug"]) echo glyph("bookmark","Bookmarked"); ?>
                         <?= $manga["title"] ?>
                     </p>
-                    <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" width="100%" alt="<?= $manga["title"] ?>" title="<?= $manga["title"] ?>">
+                    <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" width="100%" alt="<?= $manga["title"] ?>" title="<?= $manga["title"] ?>" class="loading">
                 </a>
             </div>
             <?php } ?>
@@ -133,7 +133,7 @@ $titles_6 = $conn->query("SELECT * FROM `titles` WHERE `scan-status`='6' ORDER B
                         <?php if(isset($_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]==$manga["slug"]) echo glyph("bookmark","Bookmarked"); ?>
                         <?= $manga["title"] ?>
                     </p>
-                    <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" width="100%" alt="<?= $manga["title"] ?>" title="<?= $manga["title"] ?>">
+                    <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" width="100%" alt="<?= $manga["title"] ?>" title="<?= $manga["title"] ?>" class="loading">
                 </a>
             </div>
             <?php } ?>
