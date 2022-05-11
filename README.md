@@ -11,11 +11,11 @@ The new, most powerful Comic- & Manga-Reader ever created by the human race. Rew
 - [Features](#features)
 - [Installation](#installation)
 - [Documentation](#documentation)
-- [Config Variables](#config%20variables)
+- [Config Variables](#config-variables)
 - [Supprt](#support)
 - [Donate](#donate)
 - [Demo](#demo)
-- [Used By](#used%20by)
+- [Used By](#used-by)
 - [Authors](#authors)
 ## Features
 
