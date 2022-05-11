@@ -31,6 +31,15 @@ $prev_chapter = $conn->query("SELECT * FROM `chapters` WHERE `mid`='$mid' AND `c
 $next_chapter = mysqli_fetch_assoc($next_chapter);
 $prev_chapter = mysqli_fetch_assoc($prev_chapter);
 
+$files = array();
+$dir = opendir("../../data/chapters/".$chapter["slug"]); // open the cwd..also do an err check.
+while(false != ($file = readdir($dir))) {
+        if(($file != ".") and ($file != "..") and ($file != "index.php")) {
+                $files[] = $file;
+        }   
+}
+natsort($files);
+
 if(isset($_POST["add_bookmark"])) {
     if(!isset($_COOKIE[$config["title"]."_cookie-consent"]) || empty($_COOKIE[$config["title"]."_cookie-consent"]) || $_COOKIE[$config["title"]."_cookie-consent"]==2) {
         setcookie($config["title"]."_cookie-consent", false, time() - 3600, "/");
@@ -186,7 +195,7 @@ if(isset($_POST["update_bookmark"])) {
                                     <select class="selectpicker form-control" onChange="window.location.href=this.value">
                                         <?php foreach($chapters as $chp) { ?>
                                         <option <?php if($chp["slug"]==$chapter["slug"]) echo "selected"; ?> value="<?= $config["url"] ?>chapter/<?= $chp["slug"] ?>">
-                                            <?php if(empty($chp["volume"]) && empty($chp["chapter"])) { ?> <?= $chp["title"] ?> <?php } elseif(empty($chp["volume"]) && !empty($chp["chapter"])) { ?> Ch. <?= $chp["chapter"] ?> <?php } else { ?> Vol. <?= $chp["volume"] ?> Ch. <?= $chp["chapter"] ?> <?php } ?>
+                                            <?php if(empty($chp["volume"]) && empty($chp["chapter"])) { ?> <?= $lang["chapter"]["oneshot"] ?> <?php } elseif(empty($chp["volume"]) && !empty($chp["chapter"])) { ?> Ch. <?= $chp["chapter"] ?> <?php } else { ?> Vol. <?= $chp["volume"] ?> Ch. <?= $chp["chapter"] ?> <?php } ?>
                                         </option>
                                         <?php } ?>
                                     </select>
@@ -212,8 +221,8 @@ if(isset($_POST["update_bookmark"])) {
 
                     <div class="col-sm-8">
                         <?php $i = 1; ?>
-                        <?php foreach(glob("../../data/chapters/".$chapter["slug"]."/*.*") as $image) { ?>
-                        <img src="<?= $config["url"] ?>data/chapters/<?= $image ?>" alt="<?= $manga["title"] ?> <?php if(empty($chapter["volume"]) && empty($chapter["chapter"])) { ?> <?= $chapter["title"] ?> <?php } elseif(empty($chapter["volume"]) && !empty($chapter["chapter"])) { ?> Ch. <?= $chapter["chapter"] ?> <?php } else { ?> Vol. <?= $chapter["volume"] ?> Ch. <?= $chapter["chapter"] ?> <?php } ?> - Page <?= $i ?>" style="width:100%" class="scroll">
+                        <?php foreach($files as $image) { ?>
+                        <img src="<?= $config["url"] ?>data/chapters/<?= $chapter["slug"] ?>/<?= $image ?>" alt="<?= $manga["title"] ?> <?php if(empty($chapter["volume"]) && empty($chapter["chapter"])) { ?> <?= $chapter["title"] ?> <?php } elseif(empty($chapter["volume"]) && !empty($chapter["chapter"])) { ?> Ch. <?= $chapter["chapter"] ?> <?php } else { ?> Vol. <?= $chapter["volume"] ?> Ch. <?= $chapter["chapter"] ?> <?php } ?> - Page <?= $i ?>" style="width:100%" class="scroll">
                         <?php $i++; ?>
                         <?php } ?>
                     </div>
