@@ -4,7 +4,7 @@ require("../../requires.php");
 
 $page = $lang["menu"]["add_new"];
 
-if($loggedin==false) {
+if($loggedin==false || $user["active"]==0) {
     header("Refresh: 0; url=../login");
 }
 
