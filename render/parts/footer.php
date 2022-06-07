@@ -1,4 +1,7 @@
 </div>
+
+<p class="text-center text-muted"><a href="?lang=en">English</a> - <a href="?lang=pt">Portuguese</a></p>
+
 <footer class="footer">
     <p class="text-center text-muted">Copyright &copy; <?= $config["start"]."-".date("Y") ?> <a href="<?php echo $config["url"]; ?>"><?php echo $config["title"]; ?></a> | Proudly powered by <a href="https://github.com/saintly2k/FoOlSlideX" target="_blank">FoOlSlideX</a></p>
 </footer>

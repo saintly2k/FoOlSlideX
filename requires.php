@@ -8,6 +8,17 @@ require("config.php");
 require("vhs/conn.php");
 require("vhs/funky.php");
 
+if(isset($_GET["lang"])) {
+    if($_GET["lang"]=="en") {
+        setcookie($config["cookie"]."_lang", "en", time()+31556926, "/");
+        header("refresh: 0; url=?");
+    }
+    if($_GET["lang"]=="pt") {
+        setcookie($config["cookie"]."_lang", "pt", time()+31556926, "/");
+        header("refresh: 0; url=?");
+    }
+}
+
 if(isset($_POST["refuse_cookies"])) {
     setcookie($config["cookie"]."_cookie-consent", "2", time()+31556926, "/");
     header("Refresh: 0");
