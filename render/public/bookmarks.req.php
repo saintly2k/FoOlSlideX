@@ -16,14 +16,14 @@ $titles = $conn->query("SELECT * FROM `titles` ORDER BY `title` ASC");
 
 <?php include("../parts/menu.php"); ?>
 
-<?php if(!isset($_COOKIE[$config["title"]."_cookie-consent"]) || empty($_COOKIE[$config["title"]."_cookie-consent"])) { include("../parts/cookies.php"); } ?>
+<?php if(!isset($_COOKIE[$config["cookie"]."_cookie-consent"]) || empty($_COOKIE[$config["cookie"]."_cookie-consent"])) { include("../parts/cookies.php"); } ?>
 
 <div class="row">
     <div class="col-sm-12">
         <h2 class="text-center"><?= $lang["menu"]["bookmarks"] ?></h2>
     </div>
     <?php foreach($titles as $manga) { ?>
-    <?php if(isset($_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]==$manga["slug"]) { ?>
+    <?php if(isset($_COOKIE[$config["cookie"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["cookie"]."_bookmark-".$manga["slug"]]==$manga["slug"]) { ?>
     <?php $mid = $manga["id"]; $chapters = $conn->query("SELECT * FROM `chapters` WHERE `mid`='$mid' ORDER BY `chapter` DESC"); ?>
     <div class="col-sm-12">
         <div class="row">
@@ -48,11 +48,11 @@ $titles = $conn->query("SELECT * FROM `titles` ORDER BY `title` ASC");
                         </thead>
                         <tbody>
                             <?php foreach($chapters as $chapter) { ?>
-                            <?php if(isset($_COOKIE[$config["title"]."_chapter-".$chapter["slug"]]) && $_COOKIE[$config["title"]."_chapter-".$chapter["slug"]]==$chapter["slug"]) { ?>
+                            <?php if(isset($_COOKIE[$config["cookie"]."_chapter-".$chapter["slug"]]) && $_COOKIE[$config["cookie"]."_chapter-".$chapter["slug"]]==$chapter["slug"]) { ?>
                             <tr>
                                 <td>
                                     <a href="<?= $config["url"] ?>chapter/<?= $chapter["slug"] ?>">
-                                        <?php if(isset($_COOKIE[$config["title"]."_chapter-".$chapter["slug"]]) && $_COOKIE[$config["title"]."_chapter-".$chapter["slug"]]==$chapter["slug"]) echo glyph("bookmark","Bookmarked"); ?>
+                                        <?php if(isset($_COOKIE[$config["cookie"]."_chapter-".$chapter["slug"]]) && $_COOKIE[$config["cookie"]."_chapter-".$chapter["slug"]]==$chapter["slug"]) echo glyph("bookmark","Bookmarked"); ?>
                                         <?php if(empty($chapter["volume"]) && empty($chapter["chapter"])) { ?>
                                         <?= $lang["chapter"]["oneshot"] ?>
                                         <?php } elseif(empty($chapter["volume"]) && !empty($chapter["chapter"])) { ?>

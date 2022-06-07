@@ -80,7 +80,7 @@ include("../parts/header.php");
 
 <?php include("../parts/menu.php"); ?>
 
-<?php if(!isset($_COOKIE[$config["title"]."_cookie-consent"]) || empty($_COOKIE[$config["title"]."_cookie-consent"])) { include("../parts/cookies.php"); } ?>
+<?php if(!isset($_COOKIE[$config["cookie"]."_cookie-consent"]) || empty($_COOKIE[$config["cookie"]."_cookie-consent"])) { include("../parts/cookies.php"); } ?>
 
 <?php if(!empty($error_msg)) { ?>
 <div class="alert alert-warning alert-dismissible text-center" role="alert">

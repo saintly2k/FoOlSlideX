@@ -2,6 +2,7 @@
 
 $config = [
     "title" => "MangaReader",
+    "cookie"    => "mangareader",
     "logo"  => "assets/img/logo.png",
     "slogan"    => "Read Manga online for free with no ads",
     "url"   => "http://localhost/mangareader/",

@@ -50,24 +50,24 @@ if($manga["scan-status"]==1) {
 }
 
 if(isset($_POST["add_bookmark"])) {
-    if(!isset($_COOKIE[$config["title"]."_cookie-consent"]) || empty($_COOKIE[$config["title"]."_cookie-consent"]) || $_COOKIE[$config["title"]."_cookie-consent"]==2) {
-        setcookie($config["title"]."_cookie-consent", false, time() - 3600, "/");
+    if(!isset($_COOKIE[$config["cookie"]."_cookie-consent"]) || empty($_COOKIE[$config["cookie"]."_cookie-consent"]) || $_COOKIE[$config["cookie"]."_cookie-consent"]==2) {
+        setcookie($config["cookie"]."_cookie-consent", false, time() - 3600, "/");
         header("Refresh: 0;");
     } else {
-        setcookie($config["title"]."_bookmark-".$manga["slug"], $manga["slug"], time()+31556926, "/");
+        setcookie($config["cookie"]."_bookmark-".$manga["slug"], $manga["slug"], time()+31556926, "/");
         header("Refresh: 0;");
     }
 }
 
 if(isset($_POST["remove_bookmark"])) {
-    if(!isset($_COOKIE[$config["title"]."_cookie-consent"]) || empty($_COOKIE[$config["title"]."_cookie-consent"]) || $_COOKIE[$config["title"]."_cookie-consent"]==2) {
-        setcookie($config["title"]."_cookie-consent", false, time() - 3600, "/");
+    if(!isset($_COOKIE[$config["cookie"]."_cookie-consent"]) || empty($_COOKIE[$config["cookie"]."_cookie-consent"]) || $_COOKIE[$config["cookie"]."_cookie-consent"]==2) {
+        setcookie($config["cookie"]."_cookie-consent", false, time() - 3600, "/");
         header("Refresh: 0;");
     } else {
-        setcookie($config["title"]."_bookmark-".$manga["slug"], $manga["slug"], time() - 3600, "/");
+        setcookie($config["cookie"]."_bookmark-".$manga["slug"], $manga["slug"], time() - 3600, "/");
         foreach($chapters as $rch) {
-            if(isset($_COOKIE[$config["title"]."_chapter-".$rch["slug"]])) {
-                setcookie($config["title"]."_chapter-".$rch["slug"], $rch["slug"], time() - 3600, "/");
+            if(isset($_COOKIE[$config["cookie"]."_chapter-".$rch["slug"]])) {
+                setcookie($config["cookie"]."_chapter-".$rch["slug"], $rch["slug"], time() - 3600, "/");
             }
         }
         header("Refresh: 0;");
@@ -84,7 +84,7 @@ if(isset($_POST["remove_bookmark"])) {
 
 <?php include("../parts/menu.php"); ?>
 
-<?php if(!isset($_COOKIE[$config["title"]."_cookie-consent"]) || empty($_COOKIE[$config["title"]."_cookie-consent"])) { include("../parts/cookies.php"); } ?>
+<?php if(!isset($_COOKIE[$config["cookie"]."_cookie-consent"]) || empty($_COOKIE[$config["cookie"]."_cookie-consent"])) { include("../parts/cookies.php"); } ?>
 
 <div class="row">
 
@@ -96,7 +96,7 @@ if(isset($_POST["remove_bookmark"])) {
 
     <div class="col-sm-9">
         <h2>
-            <?php if(isset($_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]==$manga["slug"]) { ?>
+            <?php if(isset($_COOKIE[$config["cookie"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["cookie"]."_bookmark-".$manga["slug"]]==$manga["slug"]) { ?>
             <?= glyph("bookmark","Bookmarked") ?>
             <?php } ?>
             <b><u><?= $manga["title"] ?></u></b>
@@ -105,7 +105,7 @@ if(isset($_POST["remove_bookmark"])) {
                 <a href="<?= $config["url"] ?>admin/edit_title/<?= $manga["slug"] ?>"><small class="badge"><?= glyph("pencil",$lang["manga"]["edit_title"]) ?> <?= $lang["manga"]["edit_title"] ?></small></a>
                 <a href="<?= $config["url"] ?>admin/add_chapter/<?= $manga["slug"] ?>"><small class="badge"><?= glyph("plus",$lang["manga"]["add_ch"]) ?> <?= $lang["manga"]["add_ch"] ?></small></a>
                 <?php } ?>
-                <?php if(!isset($_COOKIE[$config["title"]."_bookmark-".$manga["slug"]])) { ?>
+                <?php if(!isset($_COOKIE[$config["cookie"]."_bookmark-".$manga["slug"]])) { ?>
                 <button type="submit" name="add_bookmark" class="badge"><?= glyph("bookmark",$lang["chapter"]["bookmark"]) ?> <?= $lang["chapter"]["bookmark"] ?></button>
                 <?php } else { ?>
                 <button type="submit" name="remove_bookmark" class="badge"><?= glyph("remove",$lang["chapter"]["remove_bm"]) ?> <?= $lang["chapter"]["remove_bm"] ?></button>
@@ -156,7 +156,7 @@ if(isset($_POST["remove_bookmark"])) {
                                 <tr>
                                     <td>
                                         <a href="<?= $config["url"] ?>chapter/<?= $chapter["slug"] ?>">
-                                            <?php if(isset($_COOKIE[$config["title"]."_chapter-".$chapter["slug"]]) && $_COOKIE[$config["title"]."_chapter-".$chapter["slug"]]==$chapter["slug"]) echo glyph("bookmark","Bookmarked"); ?>
+                                            <?php if(isset($_COOKIE[$config["cookie"]."_chapter-".$chapter["slug"]]) && $_COOKIE[$config["cookie"]."_chapter-".$chapter["slug"]]==$chapter["slug"]) echo glyph("bookmark","Bookmarked"); ?>
                                             <?php if(empty($chapter["volume"]) && empty($chapter["chapter"])) { ?>
                                             <?= $lang["chapter"]["oneshot"] ?>
                                             <?php } elseif(empty($chapter["volume"]) && !empty($chapter["chapter"])) { ?>

@@ -7,11 +7,11 @@ if($conn->connect_error) {
     die("Database Error: " . $conn->connect_error);
 }
 
-if((isset($_COOKIE[$config["title"]."_session"]) && !empty($_COOKIE[$config["title"]."_session"])) || (isset($_SESSION[$config["title"]."_session"]) && !empty($_SESSION[$config["title"]."_session"]))) {
-    if(!empty($_COOKIE[$config["title"]."_session"])) {
-        $token = mysqli_real_escape_string($conn, $_COOKIE[$config["title"]."_session"]);
+if((isset($_COOKIE[$config["cookie"]."_session"]) && !empty($_COOKIE[$config["cookie"]."_session"])) || (isset($_SESSION[$config["cookie"]."_session"]) && !empty($_SESSION[$config["cookie"]."_session"]))) {
+    if(!empty($_COOKIE[$config["cookie"]."_session"])) {
+        $token = mysqli_real_escape_string($conn, $_COOKIE[$config["cookie"]."_session"]);
     } else {
-        $token = mysqli_real_escape_string($conn, $_SESSION[$config["title"]."_session"]);
+        $token = mysqli_real_escape_string($conn, $_SESSION[$config["cookie"]."_session"]);
     }
     $checking = $conn->query("SELECT * FROM `sessions` WHERE `token`='$token'");
     if(mysqli_num_rows($checking)<=1) {

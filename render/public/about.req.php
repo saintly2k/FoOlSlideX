@@ -12,7 +12,7 @@ include("../parts/header.php");
 
 <?php include("../parts/menu.php"); ?>
 
-<?php if(!isset($_COOKIE[$config["title"]."_cookie-consent"]) || empty($_COOKIE[$config["title"]."_cookie-consent"])) { include("../parts/cookies.php"); } ?>
+<?php if(!isset($_COOKIE[$config["cookie"]."_cookie-consent"]) || empty($_COOKIE[$config["cookie"]."_cookie-consent"])) { include("../parts/cookies.php"); } ?>
 
 <?php include("../../about.html") ?>
 

@@ -9,10 +9,10 @@ if($loggedin==true) {
 }
 
 $error = false;
-$error_msg = "";
 
-if(isset($_GET["username"]) && isset($_GET["password"]) && isset($_GET["captcha_challenge"])) {
-    if(isset($_GET['captcha_challenge']) && $_GET['captcha_challenge'] == $_SESSION['captcha_text']) {
+$error_msg = "";
+if(isset($_GET["username"]) && isset($_GET["password"]) /*&& isset($_GET["captcha_challenge"])*/) {
+    /*if(isset($_GET['captcha_challenge']) && $_GET['captcha_challenge'] == $_SESSION['captcha_text']) {*/
         $username = mysqli_real_escape_string($conn, $_GET["username"]);
         $password = mysqli_real_escape_string($conn, $_GET["password"]);
         $check1 = preg_match('/[^.a-zA-Z0-9-_]/', $username);
@@ -39,7 +39,7 @@ if(isset($_GET["username"]) && isset($_GET["password"]) && isset($_GET["captcha_
                     $uid = $user["id"];
                     $token = rand();
                     $token = md5($token);
-                    setcookie("".$config["title"]."_session", $token, time()+(86400*30), "/");
+                    setcookie("".$config["cookie"]."_session", $token, time()+(86400*30), "/");
                     $conn->query("INSERT INTO `sessions`(`user-id`,`token`) VALUES('$uid','$token')");
                     header("Location: ./");
                 } else {
@@ -53,10 +53,10 @@ if(isset($_GET["username"]) && isset($_GET["password"]) && isset($_GET["captcha_
                 $error_msg = $lang["errors"]["attack"];
             }
         }
-    } else {
+    /*} else {
         $error = true;
         $error_msg = $lang["errors"]["captcha"];
-    }
+    } */
 }
 
 include("../parts/header.php");
@@ -67,7 +67,7 @@ include("../parts/header.php");
 
 <?php include("../parts/menu.php"); ?>
 
-<?php if(!isset($_COOKIE[$config["title"]."_cookie-consent"]) || empty($_COOKIE[$config["title"]."_cookie-consent"])) { include("../parts/cookies.php"); } ?>
+<?php if(!isset($_COOKIE[$config["cookie"]."_cookie-consent"]) || empty($_COOKIE[$config["cookie"]."_cookie-consent"])) { include("../parts/cookies.php"); } ?>
 
 <?php if(!empty($error_msg)) { ?>
 <div class="alert alert-warning alert-dismissible text-center" role="alert">
@@ -89,11 +89,13 @@ include("../parts/header.php");
             <input tabindex="2" type="password" name="password" id="login_password" class="form-control" placeholder="<?= $lang["login"]["password"] ?>">
         </div>
 
+<!--
         <div class="form-group">
             <label for="login_captcha" class="sr-only"><?= $lang["login"]["captcha"] ?></label>
             <input tabindex="3" id="login_captcha" class="form-control" type="text" placeholder="<?= $lang["login"]["captcha"] ?>" name="captcha_challenge" tabindex="3" title="<?= $lang["login"]["captcha"] ?>" autocomplete="off">
             <img src="render/parts/captcha.php" alt="CAPTCHA IMAGE (Click to refresh)" class="captcha-image loading" width="200px" title="Click to refresh!" style="padding-top:10px;padding-bottom:10px;margin-left:50px;margin-right:50px;">
         </div>
+-->
 
         <div class="checkbox">
             <label>

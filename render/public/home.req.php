@@ -8,7 +8,7 @@ if(isset($_GET["logout"])) {
     // Removing token from Database and destroy entire session and so on
     $uid = $user["id"];
     $conn->query("DELETE FROM `sessions` WHERE `user-id`='$uid'");
-    setcookie($config["title"]."_session", "", time() - 3600, "/", "");
+    setcookie($config["cookie"]."_session", "", time() - 3600, "/", "");
     session_destroy();
     session_unset();
     header("Refresh: 0; url=./");
@@ -26,7 +26,7 @@ $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC"
 
 <?php include("../parts/menu.php"); ?>
 
-<?php if(!isset($_COOKIE[$config["title"]."_cookie-consent"]) || empty($_COOKIE[$config["title"]."_cookie-consent"])) { include("../parts/cookies.php"); } ?>
+<?php if(!isset($_COOKIE[$config["cookie"]."_cookie-consent"]) || empty($_COOKIE[$config["cookie"]."_cookie-consent"])) { include("../parts/cookies.php"); } ?>
 
 <div class="row">
     
@@ -98,7 +98,7 @@ $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC"
                         <td><span class="label label-info"><?= $lang["add_manga"]["manhua"] ?></span></td>
                         <?php } ?>
                         <td>
-                            <?php if(isset($_COOKIE[$config["title"]."_bookmark-".$item["slug"]]) && $_COOKIE[$config["title"]."_bookmark-".$item["slug"]]==$item["slug"]) echo glyph("bookmark","Bookmarked"); ?>
+                            <?php if(isset($_COOKIE[$config["cookie"]."_bookmark-".$item["slug"]]) && $_COOKIE[$config["cookie"]."_bookmark-".$item["slug"]]==$item["slug"]) echo glyph("bookmark","Bookmarked"); ?>
                             <a href="<?= $config["url"] ?>manga/<?= $item["slug"] ?>"><?= $item["title"] ?></a>
                             <?php if($loggedin==true) { ?>
                             <a href="<?= $config["url"] ?>admin/edit_title/<?= $item["slug"] ?>">
@@ -140,7 +140,7 @@ $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC"
                             <?php } ?>
                         </td>
                         <td>
-                            <?php if(isset($_COOKIE[$config["title"]."_chapter-".$chapter["slug"]]) && $_COOKIE[$config["title"]."_chapter-".$chapter["slug"]]==$chapter["slug"]) echo glyph("bookmark","Bookmarked"); ?>
+                            <?php if(isset($_COOKIE[$config["cookie"]."_chapter-".$chapter["slug"]]) && $_COOKIE[$config["cookie"]."_chapter-".$chapter["slug"]]==$chapter["slug"]) echo glyph("bookmark","Bookmarked"); ?>
                             <a href="<?= $config["url"] ?>chapter/<?= $chapter["slug"] ?>">
                                 <?php if(empty($chapter["volume"]) && empty($chapter["chapter"])) { ?>
                                 <?= $lang["chapter"]["oneshot"] ?>
@@ -166,7 +166,7 @@ $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC"
                             <?php } ?>
                         </td>
                         <td>
-                            <?php if(isset($_COOKIE[$config["title"]."_bookmark-".$mng["slug"]]) && $_COOKIE[$config["title"]."_bookmark-".$mng["slug"]]==$mng["slug"]) echo glyph("bookmark","Bookmarked"); ?>
+                            <?php if(isset($_COOKIE[$config["cookie"]."_bookmark-".$mng["slug"]]) && $_COOKIE[$config["cookie"]."_bookmark-".$mng["slug"]]==$mng["slug"]) echo glyph("bookmark","Bookmarked"); ?>
                             <a href="<?= $config["url"] ?>manga/<?= $mng["slug"] ?>">
                                 <?= $mng["title"] ?>
                             </a>

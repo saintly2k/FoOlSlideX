@@ -21,7 +21,7 @@ $titles_6 = $conn->query("SELECT * FROM `titles` WHERE `scan-status`='6' ORDER B
 
 <?php include("../parts/menu.php"); ?>
 
-<?php if(!isset($_COOKIE[$config["title"]."_cookie-consent"]) || empty($_COOKIE[$config["title"]."_cookie-consent"])) { include("../parts/cookies.php"); } ?>
+<?php if(!isset($_COOKIE[$config["cookie"]."_cookie-consent"]) || empty($_COOKIE[$config["cookie"]."_cookie-consent"])) { include("../parts/cookies.php"); } ?>
 
 <div class="row" onmouseover="search_manga()">
     <div class="col-sm-12">
@@ -35,7 +35,7 @@ $titles_6 = $conn->query("SELECT * FROM `titles` WHERE `scan-status`='6' ORDER B
             <div class="col-sm-2 mangaSearchItem">
                 <a href="<?= $config["url"] ?>manga/<?= $manga["slug"] ?>" class="thumbnail">
                     <p class="text-center mangaSearchText" style="position: absolute; margin-bottom:-10px;color: black; text-shadow: 0.05em 0 white, 0 0.05em white, -0.05em 0 white, 0 -0.05em white, -0.05em -0.05em white, -0.05em 0.05em white, 0.05em -0.05em white, 0.05em 0.05em white;" title="<?= $manga["title"] ?>">
-                        <?php if(isset($_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]==$manga["slug"]) echo glyph("bookmark","Bookmarked"); ?>
+                        <?php if(isset($_COOKIE[$config["cookie"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["cookie"]."_bookmark-".$manga["slug"]]==$manga["slug"]) echo glyph("bookmark","Bookmarked"); ?>
                         <?= $manga["title"] ?>
                     </p>
                     <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" width="100%" alt="<?= $manga["title"] ?>" title="<?= $manga["title"] ?>">
@@ -54,7 +54,7 @@ $titles_6 = $conn->query("SELECT * FROM `titles` WHERE `scan-status`='6' ORDER B
             <div class="col-sm-2 mangaSearchItem">
                 <a href="<?= $config["url"] ?>manga/<?= $manga["slug"] ?>" class="thumbnail">
                     <p class="text-center mangaSearchText" style="position: absolute; margin-bottom:-10px;color: black; text-shadow: 0.05em 0 white, 0 0.05em white, -0.05em 0 white, 0 -0.05em white, -0.05em -0.05em white, -0.05em 0.05em white, 0.05em -0.05em white, 0.05em 0.05em white;" title="<?= $manga["title"] ?>">
-                        <?php if(isset($_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]==$manga["slug"]) echo glyph("bookmark","Bookmarked"); ?>
+                        <?php if(isset($_COOKIE[$config["cookie"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["cookie"]."_bookmark-".$manga["slug"]]==$manga["slug"]) echo glyph("bookmark","Bookmarked"); ?>
                         <?= $manga["title"] ?>
                     </p>
                     <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" width="100%" alt="<?= $manga["title"] ?>" title="<?= $manga["title"] ?>" class="loading">
@@ -73,7 +73,7 @@ $titles_6 = $conn->query("SELECT * FROM `titles` WHERE `scan-status`='6' ORDER B
             <div class="col-sm-2 mangaSearchItem">
                 <a href="<?= $config["url"] ?>manga/<?= $manga["slug"] ?>" class="thumbnail">
                     <p class="text-center mangaSearchText" style="position: absolute; margin-bottom:-10px;color: black; text-shadow: 0.05em 0 white, 0 0.05em white, -0.05em 0 white, 0 -0.05em white, -0.05em -0.05em white, -0.05em 0.05em white, 0.05em -0.05em white, 0.05em 0.05em white;" title="<?= $manga["title"] ?>">
-                        <?php if(isset($_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]==$manga["slug"]) echo glyph("bookmark","Bookmarked"); ?>
+                        <?php if(isset($_COOKIE[$config["cookie"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["cookie"]."_bookmark-".$manga["slug"]]==$manga["slug"]) echo glyph("bookmark","Bookmarked"); ?>
                         <?= $manga["title"] ?>
                     </p>
                     <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" width="100%" alt="<?= $manga["title"] ?>" title="<?= $manga["title"] ?>" class="loading">
@@ -92,7 +92,7 @@ $titles_6 = $conn->query("SELECT * FROM `titles` WHERE `scan-status`='6' ORDER B
             <div class="col-sm-2 mangaSearchItem">
                 <a href="<?= $config["url"] ?>manga/<?= $manga["slug"] ?>" class="thumbnail">
                     <p class="text-center mangaSearchText" style="position: absolute; margin-bottom:-10px;color: black; text-shadow: 0.05em 0 white, 0 0.05em white, -0.05em 0 white, 0 -0.05em white, -0.05em -0.05em white, -0.05em 0.05em white, 0.05em -0.05em white, 0.05em 0.05em white;" title="<?= $manga["title"] ?>">
-                        <?php if(isset($_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]==$manga["slug"]) echo glyph("bookmark","Bookmarked"); ?>
+                        <?php if(isset($_COOKIE[$config["cookie"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["cookie"]."_bookmark-".$manga["slug"]]==$manga["slug"]) echo glyph("bookmark","Bookmarked"); ?>
                         <?= $manga["title"] ?>
                     </p>
                     <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" width="100%" alt="<?= $manga["title"] ?>" title="<?= $manga["title"] ?>" class="loading">
@@ -111,7 +111,7 @@ $titles_6 = $conn->query("SELECT * FROM `titles` WHERE `scan-status`='6' ORDER B
             <div class="col-sm-2 mangaSearchItem">
                 <a href="<?= $config["url"] ?>manga/<?= $manga["slug"] ?>" class="thumbnail">
                     <p class="text-center mangaSearchText" style="position: absolute; margin-bottom:-10px;color: black; text-shadow: 0.05em 0 white, 0 0.05em white, -0.05em 0 white, 0 -0.05em white, -0.05em -0.05em white, -0.05em 0.05em white, 0.05em -0.05em white, 0.05em 0.05em white;" title="<?= $manga["title"] ?>">
-                        <?php if(isset($_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]==$manga["slug"]) echo glyph("bookmark","Bookmarked"); ?>
+                        <?php if(isset($_COOKIE[$config["cookie"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["cookie"]."_bookmark-".$manga["slug"]]==$manga["slug"]) echo glyph("bookmark","Bookmarked"); ?>
                         <?= $manga["title"] ?>
                     </p>
                     <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" width="100%" alt="<?= $manga["title"] ?>" title="<?= $manga["title"] ?>" class="loading">
@@ -130,7 +130,7 @@ $titles_6 = $conn->query("SELECT * FROM `titles` WHERE `scan-status`='6' ORDER B
             <div class="col-sm-2 mangaSearchItem">
                 <a href="<?= $config["url"] ?>manga/<?= $manga["slug"] ?>" class="thumbnail">
                     <p class="text-center mangaSearchText" style="position: absolute; margin-bottom:-10px;color: black; text-shadow: 0.05em 0 white, 0 0.05em white, -0.05em 0 white, 0 -0.05em white, -0.05em -0.05em white, -0.05em 0.05em white, 0.05em -0.05em white, 0.05em 0.05em white;" title="<?= $manga["title"] ?>">
-                        <?php if(isset($_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["title"]."_bookmark-".$manga["slug"]]==$manga["slug"]) echo glyph("bookmark","Bookmarked"); ?>
+                        <?php if(isset($_COOKIE[$config["cookie"]."_bookmark-".$manga["slug"]]) && $_COOKIE[$config["cookie"]."_bookmark-".$manga["slug"]]==$manga["slug"]) echo glyph("bookmark","Bookmarked"); ?>
                         <?= $manga["title"] ?>
                     </p>
                     <img src="<?= $config["url"] ?>data/covers/<?= $manga["cover"] ?>" width="100%" alt="<?= $manga["title"] ?>" title="<?= $manga["title"] ?>" class="loading">

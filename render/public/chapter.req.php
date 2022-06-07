@@ -13,10 +13,10 @@ if(empty($chapter["title"])) $chapter["title"] = $lang["chapter"]["oneshot"];
 
 include("../parts/header.php");
 
-if(isset($_COOKIE[$config["title"]."_bookmark-".$manga["slug"]])) {
+if(isset($_COOKIE[$config["cookie"]."_bookmark-".$manga["slug"]])) {
     $bookmarked = true;
-    if(isset($_COOKIE[$config["title"]."_chapter-".$chapter["slug"]])) {
-        $bookmarked_ch = $_COOKIE[$config["title"]."_chapter-".$chapter["slug"]];
+    if(isset($_COOKIE[$config["cookie"]."_chapter-".$chapter["slug"]])) {
+        $bookmarked_ch = $_COOKIE[$config["cookie"]."_chapter-".$chapter["slug"]];
     } else {
         $bookmarked = 0;
     }
@@ -41,33 +41,33 @@ while(false != ($file = readdir($dir))) {
 natsort($files);
 
 if(isset($_POST["add_bookmark"])) {
-    if(!isset($_COOKIE[$config["title"]."_cookie-consent"]) || empty($_COOKIE[$config["title"]."_cookie-consent"]) || $_COOKIE[$config["title"]."_cookie-consent"]==2) {
-        setcookie($config["title"]."_cookie-consent", false, time() - 3600, "/");
+    if(!isset($_COOKIE[$config["cookie"]."_cookie-consent"]) || empty($_COOKIE[$config["cookie"]."_cookie-consent"]) || $_COOKIE[$config["cookie"]."_cookie-consent"]==2) {
+        setcookie($config["cookie"]."_cookie-consent", false, time() - 3600, "/");
         header("Refresh: 0;");
     } else {
-        setcookie($config["title"]."_bookmark-".$manga["slug"], $manga["slug"], time()+31556926, "/");
-        setcookie($config["title"]."_chapter-".$chapter["slug"], $chapter["slug"], time()+31556926, "/");
+        setcookie($config["cookie"]."_bookmark-".$manga["slug"], $manga["slug"], time()+31556926, "/");
+        setcookie($config["cookie"]."_chapter-".$chapter["slug"], $chapter["slug"], time()+31556926, "/");
         header("Refresh: 0;");
     }
 }
 
 if(isset($_POST["remove_bookmark"])) {
-    if(!isset($_COOKIE[$config["title"]."_cookie-consent"]) || empty($_COOKIE[$config["title"]."_cookie-consent"]) || $_COOKIE[$config["title"]."_cookie-consent"]==2) {
-        setcookie($config["title"]."_cookie-consent", false, time() - 3600, "/");
+    if(!isset($_COOKIE[$config["cookie"]."_cookie-consent"]) || empty($_COOKIE[$config["cookie"]."_cookie-consent"]) || $_COOKIE[$config["cookie"]."_cookie-consent"]==2) {
+        setcookie($config["cookie"]."_cookie-consent", false, time() - 3600, "/");
         header("Refresh: 0;");
     } else {
-//        setcookie($config["title"]."_bookmark-".$manga["slug"], $manga["slug"], time() - 3600, "/");
-        setcookie($config["title"]."_chapter-".$chapter["slug"], $chapter["slug"], time() - 3600, "/");
+//        setcookie($config["cookie"]."_bookmark-".$manga["slug"], $manga["slug"], time() - 3600, "/");
+        setcookie($config["cookie"]."_chapter-".$chapter["slug"], $chapter["slug"], time() - 3600, "/");
         header("Refresh: 0;");
     }
 }
 
 if(isset($_POST["update_bookmark"])) {
-    if(!isset($_COOKIE[$config["title"]."_cookie-consent"]) || empty($_COOKIE[$config["title"]."_cookie-consent"]) || $_COOKIE[$config["title"]."_cookie-consent"]==2) {
-        setcookie($config["title"]."_cookie-consent", false, time() - 3600, "/");
+    if(!isset($_COOKIE[$config["cookie"]."_cookie-consent"]) || empty($_COOKIE[$config["cookie"]."_cookie-consent"]) || $_COOKIE[$config["cookie"]."_cookie-consent"]==2) {
+        setcookie($config["cookie"]."_cookie-consent", false, time() - 3600, "/");
         header("Refresh: 0;");
     } else {
-        setcookie($config["title"]."_chapter-".$chapter["slug"], $chapter["slug"], time()+31556926, "/");
+        setcookie($config["cookie"]."_chapter-".$chapter["slug"], $chapter["slug"], time()+31556926, "/");
         header("Refresh: 0;");
     }
 }
@@ -80,7 +80,7 @@ if(isset($_POST["update_bookmark"])) {
 
         <body>
 
-            <?php if(!isset($_COOKIE[$config["title"]."_cookie-consent"]) || empty($_COOKIE[$config["title"]."_cookie-consent"])) { include("../parts/cookies.php"); } ?>
+            <?php if(!isset($_COOKIE[$config["cookie"]."_cookie-consent"]) || empty($_COOKIE[$config["cookie"]."_cookie-consent"])) { include("../parts/cookies.php"); } ?>
 
             <style>
                 .sidenav {
