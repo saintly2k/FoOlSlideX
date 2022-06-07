@@ -1,8 +1,8 @@
 <?php
 
 $config = [
-    "title" => "MangaReader",
-    "cookie"    => "mangareader",
+    "title" => "MangaReader", // Spaces allowed
+    "cookie"    => "mangareader", // NO SPACES, ONE WORD!
     "logo"  => "assets/img/logo.png",
     "slogan"    => "Read Manga online for free with no ads",
     "url"   => "http://localhost/mangareaderx/",
