@@ -89,14 +89,6 @@ include("../parts/header.php");
             <input tabindex="2" type="password" name="password" id="login_password" class="form-control" placeholder="<?= $lang["login"]["password"] ?>">
         </div>
 
-<!--
-        <div class="form-group">
-            <label for="login_captcha" class="sr-only"><?= $lang["login"]["captcha"] ?></label>
-            <input tabindex="3" id="login_captcha" class="form-control" type="text" placeholder="<?= $lang["login"]["captcha"] ?>" name="captcha_challenge" tabindex="3" title="<?= $lang["login"]["captcha"] ?>" autocomplete="off">
-            <img src="render/parts/captcha.php" alt="CAPTCHA IMAGE (Click to refresh)" class="captcha-image loading" width="200px" title="Click to refresh!" style="padding-top:10px;padding-bottom:10px;margin-left:50px;margin-right:50px;">
-        </div>
--->
-
         <div class="checkbox">
             <label>
                 <input tabindex="4" type="checkbox" name="remember_me" value="1"> <?= $lang["login"]["cookies"] ?>

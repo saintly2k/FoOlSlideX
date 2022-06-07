@@ -21,6 +21,10 @@ RewriteRule ^admin/edit_title/(.*)/?$ ./render/admin/edit_title.req.php?slug=$1
 RewriteRule ^admin/add_chapter/(.*)/?$ ./render/admin/add_chapter.req.php?slug=$1
 RewriteRule ^admin/edit_chapter/(.*)/?$ ./render/admin/edit_chapter.req.php?slug=$1
 
+# Redirect whatever
+RewriteRule ^login.req.php?$ ./render/redirect.php?page=login
+RewriteRule ^signup.req.php?$ ./render/redirect.php?page=signup
+
 ErrorDocument 404 "<head><title>Error! <= Team H33T</title></head><body style='overflow:hidden;margin:0;padding:0'><img src='https://cdn.henai.eu/assets/images/404.png' width='100%'></body>"
 ErrorDocument 403 "<title>Error! <= Team H33T</title><center><h1>You escaped the Matrix!</h1></center><center><h2>Seems like Neo doesn't want to go further... but do you?</h2></center>"
 ErrorDocument 500 "<title>Error! <= Team H33T</title><center><h1>You escaped the Matrix!</h1></center><center><h2>Seems like Neo doesn't want to go further... but do you?</h2></center>"

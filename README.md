@@ -89,6 +89,7 @@ This project is used by the following groups:
 
 - [Lubuntu Bionic Beaver Scans](https://stukas.henai.eu)
 - [weltenWanderer Scans](https://wws.henai.eu)
+- [ELEVEN SCANLATOR](http://eleven-scanlator.epizy.com)
 
 
 ## Authors
@@ -96,6 +97,10 @@ This project is used by the following groups:
 FoOlSlideX Development:
 - [@saintly2k](https://www.github.com/saintly2k)
 
-FoOlSlide/FoOlSlide2 Original Idea/Development:
+Translation:
+- EN: Saintly2k
+- DE: Saintly2k
+- PT: Luckkyz
 
+FoOlSlide/FoOlSlide2 Original Idea/Development:
 - [@FoolCode](https://github.com/FoolCode)

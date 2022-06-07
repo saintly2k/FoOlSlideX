@@ -54,7 +54,7 @@
                                 <a href="<?= $config["url"] ?>signup"><?= glyph("log-in",$lang["menu"]["signup"]) ?> <?= $lang["menu"]["signup"] ?></a>
                             </li>
                         </ul>
-                        <?php } else { ?>
+                        <?php } elseif($user["active"]==1) { ?>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= glyph("user",$lang["menu"]["account"]) ?> <span class="nav-label-1440"><?= $user["username"] ?></span> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <!-- <li class="<?php if($page==$lang["menu"]["profile"]) { echo "active"; } ?>">
@@ -66,6 +66,13 @@
                             <li class="<?php if($page==$lang["menu"]["add_new"]) { echo "active"; } ?>">
                                 <a href="<?= $config["url"] ?>admin/new_title"><?= glyph("log-out",$lang["menu"]["add_new"]) ?> <?= $lang["menu"]["add_new"] ?></a>
                             </li>
+                            <li class="<?php if($page==$lang["menu"]["logout"]) { echo "active"; } ?>">
+                                <a href="<?= $config["url"] ?>logout"><?= glyph("log-out",$lang["menu"]["logout"]) ?> <?= $lang["menu"]["logout"] ?></a>
+                            </li>
+                        </ul>
+                        <?php } else { ?>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= glyph("user",$lang["menu"]["account"]) ?> <span class="nav-label-1440"><?= $user["username"] ?></span> <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
                             <li class="<?php if($page==$lang["menu"]["logout"]) { echo "active"; } ?>">
                                 <a href="<?= $config["url"] ?>logout"><?= glyph("log-out",$lang["menu"]["logout"]) ?> <?= $lang["menu"]["logout"] ?></a>
                             </li>
