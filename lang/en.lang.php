@@ -1,6 +1,7 @@
 <?php
 
 # English Language File
+# By Saintly2k
 
 $lang = [
     "cookie_modal" => [
@@ -120,10 +121,15 @@ $lang = [
         "title"     => "Edit Chapter",
         "file"      => "Select new ZIP/RAR (deletes old)",
         "edit"      => "Edit Chapter",
-        "return"    => "Return to Title"
+        "return"    => "Return to Title",
+        "delete"    => "Delete Chapter",
+        "del_yes"   => "Yes, I am sure.",
+        "del_no"    => "No, cancel!"
     ],
     "edit_title" => [
         "title"     => "Edit Title",
+        "save"      => "Make Changes",
+        "delete"    => "Delete Title"
     ],
     
     "errors" => [

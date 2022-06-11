@@ -152,7 +152,7 @@ include("../parts/header.php");
 
         <div class="form-group">
             <label for="manga_description"><?= $lang["add_manga"]["descript"] ?></label>
-            <textarea tabindex="10" type="text" name="description" id="manga_description" class="form-control" placeholder="<?= $lang["add_manga"]["descript"] ?>" style="max-width:100%; height:200px"></textarea>
+            <textarea tabindex="10" type="text" name="description" id="manga_description" class="form-control" placeholder="<?= $lang["add_manga"]["descript"] ?>" style="margin-left: -200px; width: 700px; max-width: 700px; min-width: 700px; min-height:200px"></textarea>
         </div>
 
         <div class="form-group">

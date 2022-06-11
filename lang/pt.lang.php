@@ -1,6 +1,7 @@
 <?php
 
-# English Language File
+# Arquivo de lingua portuguesa
+# By luckkyz
 
 $lang = [
     "cookie_modal" => [
@@ -98,7 +99,7 @@ $lang = [
     ],
     "add_chapter" => [
         "title"     => "Adicionar capitulo para",
-        "file"      => "*Selecione arquivo ZIP/RAR para enviar",
+        "file"      => "*Selecione arquivo ZIP para enviar",
         "volume"    => "Volume (Deixe vazio para nenhum)",
         "chapter"   => "Capitulo (Deixe vazio ou 0 para Oneshot)",
         "ctitle"    => "Titulo do Capitulo (Deixe vazio para nenhum)",
@@ -118,12 +119,17 @@ $lang = [
     ],
     "edit_chapter" => [
         "title"     => "Editar Capitulo",
-        "file"      => "Selecione novo ZIP/RAR (exclui antigo)",
+        "file"      => "Selecione novo ZIP (exclui antigo)",
         "edit"      => "Editar capitulo",
-        "return"    => "Retornar para o titulo"
+        "return"    => "Retornar para o titulo",
+        "delete"    => "Eliminar Capítulo",
+        "del_yes"   => "Sim, tenho a certeza.",
+        "del_no"    => "Não, cancelar!"
     ],
     "edit_title" => [
         "title"     => "Editar Titulo",
+        "save"      => "Faça mudanças",
+        "delete"    => "Apagar título"
     ],
     
     "errors" => [

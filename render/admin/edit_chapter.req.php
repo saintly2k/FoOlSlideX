@@ -52,12 +52,17 @@ if(isset($_POST["edit_chapter"])) {
     header("Refresh: 0; url=$slug");
 }
 
+if(isset($_POST["delete_chapter"])) {
+    $conn->query("DELETE FROM `chapters` WHERE `slug`='$slug2'");
+    header("Location: ".$config["url"]."manga/".$manga["slug"]);
+}
+
 include("../parts/header.php");
 
 ?>
 
 <?php if(!empty($chapter["id"])) { ?>
-<title><?= $lang["edit_chapter"]["title"]." :: ".$config["title"] ?></title>
+<title><?= $lang["edit_chapter"]["title"]." - ".$manga["title"]." :: ".$config["title"] ?></title>
 <?php } else { ?>
 <title><?= $lang["login"]["error"]." :: ".$config["title"] ?></title>
 <?php } ?>
@@ -75,7 +80,7 @@ include("../parts/header.php");
 <div style="margin: 0 auto; width: 300px" id="login_container">
     <form method="post" name="edit_chapter" enctype="multipart/form-data">
         <h1 class="text-center"><?= $lang["edit_chapter"]["title"] ?></h1>
-        <h3 class="text-center"><a href="<?= $config["url"] ?>manga/<?= $manga["slug"] ?>"><?= $lang["edit_chapter"]["return"] ?></a></h3>
+        <h3 class="text-center"><a href="<?= $config["url"] ?>manga/<?= $manga["slug"] ?>"><?= $lang["edit_chapter"]["return"] ?>: <?= $manga["title"] ?></a></h3>
         <hr>
 
         <div class="form-group">
@@ -101,6 +106,27 @@ include("../parts/header.php");
         <p><i><?= $lang["add_manga"]["required"] ?></i></p>
         <button tabindex="5" class="btn btn-lg btn-success btn-block" type="submit" id="upload-file" name="edit_chapter"><?= glyph("pencil",$lang["edit_chapter"]["edit"]) ?> <?= $lang["edit_chapter"]["edit"] ?></button>
     </form>
+    <hr>
+    <form method="post" name="delete_chapter">
+        <button style="width: 300px; display: block" class="btn btn-lg btn-danger btn-block" onclick="showDelCon()" type="button" id="delbtn"><?= glyph("trash",$lang["edit_chapter"]["delete"]) ?> <?= $lang["edit_chapter"]["delete"] ?></button>
+        <div id="delcon" style="display: none">
+            <button style="width: 300px; display: block" class="btn btn-lg btn-success btn-block" onclick="hideDelCon()" type="button" id="delbtn"><?= glyph("remove",$lang["edit_chapter"]["del_no"]) ?> <?= $lang["edit_chapter"]["del_no"] ?></button>
+            <button style="width: 300px; display: block" class="btn btn-lg btn-danger btn-block" type="submit" name="delete_chapter" id="delbtn"><?= glyph("trash",$lang["edit_chapter"]["del_yes"]) ?> <?= $lang["edit_chapter"]["del_yes"] ?></button>
+        </div>
+    </form>
 </div>
+
+<script>
+    function showDelCon() {
+        document.getElementById("delbtn").style.display = "none";
+        document.getElementById("delcon").style.display = "block";
+    }
+
+    function hideDelCon() {
+        document.getElementById("delbtn").style.display = "block";
+        document.getElementById("delcon").style.display = "none";
+    }
+
+</script>
 
 <?php include("../parts/footer.php"); ?>

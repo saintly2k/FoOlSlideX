@@ -9,6 +9,10 @@ require("vhs/conn.php");
 require("vhs/funky.php");
 
 if(isset($_GET["lang"])) {
+    if($_GET["lang"]=="de") {
+        setcookie($config["cookie"]."_lang", "de", time()+31556926, "/");
+        header("refresh: 0; url=?");
+    }
     if($_GET["lang"]=="en") {
         setcookie($config["cookie"]."_lang", "en", time()+31556926, "/");
         header("refresh: 0; url=?");
