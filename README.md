@@ -78,7 +78,12 @@ Or eMail me at saintly@h33t.moe
 
 ## Donate
 
-I spend a lot of time working on this. Please consider donating some money via PayPal: [yuki.akihabara@yandex.com](https://paypal.me/WOLFRAMEdev)
+I spend a lot of time working on this.
+
+Please consider donating some money via PayPal: [yuki.akihabara@yandex.com](https://paypal.me/WOLFRAMEdev)
+
+Or donate via Ko-fi: [ko-fi.com/saintly](https://ko-fi.com/saintly) (I need to pay server-bills)
+
 ## Demo
 
 View (a slightly modified version of) FoOlsldiex in action: https://stukas.henai.eu/reader/
@@ -98,9 +103,10 @@ FoOlSlideX Development:
 - [@saintly2k](https://www.github.com/saintly2k)
 
 Translation:
-- EN: Saintly2k
-- DE: Saintly2k
+- EN: [Saintly2k](https://github.com/saintly2k)
+- DE: [Saintly2k](https://github.com/saintly2k)
 - PT: Luckkyz
+- RU: [RenOK](https://github.com/totavok8)
 
 FoOlSlide/FoOlSlide2 Original Idea/Development:
 - [@FoolCode](https://github.com/FoolCode)

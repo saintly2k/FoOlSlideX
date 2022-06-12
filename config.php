@@ -8,7 +8,7 @@ $config = [
     "url"   => "http://localhost/mangareaderx/",
     "theme" => 1, // choose betweeen 1-5
     "start" => "2020",
-    "lang"  => "pt", // "en", "pt", default language
+    "lang"  => "pt", // "de", en", "pt", "ru", default language
     "disqus"    => "mangapanzer"
 ];
 

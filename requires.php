@@ -21,6 +21,10 @@ if(isset($_GET["lang"])) {
         setcookie($config["cookie"]."_lang", "pt", time()+31556926, "/");
         header("refresh: 0; url=?");
     }
+    if($_GET["lang"]=="ru") {
+        setcookie($config["cookie"]."_lang", "ru", time()+31556926, "/");
+        header("refresh: 0; url=?");
+    }
 }
 
 if(isset($_POST["refuse_cookies"])) {
