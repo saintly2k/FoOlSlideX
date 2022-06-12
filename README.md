@@ -9,6 +9,7 @@ The new, most powerful Comic- & Manga-Reader ever created by the human race. Rew
 ## Index
 
 - [Features](#features)
+- [Video-Guides](#video-guides)
 - [Installation](#installation)
 - [Documentation](#documentation)
 - [Config Variables](#config-variables)
@@ -25,6 +26,12 @@ The new, most powerful Comic- & Manga-Reader ever created by the human race. Rew
 - Add Chapters/Edit them
 - Bookmark Mangas & Chapters via Cookies
 - View Bookmarks & keep track of them
+
+## Video-Guides
+
+As someone requested, I started a video-guide on YouTube on how to install, update and do some more stuff on FoOlSlideX.
+
+[View the full PlayList](https://www.youtube.com/playlist?list=PLDQvUzXjsrhP8EsCrxJ6yoqcOKTESXixX)
 
 ## Installation
 
