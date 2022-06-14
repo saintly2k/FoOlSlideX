@@ -229,3 +229,12 @@ textarea.comment-box {
 .loading {
     background: transparent url('loading.gif') center no-repeat;
 }
+
+.image-shadow {
+    text-shadow: 0px 0px 6px white;
+    color: black;
+}
+
+.text-right {
+    float: right;
+}

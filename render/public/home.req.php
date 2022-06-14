@@ -120,10 +120,10 @@ $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC"
             <table class="table table-hover table-striped">
                 <thead>
                     <th style="width:5%"><?= $lang["home"]["type"] ?></th>
-                    <th style="width:8%"><?= $lang["home"]["chapter"] ?></th>
-                    <th style="width:30%;"><?= $lang["home"]["chap_title"] ?></th>
-                    <th style="width:30%"><?= $lang["home"]["title"] ?></th>
-                    <th class="text-center" style="width:10%"><?= $lang["home"]["group"] ?></th>
+                    <th style="width:5%"><?= $lang["home"]["chapter"] ?></th>
+                    <th style="width:25%;"><?= $lang["home"]["chap_title"] ?></th>
+                    <th style="width:25%"><?= $lang["home"]["title"] ?></th>
+                    <th class="text-center" style="width:5%"><?= $lang["home"]["group"] ?></th>
                     <th class="text-center" style="width:10%"><?= $lang["home"]["uploader"] ?></th>
                     <th class="text-right" style="width:20%"><?= $lang["home"]["added"] ?></th>
                 </thead>
@@ -172,13 +172,13 @@ $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC"
                                 <?= $mng["title"] ?>
                             </a>
                         </td>
-                        <td>
+                        <td class="text-center">
                             <?php $group = $conn->query("SELECT * FROM `groups` WHERE `id`='".$chapter["group"]."' LIMIT 1")->fetch_assoc(); ?><a href="<?= $config["url"] ?>group/<?= $group["slug"] ?>"><?= $group["short"] ?></a>
                         </td>
                         <td class="text-center">
                             <?php $uploader = $conn->query("SELECT * FROM `user` WHERE `id`='".$chapter["user"]."' LIMIT 1")->fetch_assoc(); echo $uploader["username"]; ?>
                         </td>
-                        <td class="text-right"><?= $item["added"] ?></td>
+                        <td class="text-right"><?= $chapter["added"] ?></td>
                     </tr>
                     <?php } ?>
                 </tbody>

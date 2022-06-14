@@ -24,16 +24,20 @@ $groups = $conn->query("SELECT * FROM `groups` ORDER BY `name` ASC");
         <?php } elseif($user["level"]==3) { ?>
         <a href="<?= $config["url"] ?>admin/add_group" class="btn btn-success"><?= glyph("plus-sign",$lang["groups"]["req_group"]) ?> <?= $lang["groups"]["req_group"] ?></a>
         <?php } ?>
+        <hr style="opacity: 0">
     </div>
 
     <div class="col-sm-12">
         <?php foreach($groups as $g) { ?>
-        <div class="well well-sm" style="background:url('<?= $row["banner"] ?>');background-position: center;background-repeat: no-repeat;background-size: cover;">
-            <span class="image-shadow"><b><a href="<?= $config["url"] ?>gruppe/<?= $row["id"] ?>" style="color:black"><?= $row["name"] ?></a></b></span> <span class="label label-success"><?= glyph("thumbs-up",$likes["total"]." Likes") ?> <?= $likes["total"] ?></span> <span class="label label-success"><?= glyph("comment",$comments["total"]." Kommentare") ?> <?= $comments["total"] ?></span> <span class="text-right image-shadow">
-                <?php if(!empty ($row["discord"])) { ?><a href="<?= $row["discord"] ?>" target="_blank" style="color:black"><?= glyph("comment","Discord") ?></a><?php } ?>
-                <?php if(!empty ($row["website"])) { ?><a href="<?= $row["website"] ?>" target="_blank" style="color:black"><?= glyph("globe","Website") ?></a><?php } ?>
-                <?php if(!empty ($row["irc"])) { ?><a href="irc://<?= $row["irc"] ?>" target="_blank" style="color:black"><?= glyph("tags","IRC") ?></a><?php } ?>
-                <?php if(!empty ($row["email"])) { ?><a href="mailto:<?= $row["email"] ?>" target="_blank" style="color:black"><?= glyph("envelope","eMail") ?></a><?php } ?>
+        <div class="well well-sm" style="background:url('<?= $g["image"] ?>'); background-position: center; background-repeat: no-repeat; background-size: cover; border-radius: 5px;">
+            <span class="image-shadow">
+                <b><a href="<?= $config["url"] ?>group/<?= $g["slug"] ?>" style="color:black"><?= $g["name"] ?></a></b>
+            </span>
+            <span class="text-right image-shadow">
+                <?php if(!empty ($g["website"])) { ?><a href="<?= $g["website"] ?>" target="_blank" style="color:black"><?= glyph("globe","Website") ?></a><?php } ?>
+                <?php if(!empty ($g["irc"])) { ?><a href="irc://<?= $g["irc"] ?>" target="_blank" style="color:black"><?= glyph("transfer","IRC") ?></a><?php } ?>
+                <?php if(!empty ($g["mangadex"])) { ?><a href="<?= $g["mangadex"] ?>" target="_blank" style="color:black"><?= glyph("book","MangaDex") ?></a><?php } ?>
+                <?php if(!empty ($g["email"])) { ?><a href="mailto:<?= $g["email"] ?>" target="_blank" style="color:black"><?= glyph("envelope","eMail") ?></a><?php } ?>
             </span>
         </div>
         <?php } ?>
