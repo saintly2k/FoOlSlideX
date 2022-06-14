@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 10. Mai 2022 um 16:33
+-- Erstellungszeit: 14. Jun 2022 um 02:56
 -- Server-Version: 10.4.22-MariaDB
 -- PHP-Version: 7.4.27
 
@@ -32,10 +32,58 @@ CREATE TABLE `chapters` (
   `mid` int(11) NOT NULL,
   `slug` text NOT NULL,
   `volume` int(11) DEFAULT NULL,
-  `chapter` int(11) NOT NULL DEFAULT 0,
+  `chapter` varchar(11) NOT NULL DEFAULT '0',
   `title` text DEFAULT NULL,
   `user` int(11) NOT NULL,
+  `group` int(11) NOT NULL,
   `added` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `config`
+--
+
+CREATE TABLE `config` (
+  `title` varchar(50) NOT NULL DEFAULT 'MangaReader',
+  `slogan` varchar(100) NOT NULL DEFAULT 'Read Manga online for free with no ads!',
+  `logo` varchar(100) NOT NULL DEFAULT 'assets/img/logo.png',
+  `cookie` varchar(50) NOT NULL DEFAULT 'mangareader',
+  `url` varchar(100) NOT NULL DEFAULT 'http://localhost/mangareaderx/',
+  `theme` int(1) NOT NULL DEFAULT 1,
+  `start` int(4) NOT NULL DEFAULT 2020,
+  `lang` varchar(2) NOT NULL DEFAULT 'en',
+  `disqus` varchar(100) NOT NULL DEFAULT 'mangapanzer'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `config`
+--
+
+INSERT INTO `config` (`title`, `slogan`, `logo`, `cookie`, `url`, `theme`, `start`, `lang`, `disqus`) VALUES
+('MangaReader', 'Read Manga online for free with no ads!', 'assets/img/logo.png', 'mangareader', 'http://localhost/mangareaderx/', 3, 2020, 'en', 'mangapanzer');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `groups`
+--
+
+CREATE TABLE `groups` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `slug` text NOT NULL,
+  `short` varchar(10) NOT NULL,
+  `about` text DEFAULT NULL,
+  `founded` datetime NOT NULL DEFAULT current_timestamp(),
+  `website` varchar(100) DEFAULT NULL,
+  `irc` varchar(100) DEFAULT NULL,
+  `mangadex` varchar(150) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `user` int(11) NOT NULL,
+  `approved` tinyint(1) NOT NULL DEFAULT 0,
+  `created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -97,6 +145,8 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` text NOT NULL,
+  `theme` int(11) NOT NULL DEFAULT 2,
+  `level` int(11) NOT NULL DEFAULT 3,
   `active` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -108,6 +158,12 @@ CREATE TABLE `user` (
 -- Indizes für die Tabelle `chapters`
 --
 ALTER TABLE `chapters`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `groups`
+--
+ALTER TABLE `groups`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -136,6 +192,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT für Tabelle `chapters`
 --
 ALTER TABLE `chapters`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `groups`
+--
+ALTER TABLE `groups`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
