@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 14. Jun 2022 um 02:56
+-- Erstellungszeit: 14. Jun 2022 um 12:33
 -- Server-Version: 10.4.22-MariaDB
 -- PHP-Version: 7.4.27
 
@@ -56,13 +56,6 @@ CREATE TABLE `config` (
   `lang` varchar(2) NOT NULL DEFAULT 'en',
   `disqus` varchar(100) NOT NULL DEFAULT 'mangapanzer'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Daten für Tabelle `config`
---
-
-INSERT INTO `config` (`title`, `slogan`, `logo`, `cookie`, `url`, `theme`, `start`, `lang`, `disqus`) VALUES
-('MangaReader', 'Read Manga online for free with no ads!', 'assets/img/logo.png', 'mangareader', 'http://localhost/mangareaderx/', 3, 2020, 'en', 'mangapanzer');
 
 -- --------------------------------------------------------
 
@@ -145,7 +138,7 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` text NOT NULL,
-  `theme` int(11) NOT NULL DEFAULT 2,
+  `theme` int(11) NOT NULL DEFAULT 3,
   `level` int(11) NOT NULL DEFAULT 3,
   `active` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

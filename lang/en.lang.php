@@ -10,6 +10,12 @@ $lang = [
         "accept"    => "I accept",
         "refuse"    => "I refuse"
     ],
+    "install"   => [
+        "title"     => "Install FoOlSlideX",
+        "confirm"   => "Let's go!",
+        "after"     => "After you click 'Let's go!', you will be redirected to the signup page. Signup there using the following invite code:",
+        "copy"      => "Click to copy"
+    ],
     "menu" => [
         "home"      => "Home",
         "releases"  => "Releases",
@@ -64,7 +70,7 @@ $lang = [
         ],
         "start"     => "Site Started in",
         "lang"      => "Default Language",
-        "disqus"    => "Disqus Name"
+        "disqus"    => "Disqus Name (Optional)"
     ],
     "login" => [
         "error"     => "Error",

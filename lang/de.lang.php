@@ -10,6 +10,12 @@ $lang = [
         "accept"    => "Zustimmen",
         "refuse"    => "Ablehnen"
     ],
+    "install"   => [
+        "title"     => "FoOlSlideX Installieren",
+        "confirm"   => "Los geht's!",
+        "after"     => "Nachdem Sie auf 'Los geht's!' geklickt haben, werden Sie auf die Anmeldeseite weitergeleitet. Melden Sie sich dort mit dem folgenden Einladungscode an:",
+        "copy"      => "Klicken zum kopieren"
+    ],
     "menu" => [
         "home"      => "Home",
         "releases"  => "Releases",
@@ -64,7 +70,7 @@ $lang = [
         ],
         "start"     => "Seite gegründet in",
         "lang"      => "Standard Sprache",
-        "disqus"    => "Disqus Name"
+        "disqus"    => "Disqus Name (Optional)"
     ],
     "login" => [
         "error"     => "Error",
