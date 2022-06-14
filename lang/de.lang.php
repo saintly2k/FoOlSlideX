@@ -25,7 +25,46 @@ $lang = [
         "settings"  => "Einstellungen",
         "logout"    => "Abmelden",
         "add_new"   => "Neuen Titel",
-        "bookmarks" => "Bookmarks"
+        "bookmarks" => "Bookmarks",
+        "manage_groups" => "Gruppen Managen",
+        "groups"    => "Gruppen",
+        "config"    => "Seiten-Konfiguration",
+        "settings"  => "Account Einstellungen"
+    ],
+    "home"  => [
+        "added_titles"  => "Neue Titel",
+        "type"          => "Typ",
+        "title"         => "Titel",
+        "added"         => "Hinzugefügt",
+        "released_chap" => "Neue Kapitel",
+        "chapter"       => "Kapitel",
+        "chap_title"    => "Kapitel Titel",
+        "group"         => "Gruppe",
+        "uploader"      => "Uploader"
+    ],
+    "groups" => [
+        "add_group" => "Neue Gruppe hinzufügen",
+        "req_group" => "Neue Gruppe anfragen",
+    ],
+    "config"    => [
+        "title"     => "Konfiguration Bearbeiten",
+        "title2"    => "Seitentitle",
+        "slogan"    => "Seitenslogan",
+        "logo"      => "Logo URL (Leer lassen für keins)",
+        "cookie"    => "Cookie Prefix (Wenn du ihn änderst, gehen alle Bookmarks verloren!)",
+        "url"       => "URL zur Seite (Mit https und MUSS MIT SCHRÄGSTRICH ENDEN!)",
+        "theme"     => "Standard-Theme",
+        "themes"    => [
+            1   => "Standard Hell",
+            2   => "Cerulean Hell",
+            3   => "Lumen Hell",
+            4   => "Lesbar Hell",
+            5   => "Slate Dunkel",
+            6   => "Cyborg Dunkel"
+        ],
+        "start"     => "Seite gegründet in",
+        "lang"      => "Standard Sprache",
+        "disqus"    => "Disqus Name"
     ],
     "login" => [
         "error"     => "Error",
@@ -58,6 +97,7 @@ $lang = [
         "licensed"  => "Lizenzer (Leer lassen wenn unlizenziert)",
         "official"  => "URL zum offiziellem Release (Leer lassen wenn nicht vorhanden)",
         "required"  => "Erforderliche Felder sind mit * gekennzeichnet.",
+        "all_required"  => "Alle Felder sind erforderlich!",
         "manga"     => "Manga",
         "manhua"    => "Manhua",
         "manwha"    => "Manwha",

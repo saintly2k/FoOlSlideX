@@ -15,11 +15,24 @@ RewriteRule ^about/?$ ./render/public/about.req.php
 RewriteRule ^manga/(.*)/?$ ./render/public/manga.req.php?slug=$1
 RewriteRule ^chapter/(.*)/?$ ./render/public/chapter.req.php?slug=$1
 
+# Group Pages
+RewriteRule ^groups/?$ ./render/public/groups.req.php
+RewriteRule ^group/(.*)/?$ ./render/public/group.req.php?id=$1
+
+# Releaser Pages
+RewriteRule ^admin/settings/?$ ./render/releaser/settings.req.php
+RewriteRule ^admin/new_title/?$ ./render/releaser/new_title.req.php
+RewriteRule ^admin/edit_title/(.*)/?$ ./render/releaser/edit_title.req.php?slug=$1
+RewriteRule ^admin/add_chapter/(.*)/?$ ./render/releaser/add_chapter.req.php?slug=$1
+RewriteRule ^admin/edit_chapter/(.*)/?$ ./render/releaser/edit_chapter.req.php?slug=$1
+
+# Mod Pages
+RewriteRule ^admin/add_group/?$ ./render/mod/add_group.req.php
+RewriteRule ^admin/manage_groups/?$ ./render/mod/manage_groups.req.php
+RewriteRule ^admin/edit_group/(.*)/?$ ./render/mod/edit_group.req.php?id=$1
+
 # Admin Pages
-RewriteRule ^admin/new_title/?$ ./render/admin/new_title.req.php
-RewriteRule ^admin/edit_title/(.*)/?$ ./render/admin/edit_title.req.php?slug=$1
-RewriteRule ^admin/add_chapter/(.*)/?$ ./render/admin/add_chapter.req.php?slug=$1
-RewriteRule ^admin/edit_chapter/(.*)/?$ ./render/admin/edit_chapter.req.php?slug=$1
+RewriteRule ^admin/config/?$ ./render/admin/config.req.php
 
 # Redirect whatever
 RewriteRule ^login.req.php?$ ./render/redirect.php?page=login

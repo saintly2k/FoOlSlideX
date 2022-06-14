@@ -21,3 +21,8 @@ Text Style:
 4 - Forced Hiatus (due to exposure)
 5 - Completed
 6 - Dropped
+
+[ User-Level (int) ]
+1 - Admin
+2 - Moderator
+3 - Releaser

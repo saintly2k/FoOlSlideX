@@ -25,7 +25,46 @@ $lang = [
         "settings"  => "Settings",
         "logout"    => "Logout",
         "add_new"   => "New Title",
-        "bookmarks" => "Bookmarks"
+        "bookmarks" => "Bookmarks",
+        "manage_groups" => "Manage Groups",
+        "groups"    => "Groups",
+        "config"    => "Edit Config",
+        "settings"  => "Account Settings"
+    ],
+    "home"  => [
+        "added_titles"  => "Added Titles",
+        "type"          => "Type",
+        "title"         => "Title",
+        "added"         => "Added",
+        "released_chap" => "Released Chapters",
+        "chapter"       => "Chapter",
+        "chap_title"    => "Chapter Title",
+        "group"         => "Group",
+        "uploader"      => "Uploader"
+    ],
+    "groups" => [
+        "add_group" => "Add new Group",
+        "req_group" => "Request new Group",
+    ],
+    "config"    => [
+        "title"     => "Edit Config",
+        "title2"    => "Site Title",
+        "slogan"    => "Site Slogan",
+        "logo"      => "Logo URL (Leave empty for none)",
+        "cookie"    => "Cookie Prefix (If you change, all old Bookmarks will be lost!)",
+        "url"       => "URL to Site (With https and END WITH SLASH!)",
+        "theme"     => "Site Default Theme",
+        "themes"    => [
+            1   => "Default Light",
+            2   => "Cerulean Light",
+            3   => "Lumen Light",
+            4   => "Readable Light",
+            5   => "Slate Dark",
+            6   => "Cyborg Dark"
+        ],
+        "start"     => "Site Started in",
+        "lang"      => "Default Language",
+        "disqus"    => "Disqus Name"
     ],
     "login" => [
         "error"     => "Error",
@@ -58,6 +97,7 @@ $lang = [
         "licensed"  => "Licenser (leave empty if unlicensed)",
         "official"  => "URL to official Release (leave empty if none)",
         "required"  => "Required fiels are marked with *",
+        "all_required"  => "All fields are required!",
         "manga"     => "Manga",
         "manhua"    => "Manhua",
         "manwha"    => "Manwha",

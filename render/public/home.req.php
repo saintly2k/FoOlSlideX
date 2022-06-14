@@ -79,13 +79,13 @@ $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC"
     </style>
 
     <div class="col-sm-8">
-        <h3 class="text-center" style="max-height:20px;padding: 0; margin: 0;">Added Titles</h3>
+        <h3 class="text-center" style="max-height:20px;padding: 0; margin: 0;"><?= $lang["home"]["added_titles"] ?></h3>
         <div class="table-responsive" id="latest-titles">
             <table class="table table-hover table-striped">
                 <thead>
-                    <th style="width:5%">Type</th>
-                    <th>Title</th>
-                    <th class="text-right" style="width:20%">Added</th>
+                    <th style="width:5%"><?= $lang["home"]["type"] ?></th>
+                    <th><?= $lang["home"]["title"] ?></th>
+                    <th class="text-right" style="width:20%"><?= $lang["home"]["added"] ?></th>
                 </thead>
                 <tbody>
                     <?php foreach($latest_titles as $item) { ?>
@@ -115,16 +115,17 @@ $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC"
     </div>
 
     <div class="col-sm-12">
-        <h3 class="text-center">Released Chapters</h3>
+        <h3 class="text-center"><?= $lang["home"]["released_chap"] ?></h3>
         <div class="table-responsive" id="latest-titles">
             <table class="table table-hover table-striped">
                 <thead>
-                    <th style="width:5%">Type</th>
-                    <th style="width:8%">Chapter</th>
-                    <th style="width:30%;">Chapter Title</th>
-                    <th style="width:30%">Manga</th>
-                    <th style="width:10%" class="text-center">Uploader</th>
-                    <th class="text-right" style="width:20%">Added</th>
+                    <th style="width:5%"><?= $lang["home"]["type"] ?></th>
+                    <th style="width:8%"><?= $lang["home"]["chapter"] ?></th>
+                    <th style="width:30%;"><?= $lang["home"]["chap_title"] ?></th>
+                    <th style="width:30%"><?= $lang["home"]["title"] ?></th>
+                    <th class="text-center" style="width:10%"><?= $lang["home"]["group"] ?></th>
+                    <th class="text-center" style="width:10%"><?= $lang["home"]["uploader"] ?></th>
+                    <th class="text-right" style="width:20%"><?= $lang["home"]["added"] ?></th>
                 </thead>
                 <tbody>
                     <?php foreach($latest_chapters as $chapter) { ?>
@@ -171,8 +172,11 @@ $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC"
                                 <?= $mng["title"] ?>
                             </a>
                         </td>
+                        <td>
+                            <?php $group = $conn->query("SELECT * FROM `groups` WHERE `id`='".$chapter["group"]."' LIMIT 1")->fetch_assoc(); ?><a href="<?= $config["url"] ?>group/<?= $group["slug"] ?>"><?= $group["short"] ?></a>
+                        </td>
                         <td class="text-center">
-                            <?php $uploader = $conn->query("SELECT * FROM `user` WHERE `id`='".$chapter["user"]."' LIMIT 1"); $uploader = mysqli_fetch_assoc($uploader); echo $uploader["username"]; ?>
+                            <?php $uploader = $conn->query("SELECT * FROM `user` WHERE `id`='".$chapter["user"]."' LIMIT 1")->fetch_assoc(); echo $uploader["username"]; ?>
                         </td>
                         <td class="text-right"><?= $item["added"] ?></td>
                     </tr>

@@ -15,7 +15,7 @@
                     <?php if(empty($config["logo"])) { ?>
                     <?= $config["title"] ?>
                     <?php } else { ?>
-                    <img src="<?= $config["url"].$config["logo"] ?>" height="200%" style="margin-top:-9px" alt="<?= $config["title"] ?>" title="<?= $config["title"]." - ".$config["slogan"] ?>">
+                    <img src="<?= $config["url"].$config["logo"] ?>" style="margin-top:-9px; max-width: 200px; max-height: 200%" alt="<?= $config["title"] ?>" title="<?= $config["title"]." - ".$config["slogan"] ?>">
                     <?php } ?>
                 </a>
             </div>
@@ -29,6 +29,9 @@
                     </li>
                     <li class="<?php if($page==$lang["menu"]["bookmarks"]) { echo "active"; } ?>" id="titles">
                         <a href="<?php echo $config["url"]; ?>bookmarks"><?= glyph("bookmark",$lang["menu"]["bookmarks"]) ?> <?= $lang["menu"]["bookmarks"] ?></a>
+                    </li>
+                    <li class="<?php if($page==$lang["menu"]["groups"]) { echo "active"; } ?>" id="titles">
+                        <a href="<?php echo $config["url"]; ?>groups"><?= glyph("user",$lang["menu"]["groups"]) ?> <?= $lang["menu"]["groups"] ?></a>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -54,7 +57,7 @@
                                 <a href="<?= $config["url"] ?>signup"><?= glyph("log-in",$lang["menu"]["signup"]) ?> <?= $lang["menu"]["signup"] ?></a>
                             </li>
                         </ul>
-                        <?php } elseif($user["active"]==1) { ?>
+                        <?php } else { ?>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= glyph("user",$lang["menu"]["account"]) ?> <span class="nav-label-1440"><?= $user["username"] ?></span> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <!-- <li class="<?php if($page==$lang["menu"]["profile"]) { echo "active"; } ?>">
@@ -63,16 +66,24 @@
                             <!-- <li class="<?php if($page==$lang["menu"]["settings"]) { echo "active"; } ?>">
                                 <a href="<?= $config["url"] ?>settings"><?= glyph("wrench",$lang["menu"]["settings"]) ?> <?= $lang["menu"]["settings"] ?></a>
                             </li> -->
+                            <?php if(($user["level"]==1 || $user["level"]==2 || $user["level"]==3) && $user["active"]==true) { ?>
+                            <?php if($user["level"]==1 && $user["active"]==true) { ?>
+                            <li class="<?php if($page==$lang["menu"]["config"]) { echo "active"; } ?>">
+                                <a href="<?= $config["url"] ?>admin/config"><?= glyph("pencil",$lang["menu"]["config"]) ?> <?= $lang["menu"]["config"] ?></a>
+                            </li>
+                            <?php } ?>
+                            <?php if(($user["level"]==1 || $user["level"]==2) && $user["active"]==true) { ?>
+                            <li class="<?php if($page==$lang["menu"]["manage_groups"]) { echo "active"; } ?>">
+                                <a href="<?= $config["url"] ?>admin/manage_groups"><?= glyph("wrench",$lang["menu"]["manage_groups"]) ?> <?= $lang["menu"]["manage_groups"] ?></a>
+                            </li>
+                            <?php } ?>
                             <li class="<?php if($page==$lang["menu"]["add_new"]) { echo "active"; } ?>">
-                                <a href="<?= $config["url"] ?>admin/new_title"><?= glyph("log-out",$lang["menu"]["add_new"]) ?> <?= $lang["menu"]["add_new"] ?></a>
+                                <a href="<?= $config["url"] ?>admin/new_title"><?= glyph("plus-sign",$lang["menu"]["add_new"]) ?> <?= $lang["menu"]["add_new"] ?></a>
                             </li>
-                            <li class="<?php if($page==$lang["menu"]["logout"]) { echo "active"; } ?>">
-                                <a href="<?= $config["url"] ?>logout"><?= glyph("log-out",$lang["menu"]["logout"]) ?> <?= $lang["menu"]["logout"] ?></a>
+                            <?php } ?>
+                            <li class="<?php if($page==$lang["menu"]["settings"]) { echo "active"; } ?>">
+                                <a href="<?= $config["url"] ?>admin/settings"><?= glyph("wrench",$lang["menu"]["settings"]) ?> <?= $lang["menu"]["settings"] ?></a>
                             </li>
-                        </ul>
-                        <?php } else { ?>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?= glyph("user",$lang["menu"]["account"]) ?> <span class="nav-label-1440"><?= $user["username"] ?></span> <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
                             <li class="<?php if($page==$lang["menu"]["logout"]) { echo "active"; } ?>">
                                 <a href="<?= $config["url"] ?>logout"><?= glyph("log-out",$lang["menu"]["logout"]) ?> <?= $lang["menu"]["logout"] ?></a>
                             </li>

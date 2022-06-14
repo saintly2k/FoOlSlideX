@@ -25,7 +25,46 @@ $lang = [
         "settings"  => "Configurações",
         "logout"    => "Logout",
         "add_new"   => "Novo titulo",
-        "bookmarks" => "Favoritos"
+        "bookmarks" => "Favoritos",
+        "manage_groups" => "Manage Groups", # Needs translation
+        "groups"    => "Groups", # Needs translation
+        "config"    => "Edit Config", # Needs translation
+        "settings"  => "Account Settings" # Needs translation
+    ],
+    "home"  => [
+        "added_titles"  => "Added Titles", # Needs translation
+        "type"          => "Type", # Needs translation
+        "title"         => "Title", # Needs translation
+        "added"         => "Added", # Needs translation
+        "released_chap" => "Released Chapters", # Needs translation
+        "chapter"       => "Chapter", # Needs translation
+        "chap_title"    => "Chapter Title", # Needs translation
+        "group"         => "Group", # Needs translation
+        "uploader"      => "Uploader" # Needs translation
+    ],
+    "groups" => [
+        "add_group" => "Add new Group", # Needs translation
+        "req_group" => "Request new Group", # Needs translation
+    ],
+    "config"    => [
+        "title"     => "Edit Config", # Needs translation
+        "title2"    => "Site Title", # Needs translation
+        "slogan"    => "Site Slogan", # Needs translation
+        "logo"      => "Logo URL (Leave empty for none)", # Needs translation
+        "cookie"    => "Cookie Prefix (If you change, all old Bookmarks will be lost!)", # Needs translation
+        "url"       => "URL to Site (With https and END WITH SLASH!)", # Needs translation
+        "theme"     => "Site Default Theme", # Needs translation
+        "themes"    => [
+            1   => "Default Light", # Needs translation
+            2   => "Cerulean Light", # Needs translation
+            3   => "Lumen Light", # Needs translation
+            4   => "Readable Light", # Needs translation
+            5   => "Slate Dark", # Needs translation
+            6   => "Cyborg Dark" # Needs translation
+        ],
+        "start"     => "Site Started in", # Needs translation
+        "lang"      => "Default Language", # Needs translation
+        "disqus"    => "Disqus Name" # Needs translation
     ],
     "login" => [
         "error"     => "Error",
@@ -58,6 +97,7 @@ $lang = [
         "licensed"  => "Licença (Deixe limpo se estiver sem licença)",
         "official"  => "URL para lançamento oficial (deixe limpo e não tiver)",
         "required"  => "Os campos necessários são marcados com *",
+        "all_required"  => "All fields are required!", # Needs translation
         "manga"     => "Manga",
         "manhua"    => "Manhua",
         "manwha"    => "Manwha",

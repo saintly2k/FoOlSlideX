@@ -2,7 +2,7 @@
 
 require("../../requires.php");
 
-$page = $lang["menu"]["login"];
+$page = $lang["menu"]["signup"];
 
 if($loggedin==true) {
     header("Refresh: 0; url=./");
