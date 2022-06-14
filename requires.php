@@ -1,5 +1,10 @@
 <?php
 
+//if(!file_exists(".installed")) {
+//    header("Location: install.php");
+//}
+// Will work on this tomorrow
+
 ini_set('display_errors', 1);
 
 session_start();
