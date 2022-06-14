@@ -113,7 +113,7 @@ include("../parts/header.php");
 
         <div class="form-group">
             <label for="config_start"><?= $lang["config"]["start"] ?> </label>
-            <input required tabindex="7" type="text" name="start" id="config_start" class="form-control" value="<?= $config["start"] ?>" placeholder="<?= $lang["config"]["start"] ?>">
+            <input required tabindex="7" type="number" name="start" id="config_start" class="form-control" value="<?= $config["start"] ?>" placeholder="<?= $lang["config"]["start"] ?>">
         </div>
 
         <div class="form-group">
@@ -128,7 +128,7 @@ include("../parts/header.php");
 
         <div class="form-group">
             <label for="config_disqus"><?= $lang["config"]["disqus"] ?> </label>
-            <input required tabindex="9" type="text" name="disqus" id="config_disqus" class="form-control" value="<?= $config["disqus"] ?>" placeholder="<?= $lang["config"]["disqus"] ?>">
+            <input tabindex="9" type="text" name="disqus" id="config_disqus" class="form-control" value="<?= $config["disqus"] ?>" placeholder="<?= $lang["config"]["disqus"] ?>">
         </div>
 
         <p><i><?= $lang["add_manga"]["all_required"] ?></i></p>

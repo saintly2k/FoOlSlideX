@@ -1,9 +1,8 @@
 <?php
 
-//if(!file_exists(".installed")) {
-//    header("Location: install.php");
-//}
-// Will work on this tomorrow
+if(!file_exists("../../.installed")) {
+    header("Location: install");
+}
 
 ini_set('display_errors', 1);
 
@@ -11,6 +10,7 @@ session_start();
 
 require("config.php");
 require("vhs/conn.php");
+require("vhs/user.php");
 require("vhs/funky.php");
 
 if(isset($_GET["lang"])) {
@@ -57,5 +57,7 @@ if(isset($_COOKIE[$config["cookie"]."_cookie-consent"]) && $_COOKIE[$config["coo
 }
 
 require("lang/".$lang.".lang.php");
+
+$version = file_get_contents("../../.installed");
 
 ?>
