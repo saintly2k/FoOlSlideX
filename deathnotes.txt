@@ -27,7 +27,7 @@ Text Style:
 2 - Moderator
 3 - Releaser
 
-[ TYPEN ]
+[ TYPEN (int) ]
 000-099:
     Non-user related,
     For system & updates,
