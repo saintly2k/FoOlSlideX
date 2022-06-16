@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 14. Jun 2022 um 12:33
+-- Erstellungszeit: 15. Jun 2022 um 00:45
 -- Server-Version: 10.4.22-MariaDB
 -- PHP-Version: 7.4.27
 
@@ -34,6 +34,7 @@ CREATE TABLE `chapters` (
   `volume` int(11) DEFAULT NULL,
   `chapter` varchar(11) NOT NULL DEFAULT '0',
   `title` text DEFAULT NULL,
+  `type` varchar(10) NOT NULL DEFAULT 'strip',
   `user` int(11) NOT NULL,
   `group` int(11) NOT NULL,
   `added` datetime NOT NULL DEFAULT current_timestamp()
@@ -68,8 +69,9 @@ CREATE TABLE `groups` (
   `name` varchar(100) NOT NULL,
   `slug` text NOT NULL,
   `short` varchar(10) NOT NULL,
+  `image` text DEFAULT 'https://cdn.henai.eu/assets/images/fsx-group.jpg',
   `about` text DEFAULT NULL,
-  `founded` datetime NOT NULL DEFAULT current_timestamp(),
+  `founded` datetime DEFAULT current_timestamp(),
   `website` varchar(100) DEFAULT NULL,
   `irc` varchar(100) DEFAULT NULL,
   `mangadex` varchar(150) DEFAULT NULL,
