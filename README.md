@@ -6,9 +6,12 @@
 
 The new, most powerful Comic- & Manga-Reader ever created by the human race. Reworked by an Otaku for Scanlation-Groups.
 
+Before contributing, make sure to read [Contributing](#contributing)! Make sure you start with [TYP-xxx] or else it won't be merged!
+
 ## Index
 
 - [Features](#features)
+- [Contributing](#contributing)
 - [Video-Guides](#video-guides)
 - [Installation](#installation)
 - [Documentation](#documentation)
@@ -26,6 +29,16 @@ The new, most powerful Comic- & Manga-Reader ever created by the human race. Rew
 - Add Chapters/Edit them
 - Bookmark Mangas & Chapters via Cookies
 - View Bookmarks & keep track of them
+
+## Contributing
+
+Contributions are ALWAYS welcome! Even if it's just improving a language-file. Really!
+
+Make sure you follow these rules!
+
+- Commit Message should follow this title system: [TYP-xxx] where xxx is the typ type. ([See more in deathnotes.txt at the footer where types are declared](https://github.com/saintly2k/FoOlSlideX/blob/master/deathnotes.txt))
+- Code should somewhat be clean and readable
+- Notes in the code should be in ENGLISH and no other language (except language files)
 
 ## Video-Guides
 
