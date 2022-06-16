@@ -26,3 +26,27 @@ Text Style:
 1 - Admin
 2 - Moderator
 3 - Releaser
+
+[ TYPEN ]
+000-099:
+    Non-user related,
+    For system & updates,
+    For GitHub and such,
+100-199:
+    For all users,
+    Reader, system and such,
+200-299:
+    For Groups and such,
+300-399:
+    For Releases,
+    For Titles and such,
+400-499:
+    For Moderators,
+    For groups,
+500-599:
+    For Admins,
+    Administration and such,
+600-799:
+    Nothing,
+900-999:
+    Languages and such,

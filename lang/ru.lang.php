@@ -1,6 +1,8 @@
 <?php
-
-# Russian Language File
+# Russian Language File, ver: 0.3b
+# Перевод может быть не корректным, если переведенный текст ещё не задействован в функционале!
+# The translation may not be correct if the translated text is not yet functional!
+# UpDated 15.06
 
 $lang = [
     "cookie_modal" => [
@@ -10,15 +12,15 @@ $lang = [
         "refuse"    => "Отказываюсь"
     ],
     "install"   => [
-        "title"     => "Install FoOlSlideX", # Needs translation
-        "confirm"   => "Let's go!", # Needs translation
-        "after"     => "After you click 'Let's go!', you will be redirected to the signup page. Signup there using the following invite code:", # Needs translation
-        "copy"      => "Click to copy" # Needs translation
+        "title"     => "Установка FoOlSlideX",
+        "confirm"   => "Вперёд!",
+        "after"     => "После того как вы нажмете кнопку 'Вперёд!', вы будете перенаправлены на страницу регистрации. Зарегистрируйтесь там, используя следующий код приглашения:",
+        "copy"      => "скопировать"
     ],
     "menu" => [
         "home"      => "Главная",
         "releases"  => "Релизы",
-        "titles"    => "Тайтлы",
+        "titles"    => "Проекты",  # Точно ещё не было решено как обозначить раздел, ибо это можно обозначить как: Проектами, Тайтлами, а так же и Переводами / It has not yet been decided exactly how to designate the section, for it can be designated as: Projects, Titles, as well as Translations
         "more"      => "Ещё",
         "about"     => "О нас",
         "quicksearch"   => "Быстрый поиск",
@@ -31,64 +33,45 @@ $lang = [
         "logout"    => "Выход",
         "add_new"   => "Добавить релиз",
         "bookmarks" => "Закладки",
-        "manage_groups" => "Manage Groups", # Needs translation
-        "groups"    => "Groups", # Needs translation
-        "config"    => "Edit Config", # Needs translation
-        "settings"  => "Account Settings" # Needs translation
+        "manage_groups" => "Управление группами",
+        "groups"    => "Группы",
+        "config"    => "Изменить настройки",
+        "settings"  => "Настройки аккаунта"
     ],
     "home"  => [
-        "added_titles"  => "Added Titles", # Needs translation
-        "type"          => "Type", # Needs translation
-        "title"         => "Title", # Needs translation
-        "added"         => "Added", # Needs translation
-        "released_chap" => "Released Chapters", # Needs translation
-        "chapter"       => "Chapter", # Needs translation
-        "chap_title"    => "Chapter Title", # Needs translation
-        "group"         => "Group", # Needs translation
-        "uploader"      => "Uploader" # Needs translation
+        "added_titles"  => "Добавлены названия",
+        "type"          => "Тип",
+        "title"         => "Название",
+        "added"         => "Добавлена",
+        "released_chap" => "Опубликованные главы",
+        "chapter"       => "Глава",
+        "chap_title"    => "Название главы",
+        "group"         => "Группа",
+        "uploader"      => "Загрузил"
     ],
     "groups" => [
-        "add_group" => "Add new Group", # Needs translation
-        "req_group" => "Request new Group", # Needs translation
-        "name"      => "Group Name", # Needs translation
-        "short"     => "Group short Name", # Needs translation
-        "image"     => "Group Banner Image (URL)", # Needs translation
-        "about"     => "About this Group (Supports BBCode)", # Needs translation
-        "founded"   => "Group founded", # Needs translation
-        "website"   => "Group Website (Leave empty for none)", # Needs translation
-        "irc"       => "Group IRC Channel (Leave empty for none)", # Needs translation
-        "mangadex"  => "Group MangaDex site (Leave empty for none)", # Needs translation
-        "email"     => "Contact eMail", # Needs translation
-        "confirm"   => "Add group!", # Needs translation
-        "confirm_r" => "Request group!", # Needs translation
-        "group"     => "Group", # Needs translation
-        "infos"     => "Informations", # Needs translation
-        "short2"    => "Short", # Needs translation
-        "founded2"  => "Founded", # Needs translation
-        "links"     => "Links", # Needs translation
-        "about2"    => "About", # Needs translation
-        "releases"  => "Releases by this Group", # Needs translation
-        "no_releas" => "There are no Releases yet!" # Needs translation
+        "add_group" => "Добавить группу",
+        "req_group" => "Отправить запрос на регистрацию группы",
     ],
     "config"    => [
-        "title"     => "Edit Config", # Needs translation
-        "title2"    => "Site Title", # Needs translation
-        "slogan"    => "Site Slogan", # Needs translation
-        "logo"      => "Logo URL (Leave empty for none)", # Needs translation
-        "cookie"    => "Cookie Prefix (If you change, all old Bookmarks will be lost!)", # Needs translation
-        "url"       => "URL to Site (With https and END WITH SLASH!)", # Needs translation
-        "theme"     => "Site Default Theme", # Needs translation
+        "title"     => "Изменить настройки",
+        "title2"    => "Название сайта",
+        "slogan"    => "Слоган сайта",
+        "logo"      => "путь либо URL до логотипа (Оставьте пустым для отсутствия)",
+        "cookie"    => "Префикс для Cookie (Если вы измените, все старые Закладки будут потеряны!)",
+        "url"       => "URL сайта (Протокол http либо https, а так же в конце СЛЭШ обязательны!)",
+        "theme"     => "Тема сайта по умолчанию",
         "themes"    => [
-            1   => "Default Light", # Needs translation
-            2   => "Cerulean Light", # Needs translation
-            3   => "Lumen Light", # Needs translation
-            4   => "Readable Light", # Needs translation
-            5   => "Slate Dark", # Needs translation
-            6   => "Cyborg Dark" # Needs translation
+            1   => "Стандартный - Светлый",
+            2   => "Лазурный - Светлый",
+            3   => "Люмен - Светлый",
+            4   => "Удобочитаемый - Светлый",
+            5   => "Сланец - Темный",
+            6   => "Киборг - Темный"
         ],
-        "start"     => "Site Started in", # Needs translation
-        "lang"      => "Default Language", # Needs translation
-        "disqus"    => "Disqus Name (Optional)" # Needs translation
+        "start"     => "Запуск проекта (укажите год)",
+        "lang"      => "Язык по умолчанию",
+        "disqus"    => "навание в Disqus (указывается если нужны комментарии от системы Disqus)"
     ],
     "login" => [
         "error"     => "Ошибка",
@@ -121,7 +104,7 @@ $lang = [
         "licensed"  => "Лицензиар (оставить пустым, если не имеет лицензии)",
         "official"  => "URL-адрес официального релиза (оставьте пустым, если его нет)",
         "required"  => "Необходимые поля отмечены значком *",
-        "all_required"  => "All fields are required!", # Needs translation
+        "all_required"  => "Все поля обязательны для заполнения!",
         "manga"     => "Манга",
         "manhua"    => "Маньхуа",
         "manwha"    => "Манхва",
