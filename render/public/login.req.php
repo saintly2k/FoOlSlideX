@@ -9,8 +9,8 @@ if($loggedin==true) {
 }
 
 $error = false;
-
 $error_msg = "";
+
 if(isset($_GET["username"]) && isset($_GET["password"]) /*&& isset($_GET["captcha_challenge"])*/) {
     /*if(isset($_GET['captcha_challenge']) && $_GET['captcha_challenge'] == $_SESSION['captcha_text']) {*/
         $username = mysqli_real_escape_string($conn, $_GET["username"]);
