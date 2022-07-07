@@ -1,0 +1,1 @@
+ALTER TABLE `chapters` ADD `group` INT NOT NULL DEFAULT '0' AFTER `user`;

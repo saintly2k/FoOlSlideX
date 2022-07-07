@@ -25,7 +25,7 @@ include("../parts/header.php");
     <div class="col-sm-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title"><?= glyph("education",$lang["groups"]["group"]) ?> <b><?= $group["name"] ?></b> <span class="label label-success"></h3>
+                <h3 class="panel-title"><?= glyph("education",$lang["groups"]["group"]) ?> <b><?= $group["name"] ?></b> <?php if(($user["level"]==1 || $user["level"]==2) && $user["active"]==true) { ?><span class="text-right"><a href="<?= $config["url"] ?>admin/edit_group/<?= $group["slug"] ?>"><?= glyph("pencil", $lang["edit_group"]["title"]) ?> <?= $lang["edit_group"]["title"] ?></a></span><?php } ?></h3>
             </div>
             <?php if(!empty($group["image"])) { ?>
             <img src="<?= $group["image"] ?>" width="100%" alt="<?= $group["name"] ?>'s Banner" title="<?= $group["name"] ?>'s Banner">
@@ -79,7 +79,6 @@ include("../parts/header.php");
                         <th style="width:5%"><?= $lang["home"]["chapter"] ?></th>
                         <th style="width:25%;"><?= $lang["home"]["chap_title"] ?></th>
                         <th style="width:25%"><?= $lang["home"]["title"] ?></th>
-                        <th class="text-center" style="width:5%"><?= $lang["home"]["group"] ?></th>
                         <th class="text-center" style="width:10%"><?= $lang["home"]["uploader"] ?></th>
                         <th class="text-right" style="width:20%"><?= $lang["home"]["added"] ?></th>
                     </thead>
@@ -127,9 +126,6 @@ include("../parts/header.php");
                                 <a href="<?= $config["url"] ?>manga/<?= $mng["slug"] ?>">
                                     <?= $mng["title"] ?>
                                 </a>
-                            </td>
-                            <td class="text-center">
-                                <?php $group = $conn->query("SELECT * FROM `groups` WHERE `id`='".$chapter["group"]."' LIMIT 1")->fetch_assoc(); ?><a href="<?= $config["url"] ?>group/<?= $group["slug"] ?>"><?= $group["short"] ?></a>
                             </td>
                             <td class="text-center">
                                 <?php $uploader = $conn->query("SELECT * FROM `user` WHERE `id`='".$chapter["user"]."' LIMIT 1")->fetch_assoc(); echo $uploader["username"]; ?>

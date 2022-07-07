@@ -71,6 +71,9 @@ $lang = [
         "releases"  => "Releases von dieser Gruppe",
         "no_releas" => "Noch keine Releases im Moment!"
     ],
+    "edit_group" => [
+        "title"     => "Gruppe bearbeiten",
+    ],
     "config"    => [
         "title"     => "Konfiguration Bearbeiten",
         "title2"    => "Seitentitle",

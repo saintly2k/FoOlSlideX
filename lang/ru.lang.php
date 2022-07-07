@@ -1,4 +1,5 @@
 <?php
+
 # Russian Language File, ver: 0.3b
 # Перевод может быть не корректным, если переведенный текст ещё не задействован в функционале!
 # The translation may not be correct if the translated text is not yet functional!
@@ -52,6 +53,28 @@ $lang = [
     "groups" => [
         "add_group" => "Добавить группу",
         "req_group" => "Отправить запрос на регистрацию группы",
+        "name"      => "Group Name", # Needs translation
+        "short"     => "Group short Name", # Needs translation
+        "image"     => "Group Banner Image (URL)", # Needs translation
+        "about"     => "About this Group (Supports BBCode)", # Needs translation
+        "founded"   => "Group founded", # Needs translation
+        "website"   => "Group Website (Leave empty for none)", # Needs translation
+        "irc"       => "Group IRC Channel (Leave empty for none)", # Needs translation
+        "mangadex"  => "Group MangaDex site (Leave empty for none)", # Needs translation
+        "email"     => "Contact eMail", # Needs translation
+        "confirm"   => "Add group!", # Needs translation
+        "confirm_r" => "Request group!", # Needs translation
+        "group"     => "Group", # Needs translation
+        "infos"     => "Informations", # Needs translation
+        "short2"    => "Short", # Needs translation
+        "founded2"  => "Founded", # Needs translation
+        "links"     => "Links", # Needs translation
+        "about2"    => "About", # Needs translation
+        "releases"  => "Releases by this Group", # Needs translation
+        "no_releas" => "There are no Releases yet!" # Needs translation
+    ],
+    "edit_group" => [
+        "title"     => "Edit Group", # Needs translation
     ],
     "config"    => [
         "title"     => "Изменить настройки",

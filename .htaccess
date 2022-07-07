@@ -28,7 +28,6 @@ RewriteRule ^admin/edit_chapter/(.*)/?$ ./render/releaser/edit_chapter.req.php?s
 
 # Mod Pages
 RewriteRule ^admin/add_group/?$ ./render/mod/add_group.req.php
-RewriteRule ^admin/manage_groups/?$ ./render/mod/manage_groups.req.php
 RewriteRule ^admin/edit_group/(.*)/?$ ./render/mod/edit_group.req.php?id=$1
 
 # Admin Pages

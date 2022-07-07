@@ -72,11 +72,6 @@
                                 <a href="<?= $config["url"] ?>admin/config"><?= glyph("pencil",$lang["menu"]["config"]) ?> <?= $lang["menu"]["config"] ?></a>
                             </li>
                             <?php } ?>
-                            <?php if(($user["level"]==1 || $user["level"]==2) && $user["active"]==true) { ?>
-                            <li class="<?php if($page==$lang["menu"]["manage_groups"]) { echo "active"; } ?>">
-                                <a href="<?= $config["url"] ?>admin/manage_groups"><?= glyph("wrench",$lang["menu"]["manage_groups"]) ?> <?= $lang["menu"]["manage_groups"] ?></a>
-                            </li>
-                            <?php } ?>
                             <li class="<?php if($page==$lang["menu"]["add_new"]) { echo "active"; } ?>">
                                 <a href="<?= $config["url"] ?>admin/new_title"><?= glyph("plus-sign",$lang["menu"]["add_new"]) ?> <?= $lang["menu"]["add_new"] ?></a>
                             </li>

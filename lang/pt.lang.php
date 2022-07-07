@@ -71,6 +71,9 @@ $lang = [
         "releases"  => "Releases by this Group", # Needs translation
         "no_releas" => "There are no Releases yet!" # Needs translation
     ],
+    "edit_group" => [
+        "title"     => "Edit Group", # Needs translation
+    ],
     "config"    => [
         "title"     => "Edit Config", # Needs translation
         "title2"    => "Site Title", # Needs translation
