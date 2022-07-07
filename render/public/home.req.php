@@ -16,7 +16,7 @@ if(isset($_GET["logout"])) {
 
 include("../parts/header.php");
 
-$carousels = $conn->query("SELECT * FROM `titles` ORDER BY RAND() LIMIT 5");
+$carousels = $conn->query("SELECT * FROM `titles` ORDER BY RAND() LIMIT 10");
 $latest_titles = $conn->query("SELECT * FROM `titles` ORDER BY `added` DESC");
 $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC");
 
@@ -70,10 +70,6 @@ $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC"
     <style>
         #latest-titles {
             height: 500px;
-        }
-
-        #manga-carousel {
-            height: 520px;
         }
 
     </style>

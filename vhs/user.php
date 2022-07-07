@@ -1,6 +1,13 @@
 <?php
 
 $config = $conn->query("SELECT * FROM `config`")->fetch_assoc();
+$display = $conn->query("SELECT * FROM `display` ORDER BY `order` ASC");
+
+$i = 1;
+foreach($display as $ds) {
+    $d[$i] = $ds;
+    $i++;
+}
 
 if((isset($_COOKIE[$config["cookie"]."_session"]) && !empty($_COOKIE[$config["cookie"]."_session"])) || (isset($_SESSION[$config["cookie"]."_session"]) && !empty($_SESSION[$config["cookie"]."_session"]))) {
     if(!empty($_COOKIE[$config["cookie"]."_session"])) {

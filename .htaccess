@@ -4,6 +4,7 @@ Options -Indexes
 
 # Main Pages
 RewriteRule ^/?$ ./render/public/home.req.php
+RewriteRule ^releases/?$ ./render/public/home.req.php
 RewriteRule ^login/?$ ./render/public/login.req.php
 RewriteRule ^signup/?$ ./render/public/signup.req.php
 RewriteRule ^logout/?$ ./render/public/home.req.php?logout
@@ -32,6 +33,7 @@ RewriteRule ^admin/edit_group/(.*)/?$ ./render/mod/edit_group.req.php?id=$1
 
 # Admin Pages
 RewriteRule ^admin/config/?$ ./render/admin/config.req.php
+RewriteRule ^admin/menu_display/?$ ./render/admin/menu_display.req.php
 
 # Redirect whatever
 RewriteRule ^login.req.php?$ ./render/redirect.php?page=login

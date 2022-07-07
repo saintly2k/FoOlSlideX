@@ -2,6 +2,8 @@
 
 # Arquivo de lingua portuguesa
 # By luckkyz
+# Translated, then left to rot?
+# Updated 23.06.2022
 
 $lang = [
     "cookie_modal" => [
@@ -35,7 +37,12 @@ $lang = [
         "manage_groups" => "Manage Groups", # Needs translation
         "groups"    => "Groups", # Needs translation
         "config"    => "Edit Config", # Needs translation
-        "settings"  => "Account Settings" # Needs translation
+        "settings"  => "Account Settings", # Needs translation
+        "blog"      => "Blog", # Needs translation
+        "blog2"     => "Blog activated", # Needs translation
+        "news"      => "News", # Needs translation
+        "news2"     => "News activated", # Needs translation
+        "menu_dis"  => "Menu Display" # Needs translation
     ],
     "home"  => [
         "added_titles"  => "Added Titles", # Needs translation
@@ -221,7 +228,16 @@ $lang = [
         "save"      => "Faça mudanças",
         "delete"    => "Apagar título"
     ],
-    
+    "display" => [
+        "notice"    => "If you are not familiar with this setting, please watch this video, it is really important before you break anything!", # Needs translation
+        "item"      => "Item URL/Name", # Needs translation
+        "text"      => "Display Text", # Needs translation
+        "icon"      => "Glyphicon Icon", # Needs translation
+        "order"     => "Order Level", # Needs translation
+        "displayed" => "Displayed", # Needs translation
+        "hidden"    => "Hidden", # Needs translation
+        "delete"    => "Are you sure you want to delete this Menu item?" # Needs translation
+    ],
     "errors" => [
         "bad_username"  => "O nome de usuário contém caracteres ruins!",
         "bad_password"  => "A senha contém caracteres ruins!",
@@ -232,7 +248,8 @@ $lang = [
         "captcha"   => "O CAPTCHA estava errado... Tentar novamente!",
         "unsupported_image" => "O arquivo que você tentou carregar NÃO é uma imagem (ou está vazia)!",
         "title_exists"  => "O Título que você está tentando adicionar já existe com o mesmo nome!",
-        "used_invite"   => "Este Código de Convite já foi usado!"
+        "used_invite"   => "Este Código de Convite já foi usado!",
+        "exising_item"  => "The Item URL/Name/Display Text is already used!" # Needs translation
     ]
 ];
 

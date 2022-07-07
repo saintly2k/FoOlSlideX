@@ -19,6 +19,11 @@ if(isset($_POST["edit_config"])) {
     $c_url = mysqli_real_escape_string($conn, $_POST["url"]);
     $c_theme = mysqli_real_escape_string($conn, $_POST["theme"]);
     $c_start = mysqli_real_escape_string($conn, $_POST["start"]);
+    if(isset($_POST["blog"])) {
+        $c_blog = mysqli_real_escape_string($conn, $_POST["blog"]);
+    } else {
+        $c_blog = 0;
+    }
     $c_lang = mysqli_real_escape_string($conn, $_POST["lang"]);
     $c_disqus = mysqli_real_escape_string($conn, $_POST["disqus"]);
     
@@ -42,6 +47,9 @@ if(isset($_POST["edit_config"])) {
     }
     if($c_start!=$config["start"]) {
         $conn->query("UPDATE `config` SET `start`='$c_start'");
+    }
+    if($c_blog!=$config["blog"]) {
+        $conn->query("UPDATE `config` SET `blog`='$c_blog'");
     }
     if($c_lang!=$config["lang"]) {
         $conn->query("UPDATE `config` SET `lang`='$c_lang'");
@@ -114,6 +122,10 @@ include("../parts/header.php");
         <div class="form-group">
             <label for="config_start"><?= $lang["config"]["start"] ?> </label>
             <input required tabindex="7" type="number" name="start" id="config_start" class="form-control" value="<?= $config["start"] ?>" placeholder="<?= $lang["config"]["start"] ?>">
+        </div>
+        
+        <div class="form-group">
+            <input type="checkbox" <?php if($config["blog"]==true) echo "checked"; ?> name="blog" id="blog" value="1"> <label for="blog"><?= $lang["menu"]["blog"] ?></label>
         </div>
 
         <div class="form-group">

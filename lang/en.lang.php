@@ -2,6 +2,8 @@
 
 # English Language File
 # By Saintly2k
+# This is the base file which is always up-to-date. If you find any grammar mistakes, correct them ^^
+# Updated 08.07.2022
 
 $lang = [
     "cookie_modal" => [
@@ -35,7 +37,12 @@ $lang = [
         "manage_groups" => "Manage Groups",
         "groups"    => "Groups",
         "config"    => "Edit Config",
-        "settings"  => "Account Settings"
+        "settings"  => "Account Settings",
+        "blog"      => "Blog",
+        "blog2"     => "Blog activated",
+        "news"      => "News",
+        "news2"     => "News activated",
+        "menu_dis"  => "Menu Display"
     ],
     "home"  => [
         "added_titles"  => "Added Titles",
@@ -221,7 +228,16 @@ $lang = [
         "save"      => "Make Changes",
         "delete"    => "Delete Title"
     ],
-    
+    "display" => [
+        "notice"    => "If you are not familiar with this setting, please watch this video, it is really important before you break anything!",
+        "item"      => "Item URL/Name",
+        "text"      => "Display Text",
+        "icon"      => "Glyphicon Icon",
+        "order"     => "Order Level",
+        "displayed" => "Displayed",
+        "hidden"    => "Hidden",
+        "delete"    => "Are you sure you want to delete this Menu item?"
+    ],
     "errors" => [
         "bad_username"  => "Username contains bad characters!",
         "bad_password"  => "Password contains bad characters!",
@@ -232,7 +248,8 @@ $lang = [
         "captcha"   => "The CAPTCHA was wrong... try again!",
         "unsupported_image" => "The File you have tried to upload is NOT an Image (or it is empty)!",
         "title_exists"  => "The Title you are trying to add already exists with the same name!",
-        "used_invite"   => "This Invite Code has already been used!"
+        "used_invite"   => "This Invite Code has already been used!",
+        "exising_item"  => "The Item URL/Name/Display Text is already used!"
     ]
 ];
 

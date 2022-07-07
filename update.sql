@@ -3,3 +3,7 @@
 ALTER TABLE `chapters` ADD `group1` INT NOT NULL DEFAULT '0' AFTER `user`;
 ALTER TABLE `chapters` ADD `group2` INT NOT NULL DEFAULT '0' AFTER `group1`;
 ALTER TABLE `chapters` ADD `group3` INT NOT NULL DEFAULT '0' AFTER `group3`;
+
+/* ADD BLOG BOOLEAN TO DB */
+
+ALTER TABLE `config` ADD `blog` BOOLEAN NOT NULL DEFAULT FALSE AFTER `start`;

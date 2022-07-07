@@ -37,7 +37,12 @@ $lang = [
         "manage_groups" => "Управление группами",
         "groups"    => "Группы",
         "config"    => "Изменить настройки",
-        "settings"  => "Настройки аккаунта"
+        "settings"  => "Настройки аккаунта",
+        "blog"      => "Blog", # Needs translation
+        "blog2"     => "Blog activated", # Needs translation
+        "news"      => "News", # Needs translation
+        "news2"     => "News activated", # Needs translation
+        "menu_dis"  => "Menu Display" # Needs translation
     ],
     "home"  => [
         "added_titles"  => "Добавлены названия",
@@ -223,7 +228,16 @@ $lang = [
         "save"      => "Внести изменения",
         "delete"    => "Удалить тайтл"
     ],
-    
+    "display" => [
+        "notice"    => "If you are not familiar with this setting, please watch this video, it is really important before you break anything!", # Needs translation
+        "item"      => "Item URL/Name", # Needs translation
+        "text"      => "Display Text", # Needs translation
+        "icon"      => "Glyphicon Icon", # Needs translation
+        "order"     => "Order Level", # Needs translation
+        "displayed" => "Displayed", # Needs translation
+        "hidden"    => "Hidden", # Needs translation
+        "delete"    => "Are you sure you want to delete this Menu item?" # Needs translation
+    ],
     "errors" => [
         "bad_username"  => "Никнейм содержит недопустимые символы!",
         "bad_password"  => "Пароль содержит недопустимые символы!",
@@ -234,7 +248,8 @@ $lang = [
         "captcha"   => "Капча была неправильной... попробуйте еще раз!",
         "unsupported_image" => "Файл, который вы пытались загрузить, НЕ является изображением (или он пуст)!",
         "title_exists"  => "Тайтл, который вы пытаетесь добавить, уже существует с таким же названием!",
-        "used_invite"   => "Этот пригласительный код (инвайт) уже был использован!"
+        "used_invite"   => "Этот пригласительный код (инвайт) уже был использован!",
+        "exising_item"  => "The Item URL/Name/Display Text is already used!" # Needs translation
     ]
 ];
 

@@ -9,7 +9,7 @@ $group = $conn->query("SELECT * FROM `groups` WHERE `slug`='$slug' LIMIT 1")->fe
 
 if($group["approved"]==false && $user["level"]!=1 && $user["level"]!=2 || $user["active"]==false) die("not authorized to perform this action.");
 
-$releases = $conn->query("SELECT * FROM `chapters` WHERE `group`='".$group["id"]."' ORDER BY `id` DESC");
+$releases = $conn->query("SELECT * FROM `chapters` WHERE `group1`='".$group["id"]."' OR `group2`='".$group["id"]."' OR `group3`='".$group["id"]."'  ORDER BY `id` DESC");
 
 if($group["approved"]==false && (($user["level"]==1 || $user["level"]==2) && $user["active"]==true)) {
     $approved = false;

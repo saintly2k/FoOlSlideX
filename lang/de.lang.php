@@ -2,6 +2,8 @@
 
 # Deutsche Sprach-Datei
 # Von Saintly2k
+# Diese Datei ist IMMER mit der Englischen gleichauf. Bei Fehlern einfach korrigieren ^^
+# Updated 08.07.2022
 
 $lang = [
     "cookie_modal" => [
@@ -35,7 +37,12 @@ $lang = [
         "manage_groups" => "Gruppen Managen",
         "groups"    => "Gruppen",
         "config"    => "Seiten-Konfiguration",
-        "settings"  => "Account Einstellungen"
+        "settings"  => "Account Einstellungen",
+        "blog"      => "Blog",
+        "blog2"     => "Blog aktiviert",
+        "news"      => "Neuigkeiten",
+        "news2"     => "Neuigkeiten aktiviert",
+        "menu_dis"  => "Menü Ansicht"
     ],
     "home"  => [
         "added_titles"  => "Neue Titel",
@@ -221,7 +228,16 @@ $lang = [
         "save"      => "Änderrungen speichern",
         "delete"    => "Titel löschen"
     ],
-    
+    "display" => [
+        "notice"    => "Wenn du mit diesen Einstellungen nicht vertraut bist, schau dir bitte dieses Video an, es ist wirklich wichtig, bevor du etwas kaputt machst!",
+        "item"      => "Eintrag URL/Name",
+        "text"      => "Anzeige Text",
+        "icon"      => "Glyphicon Icon",
+        "order"     => "Anzeige Ebene",
+        "displayed" => "Angezeigt",
+        "hidden"    => "Versteckt",
+        "delete"    => "Bist du sicher, dass du diesen Menüeintrag löschen möchtest?"
+    ],
     "errors" => [
         "bad_username"  => "Benutzername enthält ungültige Zeichen!",
         "bad_password"  => "Das Passwort enthält ungültige Zeichen!",
@@ -232,7 +248,8 @@ $lang = [
         "captcha"   => "Das CAPTCHA war falsch... versuchen Sie es erneut!",
         "unsupported_image" => "Die Datei, die Sie hochzuladen versucht haben, ist KEIN Bild (oder sie ist leer)!",
         "title_exists"  => "Der Titel, den Sie hinzufügen möchten, existiert bereits mit demselben Namen!",
-        "used_invite"   => "Dieser Einladungscode wurde bereits verwendet!"
+        "used_invite"   => "Dieser Einladungscode wurde bereits verwendet!",
+        "exising_item"  => "Der Eintrag URL/Name/Anzeigetext wird bereits verwendet!"
     ]
 ];
 
