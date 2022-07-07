@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 15. Jun 2022 um 00:45
+-- Erstellungszeit: 08. Jul 2022 um 01:46
 -- Server-Version: 10.4.22-MariaDB
 -- PHP-Version: 7.4.27
 
@@ -36,7 +36,9 @@ CREATE TABLE `chapters` (
   `title` text DEFAULT NULL,
   `type` varchar(10) NOT NULL DEFAULT 'strip',
   `user` int(11) NOT NULL,
-  `group` int(11) NOT NULL,
+  `group1` int(11) NOT NULL,
+  `group2` int(11) DEFAULT NULL,
+  `group3` int(11) DEFAULT NULL,
   `added` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -54,9 +56,41 @@ CREATE TABLE `config` (
   `url` varchar(100) NOT NULL DEFAULT 'http://localhost/mangareaderx/',
   `theme` int(1) NOT NULL DEFAULT 1,
   `start` int(4) NOT NULL DEFAULT 2020,
+  `blog` tinyint(1) NOT NULL DEFAULT 0,
+  `news` tinyint(1) NOT NULL DEFAULT 0,
   `lang` varchar(2) NOT NULL DEFAULT 'en',
   `disqus` varchar(100) NOT NULL DEFAULT 'mangapanzer'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `display`
+--
+
+CREATE TABLE `display` (
+  `id` int(11) NOT NULL,
+  `order` int(11) NOT NULL,
+  `item` varchar(20) NOT NULL,
+  `text` varchar(20) NOT NULL,
+  `icon` varchar(20) NOT NULL,
+  `displayed` tinyint(1) NOT NULL DEFAULT 1,
+  `hidden` tinyint(1) NOT NULL DEFAULT 0,
+  `created` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `display`
+--
+
+INSERT INTO `display` (`id`, `order`, `item`, `text`, `icon`, `displayed`, `hidden`, `created`) VALUES
+(1, 1, 'releases', '', 'th-list', 1, 0, '2022-07-08 01:39:51'),
+(2, 2, 'titles', '', 'book', 1, 0, '2022-07-08 01:39:51'),
+(3, 3, 'bookmarks', '', 'bookmark', 1, 0, '2022-07-08 01:39:51'),
+(4, 4, 'groups', '', 'user', 1, 0, '2022-07-08 01:39:51'),
+(5, 5, 'about', '', 'question-sign', 1, 0, '2022-07-08 01:39:51'),
+(6, 6, 'blog', '', 'font', 1, 1, '2022-07-08 01:39:51'),
+(7, 7, 'news', '', 'bullhorn', 0, 1, '2022-07-08 01:39:51');
 
 -- --------------------------------------------------------
 
@@ -156,6 +190,12 @@ ALTER TABLE `chapters`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indizes für die Tabelle `display`
+--
+ALTER TABLE `display`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indizes für die Tabelle `groups`
 --
 ALTER TABLE `groups`
@@ -188,6 +228,12 @@ ALTER TABLE `user`
 --
 ALTER TABLE `chapters`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `display`
+--
+ALTER TABLE `display`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT für Tabelle `groups`
