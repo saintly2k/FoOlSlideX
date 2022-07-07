@@ -20,7 +20,7 @@ if(isset($_POST["edit_config"])) {
     $c_theme = mysqli_real_escape_string($conn, $_POST["theme"]);
     $c_start = mysqli_real_escape_string($conn, $_POST["start"]);
     if(isset($_POST["blog"])) { $c_blog = mysqli_real_escape_string($conn, $_POST["blog"]); } else { $c_blog = 0; }
-    if(isset($_POST["news"])) { $_news = mysqli_real_escape_string($conn, $_POST["news"]); } else { $c_news = 0; }
+    if(isset($_POST["news"])) { $c_news = mysqli_real_escape_string($conn, $_POST["news"]); } else { $c_news = 0; }
     $c_lang = mysqli_real_escape_string($conn, $_POST["lang"]);
     $c_disqus = mysqli_real_escape_string($conn, $_POST["disqus"]);
     
