@@ -16,7 +16,7 @@ if(isset($_GET["logout"])) {
 
 include("../parts/header.php");
 
-$carousels = $conn->query("SELECT * FROM `titles` ORDER BY RAND() LIMIT 5");
+$carousels = $conn->query("SELECT * FROM `titles` ORDER BY RAND() LIMIT 10");
 $latest_titles = $conn->query("SELECT * FROM `titles` ORDER BY `added` DESC");
 $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC");
 
@@ -69,11 +69,7 @@ $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC"
 
     <style>
         #latest-titles {
-            max-height: 500px;
-        }
-
-        #manga-carousel {
-            max-height: 520px;
+            height: 500px;
         }
 
     </style>
@@ -81,20 +77,20 @@ $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC"
     <div class="col-sm-8">
         <h3 class="text-center" style="max-height:20px;padding: 0; margin: 0;"><?= $lang["home"]["added_titles"] ?></h3>
         <div class="table-responsive" id="latest-titles">
-            <table class="table table-hover table-striped">
+            <table class="table table-hover table-striped"> <!-- IF ON OTHER LANGUAGES THAN ENGLISH, HERE IS AN OVERFLOW ON THE "added" TAB, IDK WHY, IF ANYONE KNOWS HOW TO FIX, PLS DO ON GITHUB.com/saintly2k/FoOlSlideX -->
                 <thead>
-                    <th style="width:5%"><?= $lang["home"]["type"] ?></th>
-                    <th><?= $lang["home"]["title"] ?></th>
-                    <th class="text-right" style="width:20%"><?= $lang["home"]["added"] ?></th>
+                    <th style="width:10%"><?= $lang["home"]["type"] ?></th>
+                    <th style="width:auto"><?= $lang["home"]["title"] ?></th>
+                    <th class="text-right" style="width:25%"><?= $lang["home"]["added"] ?></th>
                 </thead>
                 <tbody>
                     <?php foreach($latest_titles as $item) { ?>
                     <tr>
                         <?php if($item["type"]==$lang["add_manga"]["manga"]) { ?>
                         <td><span class="label label-primary"><?= $lang["add_manga"]["manga"] ?></span></td>
-                        <?php } elseif($item["type"]==$lang["add_manga"]["manwha"]) { ?>?>
+                        <?php } elseif($item["type"]==$lang["add_manga"]["manwha"]) { ?>
                         <td><span class="label label-success"><?= $lang["add_manga"]["manwha"] ?></span></td>
-                        <?php } else { ?>?>
+                        <?php } else { ?>
                         <td><span class="label label-info"><?= $lang["add_manga"]["manhua"] ?></span></td>
                         <?php } ?>
                         <td>
@@ -106,7 +102,7 @@ $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC"
                             </a>
                             <?php } ?>
                         </td>
-                        <td><?= $item["added"] ?></td>
+                        <td class="text-right"><?= $item["added"] ?></td>
                     </tr>
                     <?php } ?>
                 </tbody>
@@ -125,7 +121,7 @@ $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC"
                     <th style="width:25%"><?= $lang["home"]["title"] ?></th>
                     <th class="text-center" style="width:5%"><?= $lang["home"]["group"] ?></th>
                     <th class="text-center" style="width:10%"><?= $lang["home"]["uploader"] ?></th>
-                    <th class="text-right" style="width:20%"><?= $lang["home"]["added"] ?></th>
+                    <th class="text-right" style="width:20%"><?= $lang["home"]["added"] ?></th> <!-- IF ON OTHER LANGUAGES THAN ENGLISH, HERE IS AN OVERFLOW ON THE "added" TAB, IDK WHY, IF ANYONE KNOWS HOW TO FIX, PLS DO ON GITHUB.com/saintly2k/FoOlSlideX -->
                 </thead>
                 <tbody>
                     <?php foreach($latest_chapters as $chapter) { ?>
@@ -173,7 +169,7 @@ $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC"
                             </a>
                         </td>
                         <td class="text-center">
-                            <?php $group = $conn->query("SELECT * FROM `groups` WHERE `id`='".$chapter["group"]."' LIMIT 1")->fetch_assoc(); ?><a href="<?= $config["url"] ?>group/<?= $group["slug"] ?>"><?= $group["short"] ?></a>
+                            <?= munch_groups($chapter["group1"], $chapter["group2"], $chapter["group3"]) ?>
                         </td>
                         <td class="text-center">
                             <?php $uploader = $conn->query("SELECT * FROM `user` WHERE `id`='".$chapter["user"]."' LIMIT 1")->fetch_assoc(); echo $uploader["username"]; ?>

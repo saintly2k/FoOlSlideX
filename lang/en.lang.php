@@ -2,6 +2,8 @@
 
 # English Language File
 # By Saintly2k
+# This is the base file which is always up-to-date. If you find any grammar mistakes, correct them ^^
+# Updated 08.07.2022
 
 $lang = [
     "cookie_modal" => [
@@ -35,7 +37,12 @@ $lang = [
         "manage_groups" => "Manage Groups",
         "groups"    => "Groups",
         "config"    => "Edit Config",
-        "settings"  => "Account Settings"
+        "settings"  => "Account Settings",
+        "blog"      => "Blog",
+        "blog2"     => "Blog activated",
+        "news"      => "News",
+        "news2"     => "News activated",
+        "menu_dis"  => "Menu Display"
     ],
     "home"  => [
         "added_titles"  => "Added Titles",
@@ -70,6 +77,22 @@ $lang = [
         "about2"    => "About",
         "releases"  => "Releases by this Group",
         "no_releas" => "There are no Releases yet!"
+    ],
+    "group" => [
+        "website"   => "Website",
+        "irc"       => "IRC",
+        "mangadex"  => "MangaDex",
+        "email"     => "eMail",
+        "approve"   => [
+            "not_approved"  => "This group has not been approved by a Staff member yet and is only visible to Mods and Admins.",
+            "action"        => "What do you want to do?",
+            "approve"       => "Approve this Group",
+            "unapprove"     => "Delete this Group",
+            "notice"        => "After approving, you might want to reload this page..."
+        ]
+    ],
+    "edit_group" => [
+        "title"     => "Edit Group",
     ],
     "config"    => [
         "title"     => "Edit Config",
@@ -160,7 +183,9 @@ $lang = [
         "edit_title"    => "Edit Title",
         "add_ch"    => "Add Chapter",
         "unknown"   => "Unknown",
-        "edit_chap" => "Edit Chapter"
+        "edit_chap" => "Edit Chapter",
+        "chapters"  => "Chapters",
+        "comments"  => "Comments"
     ],
     "add_chapter" => [
         "title"     => "Add Chapter for",
@@ -168,7 +193,14 @@ $lang = [
         "volume"    => "Volume (Leave empty for none)",
         "chapter"   => "Chapter (Leave empty or 0 for Oneshot)",
         "ctitle"    => "Chapter Title (Leave empty for none)",
-        "button"    => "Add Chapter"
+        "button"    => "Add Chapter",
+        "ser_grp"   => "Search for Group...",
+        "sel_grp1"  => "Select Group 1",
+        "sel_grp2"  => "Select Group 2",
+        "sel_grp3"  => "Select Group 3",
+        "no_group"  => "No Group",
+        "none"      => "None",
+        "group_unap"    => "Don't see your group? That means it's still unapproved. Wait some more or upload without a group. You can always edit that later."
     ],
     "chapter" => [
         "menu"      => "Navigation",
@@ -196,7 +228,16 @@ $lang = [
         "save"      => "Make Changes",
         "delete"    => "Delete Title"
     ],
-    
+    "display" => [
+        "notice"    => "If you are not familiar with this setting, please watch this video, it is really important before you break anything!",
+        "item"      => "Item URL/Name",
+        "text"      => "Display Text",
+        "icon"      => "Glyphicon Icon",
+        "order"     => "Order Level",
+        "displayed" => "Displayed",
+        "hidden"    => "Hidden",
+        "delete"    => "Are you sure you want to delete this Menu item?"
+    ],
     "errors" => [
         "bad_username"  => "Username contains bad characters!",
         "bad_password"  => "Password contains bad characters!",
@@ -207,7 +248,8 @@ $lang = [
         "captcha"   => "The CAPTCHA was wrong... try again!",
         "unsupported_image" => "The File you have tried to upload is NOT an Image (or it is empty)!",
         "title_exists"  => "The Title you are trying to add already exists with the same name!",
-        "used_invite"   => "This Invite Code has already been used!"
+        "used_invite"   => "This Invite Code has already been used!",
+        "exising_item"  => "The Item URL/Name/Display Text is already used!"
     ]
 ];
 

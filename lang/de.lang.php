@@ -2,6 +2,8 @@
 
 # Deutsche Sprach-Datei
 # Von Saintly2k
+# Diese Datei ist IMMER mit der Englischen gleichauf. Bei Fehlern einfach korrigieren ^^
+# Updated 08.07.2022
 
 $lang = [
     "cookie_modal" => [
@@ -35,7 +37,12 @@ $lang = [
         "manage_groups" => "Gruppen Managen",
         "groups"    => "Gruppen",
         "config"    => "Seiten-Konfiguration",
-        "settings"  => "Account Einstellungen"
+        "settings"  => "Account Einstellungen",
+        "blog"      => "Blog",
+        "blog2"     => "Blog aktiviert",
+        "news"      => "Neuigkeiten",
+        "news2"     => "Neuigkeiten aktiviert",
+        "menu_dis"  => "Menü Ansicht"
     ],
     "home"  => [
         "added_titles"  => "Neue Titel",
@@ -70,6 +77,22 @@ $lang = [
         "about2"    => "Über",
         "releases"  => "Releases von dieser Gruppe",
         "no_releas" => "Noch keine Releases im Moment!"
+    ],
+    "group" => [
+        "website"   => "Website",
+        "irc"       => "IRC",
+        "mangadex"  => "MangaDex",
+        "email"     => "eMail",
+        "approve"   => [
+            "not_approved"  => "Diese Gruppe wurde noch nicht von einem Mitglied des Teams genehmigt und ist nur für Mods und Admins sichtbar.",
+            "action"        => "Was möchtest du tun?",
+            "approve"       => "Diese Gruppe zulassen",
+            "unapprove"     => "Diese Gruppe löschen",
+            "notice"        => "Nachdem du etwas getan hast, solltest du vielleicht diese Seite neu laden..."
+        ]
+    ],
+    "edit_group" => [
+        "title"     => "Gruppe bearbeiten",
     ],
     "config"    => [
         "title"     => "Konfiguration Bearbeiten",
@@ -160,7 +183,9 @@ $lang = [
         "edit_title"    => "Titel editieren",
         "add_ch"    => "Kapitel hinzufügen",
         "unknown"   => "Unbekannt",
-        "edit_chap" => "Kapitel editieren"
+        "edit_chap" => "Kapitel editieren",
+        "chapters"  => "Kapitel",
+        "comments"  => "Kommentare"
     ],
     "add_chapter" => [
         "title"     => "Kapitel hinzufügen für",
@@ -168,7 +193,14 @@ $lang = [
         "volume"    => "Band (Leer lassen für keins)",
         "chapter"   => "Kapitel (Leer lassen oder 0 für Oneshot)",
         "ctitle"    => "Kapitel Titel (Leer lassen für keinen)",
-        "button"    => "Kapitel hinzufügen"
+        "button"    => "Kapitel hinzufügen",
+        "ser_grp"   => "Nach Gruppe suchen...",
+        "sel_grp1"  => "Gruppe 1 auswählen",
+        "sel_grp2"  => "Gruppe 2 auswählen",
+        "sel_grp3"  => "Gruppe 3 auswählen",
+        "no_group"  => "Keine Gruppe",
+        "none"      => "Nichts",
+        "group_unap"    => "Du siehst deine Gruppe nicht? Das heißt, dass sie noch nicht zugelassen wurde. Warte noch etwas oder lade ohne Gruppe hoch. Du kannst das später immer ändern."
     ],
     "chapter" => [
         "menu"      => "Navigation",
@@ -196,7 +228,16 @@ $lang = [
         "save"      => "Änderrungen speichern",
         "delete"    => "Titel löschen"
     ],
-    
+    "display" => [
+        "notice"    => "Wenn du mit diesen Einstellungen nicht vertraut bist, schau dir bitte dieses Video an, es ist wirklich wichtig, bevor du etwas kaputt machst!",
+        "item"      => "Eintrag URL/Name",
+        "text"      => "Anzeige Text",
+        "icon"      => "Glyphicon Icon",
+        "order"     => "Anzeige Ebene",
+        "displayed" => "Angezeigt",
+        "hidden"    => "Versteckt",
+        "delete"    => "Bist du sicher, dass du diesen Menüeintrag löschen möchtest?"
+    ],
     "errors" => [
         "bad_username"  => "Benutzername enthält ungültige Zeichen!",
         "bad_password"  => "Das Passwort enthält ungültige Zeichen!",
@@ -207,7 +248,8 @@ $lang = [
         "captcha"   => "Das CAPTCHA war falsch... versuchen Sie es erneut!",
         "unsupported_image" => "Die Datei, die Sie hochzuladen versucht haben, ist KEIN Bild (oder sie ist leer)!",
         "title_exists"  => "Der Titel, den Sie hinzufügen möchten, existiert bereits mit demselben Namen!",
-        "used_invite"   => "Dieser Einladungscode wurde bereits verwendet!"
+        "used_invite"   => "Dieser Einladungscode wurde bereits verwendet!",
+        "exising_item"  => "Der Eintrag URL/Name/Anzeigetext wird bereits verwendet!"
     ]
 ];
 

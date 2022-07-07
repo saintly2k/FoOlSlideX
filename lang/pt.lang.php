@@ -2,6 +2,8 @@
 
 # Arquivo de lingua portuguesa
 # By luckkyz
+# Translated, then left to rot?
+# Updated 23.06.2022
 
 $lang = [
     "cookie_modal" => [
@@ -35,7 +37,12 @@ $lang = [
         "manage_groups" => "Manage Groups", # Needs translation
         "groups"    => "Groups", # Needs translation
         "config"    => "Edit Config", # Needs translation
-        "settings"  => "Account Settings" # Needs translation
+        "settings"  => "Account Settings", # Needs translation
+        "blog"      => "Blog", # Needs translation
+        "blog2"     => "Blog activated", # Needs translation
+        "news"      => "News", # Needs translation
+        "news2"     => "News activated", # Needs translation
+        "menu_dis"  => "Menu Display" # Needs translation
     ],
     "home"  => [
         "added_titles"  => "Added Titles", # Needs translation
@@ -70,6 +77,22 @@ $lang = [
         "about2"    => "About", # Needs translation
         "releases"  => "Releases by this Group", # Needs translation
         "no_releas" => "There are no Releases yet!" # Needs translation
+    ],
+    "group" => [
+        "website"   => "Website", # Needs translation
+        "irc"       => "IRC", # Needs translation
+        "mangadex"  => "MangaDex", # Needs translation
+        "email"     => "eMail", # Needs translation
+        "approve"   => [
+            "not_approved"  => "This group has not been approved by a Staff member yet and is only visible to Mods and Admins.", # Needs translation
+            "action"        => "What do you want to do?", # Needs translation
+            "approve"       => "Approve this Group", # Needs translation
+            "unapprove"     => "Delete this Group", # Needs translation
+            "notice"        => "After approving, you might want to reload this page..." # Needs translation
+        ]
+    ],
+    "edit_group" => [
+        "title"     => "Edit Group", # Needs translation
     ],
     "config"    => [
         "title"     => "Edit Config", # Needs translation
@@ -160,7 +183,9 @@ $lang = [
         "edit_title"    => "Editar titulo",
         "add_ch"    => "Adicionar capitulo",
         "unknown"   => "Desconhecido",
-        "edit_chap" => "Editar capitulo"
+        "edit_chap" => "Editar capitulo",
+        "chapters"  => "Chapters", # Needs translation
+        "comments"  => "Comments" # Needs translation
     ],
     "add_chapter" => [
         "title"     => "Adicionar capitulo para",
@@ -168,7 +193,14 @@ $lang = [
         "volume"    => "Volume (Deixe vazio para nenhum)",
         "chapter"   => "Capitulo (Deixe vazio ou 0 para Oneshot)",
         "ctitle"    => "Titulo do Capitulo (Deixe vazio para nenhum)",
-        "button"    => "Adicionar capitulo"
+        "button"    => "Adicionar capitulo",
+        "ser_grp"   => "Search for Group...", # Needs translation
+        "sel_grp1"  => "Select Group 1", # Needs translation
+        "sel_grp2"  => "Select Group 2", # Needs translation
+        "sel_grp3"  => "Select Group 3", # Needs translation
+        "no_group"  => "No Group", # Needs translation
+        "none"      => "None", # Needs translation
+        "group_unap"    => "Don't see your group? That means it's still unapproved. Wait some more or upload without a group. You can always edit that later." # Needs translation
     ],
     "chapter" => [
         "menu"      => "Navegação",
@@ -196,7 +228,16 @@ $lang = [
         "save"      => "Faça mudanças",
         "delete"    => "Apagar título"
     ],
-    
+    "display" => [
+        "notice"    => "If you are not familiar with this setting, please watch this video, it is really important before you break anything!", # Needs translation
+        "item"      => "Item URL/Name", # Needs translation
+        "text"      => "Display Text", # Needs translation
+        "icon"      => "Glyphicon Icon", # Needs translation
+        "order"     => "Order Level", # Needs translation
+        "displayed" => "Displayed", # Needs translation
+        "hidden"    => "Hidden", # Needs translation
+        "delete"    => "Are you sure you want to delete this Menu item?" # Needs translation
+    ],
     "errors" => [
         "bad_username"  => "O nome de usuário contém caracteres ruins!",
         "bad_password"  => "A senha contém caracteres ruins!",
@@ -207,7 +248,8 @@ $lang = [
         "captcha"   => "O CAPTCHA estava errado... Tentar novamente!",
         "unsupported_image" => "O arquivo que você tentou carregar NÃO é uma imagem (ou está vazia)!",
         "title_exists"  => "O Título que você está tentando adicionar já existe com o mesmo nome!",
-        "used_invite"   => "Este Código de Convite já foi usado!"
+        "used_invite"   => "Este Código de Convite já foi usado!",
+        "exising_item"  => "The Item URL/Name/Display Text is already used!" # Needs translation
     ]
 ];
 

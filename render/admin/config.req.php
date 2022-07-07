@@ -19,6 +19,8 @@ if(isset($_POST["edit_config"])) {
     $c_url = mysqli_real_escape_string($conn, $_POST["url"]);
     $c_theme = mysqli_real_escape_string($conn, $_POST["theme"]);
     $c_start = mysqli_real_escape_string($conn, $_POST["start"]);
+    if(isset($_POST["blog"])) { $c_blog = mysqli_real_escape_string($conn, $_POST["blog"]); } else { $c_blog = 0; }
+    if(isset($_POST["news"])) { $c_news = mysqli_real_escape_string($conn, $_POST["news"]); } else { $c_news = 0; }
     $c_lang = mysqli_real_escape_string($conn, $_POST["lang"]);
     $c_disqus = mysqli_real_escape_string($conn, $_POST["disqus"]);
     
@@ -42,6 +44,12 @@ if(isset($_POST["edit_config"])) {
     }
     if($c_start!=$config["start"]) {
         $conn->query("UPDATE `config` SET `start`='$c_start'");
+    }
+    if($c_blog!=$config["blog"]) {
+        $conn->query("UPDATE `config` SET `blog`='$c_blog'");
+    }
+    if($c_news!=$config["news"]) {
+        $conn->query("UPDATE `config` SET `news`='$c_news'");
     }
     if($c_lang!=$config["lang"]) {
         $conn->query("UPDATE `config` SET `lang`='$c_lang'");
@@ -98,7 +106,7 @@ include("../parts/header.php");
             <label for="config_url"><?= $lang["config"]["url"] ?> </label>
             <input required tabindex="5" type="text" name="url" id="config_url" class="form-control" value="<?= $config["url"] ?>" placeholder="<?= $lang["config"]["url"] ?>">
         </div>
-        
+
         <div class="form-group">
             <label for="config_theme"><?= $lang["config"]["theme"] ?></label>
             <select required tabindex="6" name="theme" id="config_theme" class="form-control selectpicker" title="<?= $lang["config"]["theme"] ?>">
@@ -114,6 +122,22 @@ include("../parts/header.php");
         <div class="form-group">
             <label for="config_start"><?= $lang["config"]["start"] ?> </label>
             <input required tabindex="7" type="number" name="start" id="config_start" class="form-control" value="<?= $config["start"] ?>" placeholder="<?= $lang["config"]["start"] ?>">
+        </div>
+
+        <div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" <?php if($config["blog"]==true) echo "checked"; ?> name="blog" value="1"> <?= $lang["menu"]["blog"] ?>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" <?php if($config["news"]==true) echo "checked"; ?> name="news" value="1"> <?= $lang["menu"]["news"] ?>
+                </label>
+            </div>
         </div>
 
         <div class="form-group">
