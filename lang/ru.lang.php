@@ -77,7 +77,14 @@ $lang = [
         "website"   => "Website", # Needs translation
         "irc"       => "IRC", # Needs translation
         "mangadex"  => "MangaDex", # Needs translation
-        "email"     => "eMail" # Needs translation
+        "email"     => "eMail", # Needs translation
+        "approve"   => [
+            "not_approved"  => "This group has not been approved by a Staff member yet and is only visible to Mods and Admins.", # Needs translation
+            "action"        => "What do you want to do?", # Needs translation
+            "approve"       => "Approve this Group", # Needs translation
+            "unapprove"     => "Delete this Group", # Needs translation
+            "notice"        => "After approving, you might want to reload this page..." # Needs translation
+        ]
     ],
     "edit_group" => [
         "title"     => "Edit Group", # Needs translation

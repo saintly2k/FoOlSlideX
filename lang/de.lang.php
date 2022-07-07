@@ -75,7 +75,14 @@ $lang = [
         "website"   => "Website",
         "irc"       => "IRC",
         "mangadex"  => "MangaDex",
-        "email"     => "eMail"
+        "email"     => "eMail",
+        "approve"   => [
+            "not_approved"  => "Diese Gruppe wurde noch nicht von einem Mitglied des Teams genehmigt und ist nur für Mods und Admins sichtbar.",
+            "action"        => "Was möchtest du tun?",
+            "approve"       => "Diese Gruppe zulassen",
+            "unapprove"     => "Diese Gruppe löschen",
+            "notice"        => "Nachdem du etwas getan hast, solltest du vielleicht diese Seite neu laden..."
+        ]
     ],
     "edit_group" => [
         "title"     => "Gruppe bearbeiten",

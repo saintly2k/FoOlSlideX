@@ -7,7 +7,25 @@ require("../../requires.php");
 $slug = mysqli_real_escape_string($conn, $_GET["id"]);
 $group = $conn->query("SELECT * FROM `groups` WHERE `slug`='$slug' LIMIT 1")->fetch_assoc();
 
+if($group["approved"]==false && $user["level"]!=1 && $user["level"]!=2 || $user["active"]==false) die("not authorized to perform this action.");
+
 $releases = $conn->query("SELECT * FROM `chapters` WHERE `group`='".$group["id"]."' ORDER BY `id` DESC");
+
+if($group["approved"]==false && (($user["level"]==1 || $user["level"]==2) && $user["active"]==true)) {
+    $approved = false;
+    
+    if(isset($_POST["approve_group"])) {
+        $conn->query("UPDATE `groups` SET `approved`='1' WHERE `slug`='$slug'");
+        echo "<script>window.close();</script>";
+    }
+    
+    if(isset($_POST["delete_group"])) {
+        $conn->query("DELETE FROM `groups` WHERE `slug`='$slug'");
+        echo "<script>window.close();</script>";
+    }
+} else {
+    $approved = true;
+}
 
 $page = $group["name"];
 
@@ -22,13 +40,30 @@ include("../parts/header.php");
 <?php if(!isset($_COOKIE[$config["cookie"]."_cookie-consent"]) || empty($_COOKIE[$config["cookie"]."_cookie-consent"])) { include("../parts/cookies.php"); } ?>
 
 <div class="row">
+    <?php if($approved==false) { ?>
+    <div class="col-sm-12">
+        <div class="alert alert-danger" role="alert">
+            <?= $lang["group"]["approve"]["not_approved"] ?>
+            <hr>
+            <form method="post">
+                <b><?= $lang["group"]["approve"]["action"] ?></b><br>
+                <button type="submit" class="btn btn-success" name="approve_group"><?= glyph("ok", $lang["group"]["approve"]["approve"]) ?> <?= $lang["group"]["approve"]["approve"] ?></button> <button type="submit" class="btn btn-danger" name="delete_group"><?= glyph("remove", $lang["group"]["approve"]["unapprove"]) ?> <?= $lang["group"]["approve"]["unapprove"] ?></button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+    <?php } ?>
+
     <div class="col-sm-12">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title"><?= glyph("education",$lang["groups"]["group"]) ?> <b><?= $group["name"] ?></b> <?php if(($user["level"]==1 || $user["level"]==2) && $user["active"]==true) { ?><span class="text-right"><a href="<?= $config["url"] ?>admin/edit_group/<?= $group["slug"] ?>"><?= glyph("pencil", $lang["edit_group"]["title"]) ?> <?= $lang["edit_group"]["title"] ?></a></span><?php } ?></h3>
             </div>
             <?php if(!empty($group["image"])) { ?>
-            <img src="<?= $group["image"] ?>" width="100%" alt="<?= $group["name"] ?>'s Banner" title="<?= $group["name"] ?>'s Banner">
+            <img src="<?= $group["image"] ?>" width="100%" alt="<?= $group["name"] ?>'s Banner">
             <?php } ?>
         </div>
     </div>

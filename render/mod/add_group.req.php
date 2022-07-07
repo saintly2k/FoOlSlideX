@@ -4,7 +4,7 @@ require("../../requires.php");
 
 $page = $lang["groups"]["add_group"];
 
-if($loggedin==false || ($user["level"]!=1 && $user["level"]!=2) || $user["active"]==0) {
+if($loggedin==false || ($user["level"]!=1 && $user["level"]!=2 && $user["level"]!=3) || $user["active"]==0) {
     header("Refresh: 0; url=../../");
 }
 
@@ -32,7 +32,7 @@ if(isset($_POST["add_group"])) {
     
     $slug = generate_url();
     
-    if($user["level"]==1) { $approved = 1; } elseif($user["level"]==3) { $approved = 0; }
+    if($user["level"]==1 || $user["level"]==2) { $approved = 1; } elseif($user["level"]==3) { $approved = 0; }
     
     $conn->query("INSERT INTO `groups`(`name`,`slug`,`short`,`image`,`about`,`founded`,`website`,`irc`,`mangadex`,`email`,`user`,`approved`) VALUES('$g_name', '$slug', '$g_short', $g_image, $g_about, $g_founded, $g_website, $g_irc, $g_mangadex, $g_email, '".$user["id"]."', '$approved')");
     $group = $conn->query("SELECT * FROM `groups` ORDER BY `id` DESC LIMIT 1")->fetch_assoc();
