@@ -42,10 +42,10 @@ include("../parts/header.php");
                 <b><?= $lang["groups"]["short2"] ?>:</b> <?= $group["short"] ?><br>
                 <b><?= $lang["groups"]["founded2"] ?>:</b> <?= $group["founded"] ?> (yyyy-mm-dd hh:mm:ss)<br>
                 <b><?= $lang["groups"]["links"] ?>:</b>
-                <?php if(!empty($group["website"])) { ?><a href="<?= $group["website"] ?>" target="_blank"><?= glyph("globe","Website") ?> Website</a><?php } ?>
-                <?php if(!empty($group["irc"])) { ?><a href="irc://<?= $group["irc"] ?>" target="_blank"><?= glyph("transfer","IRC") ?> IRC</a><?php } ?>
-                <?php if(!empty($group["mangadex"])) { ?><a href="<?= $group["mangadex"] ?>" target="_blank"><?= glyph("book","MangaDex") ?> MangaDex</a><?php } ?>
-                <?php if(!empty($group["email"])) { ?><a href="mailto:<?= $group["email"] ?>" target="_blank"><?= glyph("envelope","eMail") ?> eMail</a><?php } ?>
+                <?php if(!empty($group["website"])) { ?><a href="<?= $group["website"] ?>" target="_blank"><?= glyph("globe", $lang["group"]["website"]) ?> <?= $lang["group"]["website"] ?></a><?php } ?>
+                <?php if(!empty($group["irc"])) { ?><a href="irc://<?= $group["irc"] ?>" target="_blank"><?= glyph("transfer", $lang["group"]["irc"]) ?> <?= $lang["group"]["irc"] ?></a><?php } ?>
+                <?php if(!empty($group["mangadex"])) { ?><a href="<?= $group["mangadex"] ?>" target="_blank"><?= glyph("book", $lang["group"]["mangadex"]) ?> <?= $lang["group"]["mangadex"] ?></a><?php } ?>
+                <?php if(!empty($group["email"])) { ?><a href="mailto:<?= $group["email"] ?>" target="_blank"><?= glyph("envelope", $lang["group"]["email"]) ?> <?= $lang["group"]["email"] ?></a><?php } ?>
                 <?php if(empty($group["discord"]) && empty($group["website"]) && empty($group["irc"]) && empty($group["email"])) { ?>---<?php } ?><br>
             </div>
         </div>

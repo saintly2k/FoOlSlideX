@@ -25,7 +25,7 @@ if(isset($_POST["edit_group"])) {
     $g_mangadex = mysqli_real_escape_string($conn, $_POST["mangadex"]);
     $g_email = mysqli_real_escape_string($conn, $_POST["email"]);
     
-    if(empty($g_image)) { $g_image = "'https://cdn.henai.eu/assets/images/fsx-group.jpg'"; } else { $g_image = "'".$g_image."'"; }
+//    if(empty($g_image)) { $g_image = "'https://cdn.henai.eu/assets/images/fsx-group.jpg'"; } else { $g_image = "'".$g_image."'"; }
     if(empty($g_about)) { $g_about = "NULL"; } else { $g_about = "'".$g_about."'"; }
     if(empty($g_founded)) { $g_founded = "NULL"; } else { $g_founded = "'".$g_founded."'"; }
     if(empty($g_website)) { $g_website = "NULL"; } else { $g_website = "'".$g_website."'"; }
@@ -35,8 +35,7 @@ if(isset($_POST["edit_group"])) {
     
     if($user["level"]==1) { $approved = 1; } elseif($user["level"]==3) { $approved = 0; }
     
-    $conn->query("INSERT INTO `groups`(`name`,`slug`,`short`,`image`,`about`,`founded`,`website`,`irc`,`mangadex`,`email`,`user`,`approved`) VALUES('$g_name', '$slug', '$g_short', $g_image, $g_about, $g_founded, $g_website, $g_irc, $g_mangadex, $g_email, '".$user["id"]."', '$approved')");
-    $group = $conn->query("SELECT * FROM `groups` ORDER BY `id` DESC LIMIT 1")->fetch_assoc();
+    $conn->query("UPDATE `groups` SET `name`='$g_name', `short`='$g_short', `image`='$g_image', `about`=$g_about, `founded`=$g_founded, `website`=$g_website, `irc`=$g_irc, `mangadex`=$g_mangadex, `email`=$g_email WHERE `slug`='$slug'");
     header("Location: ".$config["url"]."group/".$group["slug"]);
 }
 
@@ -58,7 +57,7 @@ include("../parts/header.php");
 <?php } ?>
 <div style="margin: 0 auto; width: 300px" id="login_container">
     <form method="post" name="edit_group">
-        <h1 class="text-center"><?= $lang["edit_group"]["title"] ?></h1>
+        <h1 class="text-center"><?= $lang["edit_group"]["title"] ?>:<br><a href="<?= $config["url"] ?>group/<?= $group["slug"] ?>"><?= $group["name"] ?></a></h1>
         <hr>
 
         <div class="form-group">

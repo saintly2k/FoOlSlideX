@@ -71,6 +71,12 @@ $lang = [
         "releases"  => "Releases von dieser Gruppe",
         "no_releas" => "Noch keine Releases im Moment!"
     ],
+    "group" => [
+        "website"   => "Website",
+        "irc"       => "IRC",
+        "mangadex"  => "MangaDex",
+        "email"     => "eMail"
+    ],
     "edit_group" => [
         "title"     => "Gruppe bearbeiten",
     ],
