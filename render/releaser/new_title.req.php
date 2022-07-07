@@ -64,6 +64,8 @@ if(isset($_POST["add_manga"])) {
         if(isset($_FILES["cover"]["tmp_name"])) {
             move_uploaded_file($_FILES["cover"]["tmp_name"], $target_file);
         }
+        $title = $conn->query("SELECT * FROM `titles` WHERE `slug`='$slug' LIMIT 1")->fetch_assoc();
+        header("Location: ../manga/$slug");
     }
     
 }

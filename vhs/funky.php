@@ -59,11 +59,15 @@ function bbconvert($text) {
 		'<span style="font-size:$1px;">$2</span>',
 		'<span style="color:$1;">$2</span>',
 		'<a href="$1" target="_blank">$1</a>',
-		'<img src="$1" alt="$1" />'
+		'<img src="$1" alt="$1">'
 	);
 
 	// Replacing the BBcodes with corresponding HTML tags
 	return preg_replace($find,$replace,$text);
+}
+
+function munch_groups($a, $b, $c) {
+    return "YOLO";
 }
 
 ?>

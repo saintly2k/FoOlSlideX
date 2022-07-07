@@ -1,1 +1,5 @@
-ALTER TABLE `chapters` ADD `group` INT NOT NULL DEFAULT '0' AFTER `user`;
+/* ADDING THE GROUPS TO THE DB */
+
+ALTER TABLE `chapters` ADD `group1` INT NOT NULL DEFAULT '0' AFTER `user`;
+ALTER TABLE `chapters` ADD `group2` INT NOT NULL DEFAULT '0' AFTER `group1`;
+ALTER TABLE `chapters` ADD `group3` INT NOT NULL DEFAULT '0' AFTER `group3`;

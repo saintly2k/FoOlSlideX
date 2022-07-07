@@ -176,7 +176,9 @@ $lang = [
         "edit_title"    => "Edit Title",
         "add_ch"    => "Add Chapter",
         "unknown"   => "Unknown",
-        "edit_chap" => "Edit Chapter"
+        "edit_chap" => "Edit Chapter",
+        "chapters"  => "Chapters",
+        "comments"  => "Comments"
     ],
     "add_chapter" => [
         "title"     => "Add Chapter for",
@@ -184,7 +186,14 @@ $lang = [
         "volume"    => "Volume (Leave empty for none)",
         "chapter"   => "Chapter (Leave empty or 0 for Oneshot)",
         "ctitle"    => "Chapter Title (Leave empty for none)",
-        "button"    => "Add Chapter"
+        "button"    => "Add Chapter",
+        "ser_grp"   => "Search for Group...",
+        "sel_grp1"  => "Select Group 1",
+        "sel_grp2"  => "Select Group 2",
+        "sel_grp3"  => "Select Group 3",
+        "no_group"  => "No Group",
+        "none"      => "None",
+        "group_unap"    => "Don't see your group? That means it's still unapproved. Wait some more or upload without a group. You can always edit that later."
     ],
     "chapter" => [
         "menu"      => "Navigation",

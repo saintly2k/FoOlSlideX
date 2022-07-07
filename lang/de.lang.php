@@ -176,7 +176,9 @@ $lang = [
         "edit_title"    => "Titel editieren",
         "add_ch"    => "Kapitel hinzufügen",
         "unknown"   => "Unbekannt",
-        "edit_chap" => "Kapitel editieren"
+        "edit_chap" => "Kapitel editieren",
+        "chapters"  => "Kapitel",
+        "comments"  => "Kommentare"
     ],
     "add_chapter" => [
         "title"     => "Kapitel hinzufügen für",
@@ -184,7 +186,14 @@ $lang = [
         "volume"    => "Band (Leer lassen für keins)",
         "chapter"   => "Kapitel (Leer lassen oder 0 für Oneshot)",
         "ctitle"    => "Kapitel Titel (Leer lassen für keinen)",
-        "button"    => "Kapitel hinzufügen"
+        "button"    => "Kapitel hinzufügen",
+        "ser_grp"   => "Nach Gruppe suchen...",
+        "sel_grp1"  => "Gruppe 1 auswählen",
+        "sel_grp2"  => "Gruppe 2 auswählen",
+        "sel_grp3"  => "Gruppe 3 auswählen",
+        "no_group"  => "Keine Gruppe",
+        "none"      => "Nichts",
+        "group_unap"    => "Du siehst deine Gruppe nicht? Das heißt, dass sie noch nicht zugelassen wurde. Warte noch etwas oder lade ohne Gruppe hoch. Du kannst das später immer ändern."
     ],
     "chapter" => [
         "menu"      => "Navigation",

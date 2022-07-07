@@ -16,19 +16,19 @@ require("vhs/funky.php");
 if(isset($_GET["lang"])) {
     if($_GET["lang"]=="de") {
         setcookie($config["cookie"]."_lang", "de", time()+31556926, "/");
-        header("refresh: 0; url=?");
+        echo "<script>window.close();</script>";
     }
     if($_GET["lang"]=="en") {
         setcookie($config["cookie"]."_lang", "en", time()+31556926, "/");
-        header("refresh: 0; url=?");
+        echo "<script>window.close();</script>";
     }
     if($_GET["lang"]=="pt") {
         setcookie($config["cookie"]."_lang", "pt", time()+31556926, "/");
-        header("refresh: 0; url=?");
+        echo "<script>window.close();</script>";
     }
     if($_GET["lang"]=="ru") {
         setcookie($config["cookie"]."_lang", "ru", time()+31556926, "/");
-        header("refresh: 0; url=?");
+        echo "<script>window.close();</script>";
     }
 }
 

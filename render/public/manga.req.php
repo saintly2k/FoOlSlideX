@@ -136,8 +136,8 @@ if(isset($_POST["remove_bookmark"])) {
 
             <!-- Nav tabs -->
             <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#chapters" aria-controls="chapters" role="tab" data-toggle="tab">Chapters</a></li>
-                <li role="presentation"><a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">Comments</a></li>
+                <li role="presentation" class="active"><a href="#chapters" aria-controls="chapters" role="tab" data-toggle="tab"><?= $lang["manga"]["chapters"] ?></a></li>
+                <li role="presentation"><a href="#comments" aria-controls="comments" role="tab" data-toggle="tab"><?= $lang["manga"]["comments"] ?></a></li>
             </ul>
 
             <!-- Tab panes -->
@@ -146,10 +146,11 @@ if(isset($_POST["remove_bookmark"])) {
                     <div class="table-responsive" id="latest-titles">
                         <table class="table table-hover table-striped">
                             <thead>
-                                <th style="width:10%">Chapter</th>
-                                <th style="width:60%;">Chapter Title</th>
-                                <th style="width:10%" class="text-center">Uploader</th>
-                                <th class="text-right" style="width:20%">Added</th>
+                                <th style="width:10%"><?= $lang["home"]["chapter"] ?></th>
+                                <th style="width:40%;"><?= $lang["home"]["chap_title"] ?></th>
+                                <th style="width:10%" class="text-center"><?= $lang["home"]["group"] ?></th>
+                                <th style="width:10%" class="text-center"><?= $lang["home"]["uploader"] ?></th>
+                                <th class="text-right" style="width:20%"><?= $lang["home"]["added"] ?></th>
                             </thead>
                             <tbody>
                                 <?php foreach($chapters as $chapter) { ?>
@@ -179,6 +180,9 @@ if(isset($_POST["remove_bookmark"])) {
                                             <span class="badge"><?= glyph("pencil",$lang["manga"]["edit_chap"]) ?> <?= $lang["manga"]["edit_chap"] ?></span>
                                         </a>
                                         <?php } ?>
+                                    </td>
+                                    <td class="text-center">
+                                        <?= munch_groups($chapter["group1"], $chapter["group2"], $chapter["group3"]) ?>
                                     </td>
                                     <td class="text-center">
                                         <?php $uploader = $conn->query("SELECT * FROM `user` WHERE `id`='".$chapter["user"]."' LIMIT 1"); $uploader = mysqli_fetch_assoc($uploader); echo $uploader["username"]; ?>
