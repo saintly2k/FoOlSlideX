@@ -11,6 +11,7 @@ RewriteRule ^logout/?$ ./render/public/home.req.php?logout
 RewriteRule ^titles/?$ ./render/public/titles.req.php
 RewriteRule ^bookmarks/?$ ./render/public/bookmarks.req.php
 RewriteRule ^about/?$ ./render/public/about.req.php
+RewriteRule ^s/(.*)/?$ ./render/public/static.req.php?static=$1
 
 # Manga Pages
 RewriteRule ^manga/(.*)/?$ ./render/public/manga.req.php?slug=$1
@@ -30,6 +31,8 @@ RewriteRule ^admin/edit_chapter/(.*)/?$ ./render/releaser/edit_chapter.req.php?s
 # Mod Pages
 RewriteRule ^admin/add_group/?$ ./render/mod/add_group.req.php
 RewriteRule ^admin/edit_group/(.*)/?$ ./render/mod/edit_group.req.php?id=$1
+RewriteRule ^admin/statics/?$ ./render/mod/statics.req.php
+RewriteRule ^admin/editor/?$ ./render/mod/editor.req.php
 
 # Admin Pages
 RewriteRule ^admin/config/?$ ./render/admin/config.req.php

@@ -23,7 +23,6 @@ $lang = [
         "releases"  => "Releases",
         "titles"    => "Mangas",
         "more"      => "Weiteres",
-        "about"     => "Über",
         "quicksearch"   => "Schnellsuche",
         "search"    => "Suche",
         "account"   => "Account",
@@ -42,7 +41,8 @@ $lang = [
         "blog2"     => "Blog aktiviert",
         "news"      => "Neuigkeiten",
         "news2"     => "Neuigkeiten aktiviert",
-        "menu_dis"  => "Menü Ansicht"
+        "menu_dis"  => "Menü Ansicht",
+        "statics"   => "Statische Seiten"
     ],
     "home"  => [
         "added_titles"  => "Neue Titel",
@@ -237,6 +237,20 @@ $lang = [
         "displayed" => "Angezeigt",
         "hidden"    => "Versteckt",
         "delete"    => "Bist du sicher, dass du diesen Menüeintrag löschen möchtest?"
+    ],
+    "statics" => [
+        "delete"    => "Bist du sicher, dass du diese Seite löschen willst? Es wird der MySQL-Eintrag, der Menüpunkt UND die Datei gelöscht. KEINE CHANCE AUF WIEDERHERSTELLUNG!",
+        "name"      => "Seiten Name/URL",
+        "title"     => "Anzeige Name",
+        "private"   => "Privat?",
+        "menu"      => "Menüeintrag erstellen?",
+        "create"    => "Erstellen"
+    ],
+    "editor" => [
+        "title"     => "Dateieditor",
+        "edit"      => "Datei bearbeiten",
+        "delete"    => "Seite löschen",
+        "close"     => "Schließen",
     ],
     "errors" => [
         "bad_username"  => "Benutzername enthält ungültige Zeichen!",

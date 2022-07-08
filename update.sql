@@ -66,6 +66,46 @@ ALTER TABLE `display`
 --
 
 --
+-- Tabellenstruktur für Tabelle `statics`
+--
+
+CREATE TABLE `statics` (
+  `id` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `public` tinyint(1) NOT NULL DEFAULT 1,
+  `created` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `statics`
+--
+
+INSERT INTO `statics` (`id`, `name`, `title`, `public`, `created`) VALUES
+(1, 'about', 'About', 1, '2022-07-08 17:17:57');
+
+--
+-- Indizes der exportierten Tabellen
+--
+
+--
+-- Indizes für die Tabelle `statics`
+--
+ALTER TABLE `statics`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT für exportierte Tabellen
+--
+
+--
+-- AUTO_INCREMENT für Tabelle `statics`
+--
+ALTER TABLE `statics`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
+--
 -- AUTO_INCREMENT für Tabelle `display`
 --
 ALTER TABLE `display`

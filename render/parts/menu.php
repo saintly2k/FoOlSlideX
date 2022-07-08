@@ -66,6 +66,11 @@
                                 <a href="<?= $config["url"] ?>admin/menu_display"><?= glyph("cog",$lang["menu"]["menu_dis"]) ?> <?= $lang["menu"]["menu_dis"] ?></a>
                             </li>
                             <?php } ?>
+                            <?php if($user["level"]==1 || $user["level"]==2) { ?>
+                            <li class="<?php if($page==$lang["menu"]["statics"]) { echo "active"; } ?>">
+                                <a href="<?= $config["url"] ?>admin/statics"><?= glyph("file",$lang["menu"]["statics"]) ?> <?= $lang["menu"]["statics"] ?></a>
+                            </li>
+                            <?php } ?>
                             <li class="<?php if($page==$lang["menu"]["add_new"]) { echo "active"; } ?>">
                                 <a href="<?= $config["url"] ?>admin/new_title"><?= glyph("plus-sign",$lang["menu"]["add_new"]) ?> <?= $lang["menu"]["add_new"] ?></a>
                             </li>

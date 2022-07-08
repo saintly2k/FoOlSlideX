@@ -85,6 +85,7 @@ include("../parts/header.php");
 
 <?php if(!isset($_COOKIE[$config["cookie"]."_cookie-consent"]) || empty($_COOKIE[$config["cookie"]."_cookie-consent"])) { include("../parts/cookies.php"); } ?>
 
+<!-- THIS IS OPTIONAL FOR YOU BUT IF YOU DON'T KNOW, WATCH IT :)
 <a href="" target="_blank">
     <div class="alert alert-info text-center" role="alert">
         <b>
@@ -92,6 +93,7 @@ include("../parts/header.php");
         </b>
     </div>
 </a>
+-->
 
 <?php if(!empty($error_msg)) { ?>
 <div class="alert alert-warning alert-dismissible text-center" role="alert">
