@@ -23,7 +23,6 @@ $lang = [
         "releases"  => "Lançamentos",
         "titles"    => "Titulos",
         "more"      => "Mais",
-        "about"     => "Sobre",
         "quicksearch"   => "Pesquisa rapida",
         "search"    => "Pesquisar",
         "account"   => "Conta",
@@ -42,7 +41,8 @@ $lang = [
         "blog2"     => "Blog activated", # Needs translation
         "news"      => "News", # Needs translation
         "news2"     => "News activated", # Needs translation
-        "menu_dis"  => "Menu Display" # Needs translation
+        "menu_dis"  => "Menu Display", # Needs translation
+        "statics"   => "Static Pages" # Needs translation
     ],
     "home"  => [
         "added_titles"  => "Added Titles", # Needs translation
@@ -237,6 +237,20 @@ $lang = [
         "displayed" => "Displayed", # Needs translation
         "hidden"    => "Hidden", # Needs translation
         "delete"    => "Are you sure you want to delete this Menu item?" # Needs translation
+    ],
+    "statics" => [
+        "delete"    => "Are you sure you want to delete this page? It will delete the MySQL entry, the Menu item AND the file. NO CHANCE FOR RECOVERY!", # Needs translation
+        "name"      => "Page Name/URL", # Needs translation
+        "title"     => "Display Name", # Needs translation
+        "private"   => "Private?", # Needs translation
+        "menu"      => "Create Menu item?", # Needs translation
+        "create"    => "Create" # Needs translation
+    ],
+    "editor" => [
+        "title"     => "File Editor", # Needs translation
+        "edit"      => "Edit File", # Needs translation
+        "delete"    => "Delete Page", # Needs translation
+        "close"     => "Close", # Needs translation
     ],
     "errors" => [
         "bad_username"  => "O nome de usuário contém caracteres ruins!",

@@ -3,7 +3,7 @@
 # Russian Language File, ver: 0.3b
 # Перевод может быть не корректным, если переведенный текст ещё не задействован в функционале!
 # The translation may not be correct if the translated text is not yet functional!
-# UpDated 15.06
+# UpDated 15.06.2022
 
 $lang = [
     "cookie_modal" => [
@@ -23,7 +23,6 @@ $lang = [
         "releases"  => "Релизы",
         "titles"    => "Проекты",  # Точно ещё не было решено как обозначить раздел, ибо это можно обозначить как: Проектами, Тайтлами, а так же и Переводами / It has not yet been decided exactly how to designate the section, for it can be designated as: Projects, Titles, as well as Translations
         "more"      => "Ещё",
-        "about"     => "О нас",
         "quicksearch"   => "Быстрый поиск",
         "search"    => "Поиск",
         "account"   => "Аккаунт",
@@ -42,7 +41,8 @@ $lang = [
         "blog2"     => "Blog activated", # Needs translation
         "news"      => "News", # Needs translation
         "news2"     => "News activated", # Needs translation
-        "menu_dis"  => "Menu Display" # Needs translation
+        "menu_dis"  => "Menu Display", # Needs translation
+        "statics"   => "Static Pages" # Needs translation
     ],
     "home"  => [
         "added_titles"  => "Добавлены названия",
@@ -237,6 +237,20 @@ $lang = [
         "displayed" => "Displayed", # Needs translation
         "hidden"    => "Hidden", # Needs translation
         "delete"    => "Are you sure you want to delete this Menu item?" # Needs translation
+    ],
+    "statics" => [
+        "delete"    => "Are you sure you want to delete this page? It will delete the MySQL entry, the Menu item AND the file. NO CHANCE FOR RECOVERY!", # Needs translation
+        "name"      => "Page Name/URL", # Needs translation
+        "title"     => "Display Name", # Needs translation
+        "private"   => "Private?", # Needs translation
+        "menu"      => "Create Menu item?", # Needs translation
+        "create"    => "Create" # Needs translation
+    ],
+    "editor" => [
+        "title"     => "File Editor", # Needs translation
+        "edit"      => "Edit File", # Needs translation
+        "delete"    => "Delete Page", # Needs translation
+        "close"     => "Close", # Needs translation
     ],
     "errors" => [
         "bad_username"  => "Никнейм содержит недопустимые символы!",

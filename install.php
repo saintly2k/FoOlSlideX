@@ -27,6 +27,8 @@ if(isset($_POST["install"])) {
     $c_url = mysqli_real_escape_string($conn, $_POST["url"]);
     $c_theme = mysqli_real_escape_string($conn, $_POST["theme"]);
     $c_start = mysqli_real_escape_string($conn, $_POST["start"]);
+    if(isset($_POST["blog"])) { $c_blog = "1"; } else { $c_blog = "0"; }
+    if(isset($_POST["news"])) { $c_news = "1"; } else { $c_news = "0"; }
     $c_lang = mysqli_real_escape_string($conn, $_POST["lang"]);
     $c_disqus = mysqli_real_escape_string($conn, $_POST["disqus"]);
     
@@ -47,7 +49,7 @@ if(isset($_POST["install"])) {
     fwrite($file, $version);
     fclose($file);
     
-    $conn->query("INSERT INTO `config`(`title`, `slogan`, `logo`, `cookie`, `url`, `theme`, `start`, `lang`, `disqus`) VALUES('$c_title', '$c_slogan', '$c_logo', '$c_cookie', '$c_url', '$c_theme', '$c_start', '$c_lang', '$c_disqus')");
+    $conn->query("INSERT INTO `config`(`title`, `slogan`, `logo`, `cookie`, `url`, `theme`, `start`, `blog`, `news`, `lang`, `disqus`) VALUES('$c_title', '$c_slogan', '$c_logo', '$c_cookie', '$c_url', '$c_theme', '$c_start', '$c_blog', '$cnews', '$c_lang', '$c_disqus')");
     $conn->query("INSERT INTO `invites`(`token`,`used`) VALUES('FoOlSlideX', NULL)");
     
     header("Location: signup");
@@ -123,6 +125,22 @@ include("./render/parts/header.php");
                 <div class="form-group">
                     <label for="config_start"><?= $lang["config"]["start"] ?> </label>
                     <input required tabindex="7" type="number" name="start" id="config_start" class="form-control" placeholder="<?= $lang["config"]["start"] ?>">
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label title="<?= $lang["menu"]["blog2"] ?>">
+                            <input type="checkbox" name="blog" checked> <?= $lang["menu"]["blog2"] ?>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label title="<?= $lang["menu"]["news2"] ?>">
+                            <input type="checkbox" name="news" checked> <?= $lang["menu"]["news2"] ?>
+                        </label>
+                    </div>
                 </div>
 
                 <div class="form-group">

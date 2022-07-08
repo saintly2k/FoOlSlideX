@@ -23,7 +23,6 @@ $lang = [
         "releases"  => "Releases",
         "titles"    => "Titles",
         "more"      => "More",
-        "about"     => "About",
         "quicksearch"   => "Quicksearch",
         "search"    => "Search",
         "account"   => "Account",
@@ -42,7 +41,8 @@ $lang = [
         "blog2"     => "Blog activated",
         "news"      => "News",
         "news2"     => "News activated",
-        "menu_dis"  => "Menu Display"
+        "menu_dis"  => "Menu Display",
+        "statics"   => "Static Pages"
     ],
     "home"  => [
         "added_titles"  => "Added Titles",
@@ -237,6 +237,20 @@ $lang = [
         "displayed" => "Displayed",
         "hidden"    => "Hidden",
         "delete"    => "Are you sure you want to delete this Menu item?"
+    ],
+    "statics" => [
+        "delete"    => "Are you sure you want to delete this page? It will delete the MySQL entry, the Menu item AND the file. NO CHANCE FOR RECOVERY!",
+        "name"      => "Page Name/URL",
+        "title"     => "Display Name",
+        "private"   => "Private?",
+        "menu"      => "Create Menu item?",
+        "create"    => "Create"
+    ],
+    "editor" => [
+        "title"     => "File Editor",
+        "edit"      => "Edit File",
+        "delete"    => "Delete Page",
+        "close"     => "Close",
     ],
     "errors" => [
         "bad_username"  => "Username contains bad characters!",
