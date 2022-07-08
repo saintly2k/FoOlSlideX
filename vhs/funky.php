@@ -66,8 +66,29 @@ function bbconvert($text) {
 	return preg_replace($find,$replace,$text);
 }
 
-function munch_groups($a, $b, $c) {
-    return "YOLO";
+function munch_groups($a, $b = "", $c = "", $html = true) {
+    require("../../config.php");
+    require("conn.php");
+    require("user.php");
+    
+    $output = "";
+    
+    if($a=="0") {
+        $output .= "No Group";
+    } else {
+        $a = $conn->query("SELECT * FROM `groups` WHERE `id`='$a' LIMIT 1")->fetch_assoc();
+        $output .= "<a href='".$config["url"]."group/".$a["slug"]."'>".$a["name"]."</a>";
+    }
+    if(!empty($b)) {
+        $b = $conn->query("SELECT * FROM `groups` WHERE `id`='$b' LIMIT 1")->fetch_assoc();
+        $output .= ", <a href='".$config["url"]."group/".$b["slug"]."'>".$b["name"]."</a>";
+    }
+    if(!empty($c)) {
+        $c = $conn->query("SELECT * FROM `groups` WHERE `id`='$c' LIMIT 1")->fetch_assoc();
+        $output .= ", <a href='".$config["url"]."group/".$c["slug"]."'>".$c["name"]."</a>";
+    }
+    
+    return $output;
 }
 
 ?>
