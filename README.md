@@ -13,7 +13,7 @@ Before contributing, make sure to read [Contributing](#contributing)! Make sure 
 - [Features](#features)
 - [Contributing](#contributing)
 - [Video-Guides](#video-guides)
-- [Installation](#installation)
+- [Installation using the Installer](#installation-using-the-installer)
 - [Documentation](#documentation)
 - [Config Variables](#config-variables)
 - [Supprt](#support)
@@ -21,6 +21,7 @@ Before contributing, make sure to read [Contributing](#contributing)! Make sure 
 - [Demo](#demo)
 - [Used By](#used-by)
 - [Authors](#authors)
+
 ## Features
 
 - Create invites
@@ -29,6 +30,8 @@ Before contributing, make sure to read [Contributing](#contributing)! Make sure 
 - Add Chapters/Edit them
 - Bookmark Mangas & Chapters via Cookies
 - View Bookmarks & keep track of them
+- Create Groups, view groups and their chapters
+- Create static pages & manage them
 
 ## Contributing
 
@@ -46,40 +49,21 @@ As someone requested, I started a video-guide on YouTube on how to install, upda
 
 [View the full PlayList](https://www.youtube.com/playlist?list=PLDQvUzXjsrhP8EsCrxJ6yoqcOKTESXixX)
 
-## Installation
+## Installation using the Installer
 
 - Download the latest stable release
-- Create a MySQL Database and import `mangareaderx.sql`
-- Go to table `invites`, press `insert` and type in `token` whatever you want
-- Edit `config.php` to your likings
-- Upload everything and open in Browser
-- Click on `Account`, then `Signup` and fill out the info
-- Enter in the field `Invite Code` the `token` you just created
-- After Registering, Login using your Details
+- Create a MySQL Database
+- Open your webroot in your browser
+- Fill out all data and click on submit
+- Create an account using the invite code `FoOlSlideX`
 - Done
 
 ## Documentation
 
-[View full Documentation here.](https://h33t.moe/file/foolslidex-docs) (Soon)
+[View full Documentation in the GitHub Wiki](https://github.com/saintly2k/FoOlSlideX/wiki)
 
 
 ## Config Variables
-
-`$config["title"]` is the Title of the Site
-
-`$config["logo"]` is the location of the logo from the Root folder
-
-`$config["slogan"]` is what shows when you're on the main page
-
-`$config["url"]` is the full URL to your site including subfolder AND ends with slash!
-
-`$config["theme"]` is a number between 1-5 being different Themes
-
-`$config["start"]` declares when your Group was founded, will show in footer
-
-`$config["lang"]` is what language-file it uses located in /lang/
-
-`$config["disqus"]` is the name of your Disqus portal
 
 `$slave["host"]` is the MySQL host
 
@@ -98,7 +82,7 @@ Or eMail me at saintly@h33t.moe
 
 ## Donate
 
-I spend a lot of time working on this.
+I spend a lot of time working on this. Really.
 
 Please consider donating some money via PayPal: [yuki.akihabara@yandex.com](https://paypal.me/WOLFRAMEdev)
 
@@ -115,12 +99,14 @@ This project is used by the following groups:
 - [Lubuntu Bionic Beaver Scans](https://stukas.henai.eu)
 - [weltenWanderer Scans](https://wws.henai.eu)
 - [ELEVEN SCANLATOR](http://eleven-scanlator.epizy.com)
+- [PuchiRoll](https://puchiroll.com)
 
 
 ## Authors
 
 FoOlSlideX Development:
 - [@saintly2k](https://www.github.com/saintly2k)
+- [@kaligula-eu](https://www.github.com/kaligula-eu)
 
 Translation:
 - EN: [Saintly2k](https://github.com/saintly2k)

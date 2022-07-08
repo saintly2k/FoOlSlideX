@@ -28,25 +28,25 @@ Text Style:
 3 - Releaser
 
 [ TYPEN (int) ]
-000-099:
+000:
     Non-user related,
     For system & updates,
     For GitHub and such,
-100-199:
+100:
     For all users,
     Reader, system and such,
-200-299:
+200:
     For Groups and such,
-300-399:
+300:
     For Releases,
     For Titles and such,
-400-499:
+400:
     For Moderators,
     For groups,
-500-599:
+500:
     For Admins,
     Administration and such,
-600-799:
+600:
     Nothing,
-900-999:
+900:
     Languages and such,
