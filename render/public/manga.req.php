@@ -148,7 +148,7 @@ if(isset($_POST["remove_bookmark"])) {
                             <thead>
                                 <th style="width:10%"><?= $lang["home"]["chapter"] ?></th>
                                 <th style="width:40%;"><?= $lang["home"]["chap_title"] ?></th>
-                                <th style="width:10%" class="text-center"><?= $lang["home"]["group"] ?></th>
+                                <th style="width:20%" class="text-center"><?= $lang["home"]["group"] ?></th>
                                 <th style="width:10%" class="text-center"><?= $lang["home"]["uploader"] ?></th>
                                 <th class="text-right" style="width:20%"><?= $lang["home"]["added"] ?></th>
                             </thead>
