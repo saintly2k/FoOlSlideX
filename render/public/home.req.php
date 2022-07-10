@@ -117,9 +117,9 @@ $latest_chapters = $conn->query("SELECT * FROM `chapters` ORDER BY `added` DESC"
                 <thead>
                     <th style="width:5%"><?= $lang["home"]["type"] ?></th>
                     <th style="width:5%"><?= $lang["home"]["chapter"] ?></th>
-                    <th style="width:20%;"><?= $lang["home"]["chap_title"] ?></th>
+                    <th style="width:15%;"><?= $lang["home"]["chap_title"] ?></th>
                     <th style="width:20%"><?= $lang["home"]["title"] ?></th>
-                    <th class="text-center" style="width:15%"><?= $lang["home"]["group"] ?></th>
+                    <th class="text-center" style="width:20%"><?= $lang["home"]["group"] ?></th>
                     <th class="text-center" style="width:10%"><?= $lang["home"]["uploader"] ?></th>
                     <th class="text-right" style="width:20%"><?= $lang["home"]["added"] ?></th> <!-- IF ON OTHER LANGUAGES THAN ENGLISH, HERE IS AN OVERFLOW ON THE "added" TAB, IDK WHY, IF ANYONE KNOWS HOW TO FIX, PLS DO ON GITHUB.com/saintly2k/FoOlSlideX -->
                 </thead>
