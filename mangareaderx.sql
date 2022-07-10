@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 08. Jul 2022 um 01:46
+-- Erstellungszeit: 10. Jul 2022 um 02:39
 -- Server-Version: 10.4.22-MariaDB
 -- PHP-Version: 7.4.27
 
@@ -84,13 +84,13 @@ CREATE TABLE `display` (
 --
 
 INSERT INTO `display` (`id`, `order`, `item`, `text`, `icon`, `displayed`, `hidden`, `created`) VALUES
-(1, 1, 'releases', '', 'th-list', 1, 0, '2022-07-08 01:39:51'),
-(2, 2, 'titles', '', 'book', 1, 0, '2022-07-08 01:39:51'),
-(3, 3, 'bookmarks', '', 'bookmark', 1, 0, '2022-07-08 01:39:51'),
-(4, 4, 'groups', '', 'user', 1, 0, '2022-07-08 01:39:51'),
-(5, 5, 'about', '', 'question-sign', 1, 0, '2022-07-08 01:39:51'),
-(6, 6, 'blog', '', 'font', 1, 1, '2022-07-08 01:39:51'),
-(7, 7, 'news', '', 'bullhorn', 0, 1, '2022-07-08 01:39:51');
+(1, 1, 'releases', '', 'th-list', 1, 0, '2022-07-08 21:02:43'),
+(2, 2, 'titles', '', 'book', 1, 0, '2022-07-08 21:02:56'),
+(3, 3, 'bookmarks', '', 'bookmark', 1, 0, '2022-07-08 21:03:05'),
+(4, 4, 'groups', '', 'user', 1, 0, '2022-07-08 21:04:41'),
+(5, 5, 's/about', 'About', 'question-sign', 1, 0, '2022-07-08 01:39:51'),
+(6, 6, 'blog', '', 'font', 0, 1, '2022-07-08 21:05:01'),
+(7, 7, 'news', '', 'bullhorn', 0, 1, '2022-07-08 21:05:12');
 
 -- --------------------------------------------------------
 
@@ -142,6 +142,27 @@ CREATE TABLE `sessions` (
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `statics`
+--
+
+CREATE TABLE `statics` (
+  `id` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `title` varchar(50) NOT NULL,
+  `public` tinyint(1) NOT NULL DEFAULT 1,
+  `created` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `statics`
+--
+
+INSERT INTO `statics` (`id`, `name`, `title`, `public`, `created`) VALUES
+(1, 'about', 'About', 1, '2022-07-08 17:17:57');
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `titles`
 --
 
@@ -180,46 +201,6 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Tabellenstruktur für Tabelle `statics`
---
-
-CREATE TABLE `statics` (
-  `id` int(11) NOT NULL,
-  `name` varchar(20) NOT NULL,
-  `title` varchar(50) NOT NULL,
-  `public` tinyint(1) NOT NULL DEFAULT 1,
-  `created` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Daten für Tabelle `statics`
---
-
-INSERT INTO `statics` (`id`, `name`, `title`, `public`, `created`) VALUES
-(1, 'about', 'About', 1, '2022-07-08 17:17:57');
-
---
--- Indizes der exportierten Tabellen
---
-
---
--- Indizes für die Tabelle `statics`
---
-ALTER TABLE `statics`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT für exportierte Tabellen
---
-
---
--- AUTO_INCREMENT für Tabelle `statics`
---
-ALTER TABLE `statics`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-COMMIT;
-
---
 -- Indizes der exportierten Tabellen
 --
 
@@ -245,6 +226,12 @@ ALTER TABLE `groups`
 -- Indizes für die Tabelle `invites`
 --
 ALTER TABLE `invites`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `statics`
+--
+ALTER TABLE `statics`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -286,6 +273,12 @@ ALTER TABLE `groups`
 --
 ALTER TABLE `invites`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT für Tabelle `statics`
+--
+ALTER TABLE `statics`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT für Tabelle `titles`
