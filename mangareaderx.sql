@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 10. Jul 2022 um 02:39
+-- Erstellungszeit: 10. Jul 2022 um 02:45
 -- Server-Version: 10.4.22-MariaDB
 -- PHP-Version: 7.4.27
 
@@ -103,7 +103,7 @@ CREATE TABLE `groups` (
   `name` varchar(100) NOT NULL,
   `slug` text NOT NULL,
   `short` varchar(10) NOT NULL,
-  `image` text DEFAULT 'https://cdn.henai.eu/assets/images/fsx-group.jpg',
+  `image` varchar(1000) DEFAULT '''https://cdn.henai.eu/assets/images/fsx-group.jpg''',
   `about` text DEFAULT NULL,
   `founded` datetime DEFAULT current_timestamp(),
   `website` varchar(100) DEFAULT NULL,
