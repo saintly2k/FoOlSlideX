@@ -14,6 +14,7 @@ Before contributing, make sure to read [Contributing](#contributing)! Make sure 
 - [Contributing](#contributing)
 - [Video-Guides](#video-guides)
 - [Installation using the Installer](#installation-using-the-installer)
+- [Adding a Chapter](#adding-a-chapter)
 - [Documentation](#documentation)
 - [Config Variables](#config-variables)
 - [Supprt](#support)
@@ -57,6 +58,28 @@ As someone requested, I started a video-guide on YouTube on how to install, upda
 - Fill out all data and click on submit
 - Create an account using the invite code `FoOlSlideX`
 - Done
+
+## Adding a Chapter
+
+This is very important that you follow these steps I will give you. If you prefer a video-guide, you can watch it here:
+
+https://www.youtube.com/watch?v=E-HFaMTH-NM&ab_channel=TeamH33T
+
+If not, here is a step-by-step guide:
+
+- You need to have a folder structure like this:
+```
+- Chapter 01
+- - 01.png
+- - 02.png
+- - 03.png
+```
+- Then you need to ZIP "Chapter 01" as a ZIP file with THE SAME NAME
+- After that, DON'T RENAME THE ZIP FILE, IF YOU DO, IT WON'T WORK!
+- Then go to the title where you want to add it
+- Click on "Add new Chapter" and select the ZIP, volume, chapter and group(s)
+- Hit "Add Chapter" and you're done
+- If you encounter any errors saying "cannot rename" or such, it means you renamed the folder or didn't zip it properly
 
 ## Documentation
 
