@@ -1,6 +1,6 @@
+Short Notice: v0.2.0 is currently in development. Join the Discord for more information and its status. Please do not use v0.1.4 or any other version until v0.2.0 is officially released. Thanks!
 
 ![FoOlSlideX Logo](https://cdn.henai.eu/assets/images/foolslidex-logo.png)
-
 
 # FoOlSlideX
 
@@ -54,6 +54,7 @@ As someone requested, I started a video-guide on YouTube on how to install, upda
 
 - Download the latest stable release
 - Create a MySQL Database
+- Edit your config.php properly (MySQL User, Pass, Database name)
 - Open your webroot in your browser
 - Fill out all data and click on submit
 - Create an account using the invite code `FoOlSlideX`
@@ -85,7 +86,6 @@ If not, here is a step-by-step guide:
 
 [View full Documentation in the GitHub Wiki](https://github.com/saintly2k/FoOlSlideX/wiki)
 
-
 ## Config Variables
 
 `$slave["host"]` is the MySQL host
@@ -101,7 +101,6 @@ If not, here is a step-by-step guide:
 For support, join our Discord: https://discord.gg/uahG2fKVvg
 
 Or eMail me at saintly@h33t.moe
-
 
 ## Donate
 
@@ -123,7 +122,6 @@ This project is used by the following groups:
 - [weltenWanderer Scans](https://wws.henai.eu)
 - [ELEVEN SCANLATOR](http://eleven-scanlator.epizy.com)
 - [PuchiRoll](https://puchiroll.com)
-
 
 ## Authors
 
