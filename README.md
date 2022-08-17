@@ -86,7 +86,6 @@ If not, here is a step-by-step guide:
 
 [View full Documentation in the GitHub Wiki](https://github.com/saintly2k/FoOlSlideX/wiki)
 
-
 ## Config Variables
 
 `$slave["host"]` is the MySQL host
@@ -102,7 +101,6 @@ If not, here is a step-by-step guide:
 For support, join our Discord: https://discord.gg/uahG2fKVvg
 
 Or eMail me at saintly@h33t.moe
-
 
 ## Donate
 
@@ -124,7 +122,6 @@ This project is used by the following groups:
 - [weltenWanderer Scans](https://wws.henai.eu)
 - [ELEVEN SCANLATOR](http://eleven-scanlator.epizy.com)
 - [PuchiRoll](https://puchiroll.com)
-
 
 ## Authors
 
