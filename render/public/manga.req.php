@@ -4,8 +4,6 @@ require("../../requires.php");
 
 //$page = $lang["menu"]["home"];
 
-include("../parts/header.php");
-
 $slug = mysqli_real_escape_string($conn, $_GET["slug"]);
 $manga = $conn->query("SELECT * FROM `titles` WHERE `slug`='$slug' LIMIT 1");
 $manga = mysqli_fetch_assoc($manga);
@@ -73,6 +71,8 @@ if(isset($_POST["remove_bookmark"])) {
         header("Refresh: 0;");
     }
 }
+
+include("../parts/header.php");
 
 ?>
 
@@ -148,7 +148,7 @@ if(isset($_POST["remove_bookmark"])) {
                             <thead>
                                 <th style="width:10%"><?= $lang["home"]["chapter"] ?></th>
                                 <th style="width:40%;"><?= $lang["home"]["chap_title"] ?></th>
-                                <th style="width:10%" class="text-center"><?= $lang["home"]["group"] ?></th>
+                                <th style="width:20%" class="text-center"><?= $lang["home"]["group"] ?></th>
                                 <th style="width:10%" class="text-center"><?= $lang["home"]["uploader"] ?></th>
                                 <th class="text-right" style="width:20%"><?= $lang["home"]["added"] ?></th>
                             </thead>
