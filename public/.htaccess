@@ -1,0 +1,10 @@
+Options +FollowSymLinks
+RewriteEngine On
+Options -Indexes
+
+# If yours are too low set by the server? the second should be larger than the first
+# php_value post_max_size 500M
+# php_value upload_max_filesize 510M
+
+ErrorDocument 404 /fsx/public/error.php
+ErrorDocument 403 /fsx/public/error.php
