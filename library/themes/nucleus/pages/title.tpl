@@ -229,9 +229,11 @@
 													{formatChapterTitle($item.volume, $item.number, "full")}
 												</span>
 											</a>
-											<label class="btn btn-xs" for="editChapterModal{$item.id}">
-												Edit Chapter
-											</label>
+											{if $logged && $user.level >= 75}
+												<label class="btn btn-xs" for="editChapterModal{$item.id}">
+													Edit Chapter
+												</label>
+											{/if}
 										</td>
 										<td>
 											<a href="chapter.php?id={$item.id}" class="link">
