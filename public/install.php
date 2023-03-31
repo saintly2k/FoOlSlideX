@@ -7,8 +7,8 @@ if (file_exists(ps(__DIR__ . "/../.installed")))
 
 require_once "../config.php";
 
-// if ($config["email"] == "saintly@h33t.moe")
-//     die("You haven't edited the config.php file yet.");
+if ($config["email"] == "saintly@h33t.moe")
+    die("You haven't edited the config.php file yet.");
 
 require_once "../library/plugins/enabled/userLangs.php";
 
