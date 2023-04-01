@@ -1,6 +1,6 @@
 <?php
 
-function clean($data)
+function clean($data, $title = true)
 {
     // This function is used, to completely sanitize user-input and make any form of scripts harmless and displayable
     $data = htmlspecialchars($data);
@@ -8,6 +8,8 @@ function clean($data)
     $data = stripslashes($data);
     $data = trim($data);
     $data = str_replace("'", "\'", $data);
+    if ($title)
+        $data = str_replace(".", "", $data);
     return $data;
 }
 
