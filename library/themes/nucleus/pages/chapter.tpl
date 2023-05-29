@@ -7,7 +7,8 @@
         <h2 class="text-2xl flex">
             {$fullChapterTitle}
             <label class="swap swap-flip">
-                <input type="checkbox" onchange="toggleRead({$chapter.id});toggleCheck('readBox{$chapter.id}0');toggleCheck('readBox{$chapter.id}Modal');"
+                <input type="checkbox"
+                    onchange="toggleRead({$chapter.id});toggleCheck('readBox{$chapter.id}0');toggleCheck('readBox{$chapter.id}Modal');"
                     id="readBox{$chapter.id}" {if $logged && in_array($chapter.id, $readChapters)}checked{/if}>
                 <div class="swap-on">&#9989;</div>
                 <div class="swap-off">&#10060;</div>
@@ -17,7 +18,7 @@
         <div class="w-full grid grid-cols-9 gap-2">
             {if $readingMode == "strip"}
                 <select onchange="c = document.getElementById('chSelect'); location.href = 'chapter.php?id=' + c.value;"
-                    class="col-span-3" id="chSelect">
+                    class="col-span-3 border border-black rounded-lg" id="chSelect">
                     {foreach from=$chapters item=item key=key name=name}
                         <option value="{$item.id}" {if $item.id == $chapter.id}selected{/if}>
                             {formatChapterTitle($item.volume, $item.number, "short")}</option>
@@ -25,22 +26,22 @@
                 </select>
                 <select
                     onchange="s = document.getElementById('pageSelect'); Cookies.set('{cat($config.title)}_readingmode', s.value); location.href = 'chapter.php?id={$chapter.id}&page=1';"
-                    class="col-span-2" id="pageSelect">
+                    class="col-span-2 border border-black rounded-lg" id="pageSelect">
                     <option value="strip" selected>All Pages</option>
                     <option value="single">Single Page</option>
                 </select>
                 {if $prevChapter || $nextChapter}
                     <a href="{if $prevChapter}chapter.php?id={$prevChapter}{else}title.php?id={$title.id}{/if}"
-                        class="col-span-2 p-2 border border-black text-center hover:bg-gray-200">{if $prevChapter}Previous{else}Title{/if}</a>
+                        class="col-span-2 p-2 border border-black rounded-lg text-center hover:bg-gray-200">{if $prevChapter}Previous{else}Title{/if}</a>
                     <a href="{if $nextChapter}chapter.php?id={$nextChapter}{else}title.php?id={$title.id}{/if}"
-                        class="col-span-2 p-2 border border-black text-center hover:bg-gray-200">{if $nextChapter}Next{else}Title{/if}</a>
+                        class="col-span-2 p-2 border border-black rounded-lg text-center hover:bg-gray-200">{if $nextChapter}Next{else}Title{/if}</a>
                 {else}
                     <a href="title.php?id={$title.id}"
-                        class="col-span-4 p-2 border border-black text-center hover:bg-gray-200">Title</a>
+                        class="col-span-4 p-2 border border-black rounded-lg text-center hover:bg-gray-200">Title</a>
                 {/if}
             {else}
                 <select onchange="c = document.getElementById('chSelect'); location.href = 'chapter.php?id=' + c.value;"
-                    class="col-span-2" id="chSelect">
+                    class="col-span-2 border border-black rounded-lg" id="chSelect">
                     {foreach from=$chapters item=item key=key name=name}
                         <option value="{$item.id}" {if $item.id == $chapter.id}selected{/if}>
                             {formatChapterTitle($item.volume, $item.number, "short")}</option>
@@ -48,13 +49,13 @@
                 </select>
                 <select
                     onchange="s = document.getElementById('pageSelect'); Cookies.set('{cat($config.title)}_readingmode', s.value); location.href = 'chapter.php?id={$chapter.id}';"
-                    class="col-span-2" id="pageSelect">
+                    class="col-span-2 border border-black rounded-lg" id="pageSelect">
                     <option value="strip">All Pages</option>
                     <option value="single" selected>Single Page</option>
                 </select>
                 <select
                     onchange="this.options[this.selectedIndex].value&&window.open('chapter.php?id={$chapter.id}&page=' + this.options[this.selectedIndex].value,'_self')"
-                    class="col-span-1">
+                    class="col-span-1 border border-black rounded-lg">
                     {foreach from=$imgind item=item key=key name=name}
                         <option value="{$item.order}" {if $item.order == $currentPage}selected{/if}>
                             {$item.order}{if $item.order == $currentPage}/{count($images)}{/if}</option>
@@ -62,12 +63,12 @@
                 </select>
                 {if $prevChapter || $nextChapter}
                     <a href="{if $prevChapter}chapter.php?id={$prevChapter}{else}title.php?id={$title.id}{/if}"
-                        class="col-span-2 p-2 border border-black text-center hover:bg-gray-200">{if $prevChapter}Previous{else}Title{/if}</a>
+                        class="col-span-2 p-2 border border-black rounded-lg text-center hover:bg-gray-200">{if $prevChapter}Previous{else}Title{/if}</a>
                     <a href="{if $nextChapter}chapter.php?id={$nextChapter}{else}title.php?id={$title.id}{/if}"
-                        class="col-span-2 p-2 border border-black text-center hover:bg-gray-200">{if $nextChapter}Next{else}Title{/if}</a>
+                        class="col-span-2 p-2 border border-black rounded-lg text-center hover:bg-gray-200">{if $nextChapter}Next{else}Title{/if}</a>
                 {else}
                     <a href="title.php?id={$title.id}"
-                        class="col-span-4 p-2 border border-black text-center hover:bg-gray-200">Title</a>
+                        class="col-span-4 p-2 border border-black rounded-lg text-center hover:bg-gray-200">Title</a>
                 {/if}
             {/if}
         </div>
@@ -109,7 +110,7 @@
         <div class="w-full grid grid-cols-9 gap-2">
             {if $readingMode == "strip"}
                 <select onchange="c = document.getElementById('chSelect'); location.href = 'chapter.php?id=' + c.value;"
-                    class="col-span-3" id="chSelect">
+                    class="col-span-3 border border-black rounded-lg" id="chSelect">
                     {foreach from=$chapters item=item key=key name=name}
                         <option value="{$item.id}" {if $item.id == $chapter.id}selected{/if}>
                             {formatChapterTitle($item.volume, $item.number, "short")}</option>
@@ -117,22 +118,22 @@
                 </select>
                 <select
                     onchange="s = document.getElementById('pageSelect'); Cookies.set('{cat($config.title)}_readingmode', s.value); location.href = 'chapter.php?id={$chapter.id}&page=1';"
-                    class="col-span-2" id="pageSelect">
+                    class="col-span-2 border border-black rounded-lg" id="pageSelect">
                     <option value="strip" selected>All Pages</option>
                     <option value="single">Single Page</option>
                 </select>
                 {if $prevChapter || $nextChapter}
                     <a href="{if $prevChapter}chapter.php?id={$prevChapter}{else}title.php?id={$title.id}{/if}"
-                        class="col-span-2 p-2 border border-black text-center hover:bg-gray-200">{if $prevChapter}Previous{else}Title{/if}</a>
+                        class="col-span-2 p-2 border border-black rounded-lg text-center hover:bg-gray-200">{if $prevChapter}Previous{else}Title{/if}</a>
                     <a href="{if $nextChapter}chapter.php?id={$nextChapter}{else}title.php?id={$title.id}{/if}"
-                        class="col-span-2 p-2 border border-black text-center hover:bg-gray-200">{if $nextChapter}Next{else}Title{/if}</a>
+                        class="col-span-2 p-2 border border-black rounded-lg text-center hover:bg-gray-200">{if $nextChapter}Next{else}Title{/if}</a>
                 {else}
                     <a href="title.php?id={$title.id}"
-                        class="col-span-4 p-2 border border-black text-center hover:bg-gray-200">Title</a>
+                        class="col-span-4 p-2 border border-black rounded-lg text-center hover:bg-gray-200">Title</a>
                 {/if}
             {else}
                 <select onchange="c = document.getElementById('chSelect'); location.href = 'chapter.php?id=' + c.value;"
-                    class="col-span-2" id="chSelect">
+                    class="col-span-2 border border-black rounded-lg" id="chSelect">
                     {foreach from=$chapters item=item key=key name=name}
                         <option value="{$item.id}" {if $item.id == $chapter.id}selected{/if}>
                             {formatChapterTitle($item.volume, $item.number, "short")}</option>
@@ -140,13 +141,13 @@
                 </select>
                 <select
                     onchange="s = document.getElementById('pageSelect'); Cookies.set('{cat($config.title)}_readingmode', s.value); location.href = 'chapter.php?id={$chapter.id}';"
-                    class="col-span-2" id="pageSelect">
+                    class="col-span-2 border border-black rounded-lg" id="pageSelect">
                     <option value="strip">All Pages</option>
                     <option value="single" selected>Single Page</option>
                 </select>
                 <select
                     onchange="this.options[this.selectedIndex].value&&window.open('chapter.php?id={$chapter.id}&page=' + this.options[this.selectedIndex].value,'_self')"
-                    class="col-span-1">
+                    class="col-span-1 border border-black rounded-lg">
                     {foreach from=$imgind item=item key=key name=name}
                         <option value="{$item.order}" {if $item.order == $currentPage}selected{/if}>
                             {$item.order}{if $item.order == $currentPage}/{count($images)}{/if}</option>
@@ -154,12 +155,12 @@
                 </select>
                 {if $prevChapter || $nextChapter}
                     <a href="{if $prevChapter}chapter.php?id={$prevChapter}{else}title.php?id={$title.id}{/if}"
-                        class="col-span-2 p-2 border border-black text-center hover:bg-gray-200">{if $prevChapter}Previous{else}Title{/if}</a>
+                        class="col-span-2 p-2 border border-black rounded-lg text-center hover:bg-gray-200">{if $prevChapter}Previous{else}Title{/if}</a>
                     <a href="{if $nextChapter}chapter.php?id={$nextChapter}{else}title.php?id={$title.id}{/if}"
-                        class="col-span-2 p-2 border border-black text-center hover:bg-gray-200">{if $nextChapter}Next{else}Title{/if}</a>
+                        class="col-span-2 p-2 border border-black rounded-lg text-center hover:bg-gray-200">{if $nextChapter}Next{else}Title{/if}</a>
                 {else}
                     <a href="title.php?id={$title.id}"
-                        class="col-span-4 p-2 border border-black text-center hover:bg-gray-200">Title</a>
+                        class="col-span-4 p-2 border border-black rounded-lg text-center hover:bg-gray-200">Title</a>
                 {/if}
             {/if}
         </div>
@@ -167,7 +168,8 @@
         <h2 class="text-2xl flex">
             {$fullChapterTitle}
             <label class="swap swap-flip">
-                <input type="checkbox" onchange="toggleRead({$chapter.id});toggleCheck('readBox{$chapter.id}');toggleCheck('readBox{$chapter.id}Modal');"
+                <input type="checkbox"
+                    onchange="toggleRead({$chapter.id});toggleCheck('readBox{$chapter.id}');toggleCheck('readBox{$chapter.id}Modal');"
                     id="readBox{$chapter.id}0" {if $logged && in_array($chapter.id, $readChapters)}checked{/if}>
                 <div class="swap-on">&#9989;</div>
                 <div class="swap-off">&#10060;</div>
@@ -188,7 +190,8 @@
         <h2 class="text-2xl flex">
             {$fullChapterTitle}
             <label class="swap swap-flip">
-                <input type="checkbox" onchange="toggleRead({$chapter.id});toggleCheck('readBox{$chapter.id}0');toggleCheck('readBox{$chapter.id}');"
+                <input type="checkbox"
+                    onchange="toggleRead({$chapter.id});toggleCheck('readBox{$chapter.id}0');toggleCheck('readBox{$chapter.id}');"
                     id="readBox{$chapter.id}Modal" {if $logged && in_array($chapter.id, $readChapters)}checked{/if}>
                 <div class="swap-on">&#9989;</div>
                 <div class="swap-off">&#10060;</div>
