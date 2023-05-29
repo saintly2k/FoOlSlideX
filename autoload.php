@@ -66,9 +66,9 @@ $smarty->setCacheDir(ps(__DIR__ . $config["smarty"]["cache"]));
 // Getting all plugins for the Theme
 require ps(__DIR__ . $config["smarty"]["template"] . "/{$usertheme}/info.php");
 foreach ($theme["plugins"] as $reqPlugin) {
-    if (!file_exists(ps(__DIR__ . $config["path"]["plugins"] . "/enabled/" . $reqPlugin . ".php")))
-        die("This theme requires following plugin to be enabled: " . $reqPlugin);
-    require_once ps(__DIR__ . $config["path"]["plugins"] . "/enabled/" . $reqPlugin . ".php");
+    if (!file_exists(ps(__DIR__ . $config["path"]["plugins"] . "/" . $reqPlugin . ".php")))
+        die("This theme requires following plugin: " . $reqPlugin);
+    require_once ps(__DIR__ . $config["path"]["plugins"] . "/" . $reqPlugin . ".php");
 }
 
 // Plugins (Legacy)

@@ -46,8 +46,8 @@ $data = array(
     "volume" => namba($volume),
     "name" => $name,
     "language" => $language,
-    "title" => $title,
-    "user" => $user,
+    "title" => $title["id"],
+    "user" => $user["id"],
     "lastEdited" => now(),
     "timestamp" => now()
 );

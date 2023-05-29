@@ -46,7 +46,8 @@ $recentlyUpdated = $db["chapters"]->createQueryBuilder()
     ->fetch();
 
 foreach ($recentlyUpdated as $key => $rec) {
-    $title = $db["titles"]->findById($rec["title"]["id"]);
+    $title = $db["titles"]->findById($rec["title"]);
+    $recentlyUpdated[$key]["title"] = $title;
     $recentlyUpdated[$key]["title"]["summary1"] = shorten($parsedown->text($purifier->purify($title["summary"])), 400);
     $recentlyUpdated[$key]["title"]["summary2"] = shorten($parsedown->text($purifier->purify($title["summary"])), 100);
 }
@@ -56,6 +57,13 @@ $chapters = $db["chapters"]->createQueryBuilder()
     ->limit($config["perpage"]["chapters"])
     ->getQuery()
     ->fetch();
+
+foreach ($chapters as $key => $ch) {
+    $title = $db["titles"]->findById($ch["title"]);
+    $uploader = $db["users"]->findById($ch["user"]);
+    $chapters[$key]["title"] = $title;
+    $chapters[$key]["user"] = $uploader;
+}
 
 $smarty->assign("chapters", $chapters);
 $smarty->assign("recentlyUpdated", $recentlyUpdated);

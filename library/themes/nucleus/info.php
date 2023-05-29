@@ -10,7 +10,8 @@ $theme = [
         "readChapters",
         "simpleAlert",
         "started",
-        "userLangs"
+        "userLangs",
+        "readingMode"
     ],
     "version" => "2023-03-30"
 ];

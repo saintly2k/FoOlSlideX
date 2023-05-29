@@ -99,7 +99,8 @@ if (!empty($db["titles"]->findOneBy(["title", "=", $title]))) die(je(["s" => fal
 
 //die(je(["s" => false, "msg" => $cover]));
 if (!file_exists("../../data/covers")) mkdir("../../data/covers", 0777, true);
-if (file_exists("../../data/tmp/" . $cover)) rename("../../data/tmp/" . $cover, "../../data/covers/" . ($db["titles"]->getLastInsertedId() + 1) . ".png");
+if (file_exists(ps(__DIR__ . "/../../data/tmp/" . $cover))) rename(ps(__DIR__ . "/../../data/tmp/" . $cover), ps(__DIR__ . "/../../data/covers/" . ($db["titles"]->getLastInsertedId() + 1) . ".png"));
+if (file_exists(ps(__DIR__ . "/../../data/tmp/" . $cover))) unlink(ps(__DIR__ . "/../../data/tmp/" . $cover));
 
 $data = array(
 	"title" => $title,
@@ -118,7 +119,7 @@ $data = array(
 		"themes" => $themes,
 		"genres" => $genres
 	),
-	"creator" => $user,
+	"creator" => $user["id"],
 	"lastEdited" => now(),
 	"timestamp" => now()
 );

@@ -91,11 +91,11 @@ if (!empty($title["summary"])) {
 $chapters = array();
 $chapterLangs = array();
 $chapterCount = 0;
-if (!empty($db["chapters"]->findOneBy(["title.id", "=", $title["id"]]))) {
+if (!empty($db["chapters"]->findOneBy(["title", "==", $title["id"]]))) {
 	// Chapter Languages
 	$chapterLangs = $db["chapters"]->createQueryBuilder()
 		->select(["language"])
-		->where(["title.id", "=", $title["id"]])
+		->where(["title", "==", $title["id"]])
 		->distinct("language.0")
 		->getQuery()
 		->fetch();
@@ -105,7 +105,7 @@ if (!empty($db["chapters"]->findOneBy(["title.id", "=", $title["id"]]))) {
 	// Actual Chapters
 	foreach ($chapterLangs as $key => $chLang) {
 		$_chapters = $db["chapters"]->createQueryBuilder()
-			->where([["title.id", "=", $title["id"]], "AND", ["language.1", "=", $chLang["language"][1]]])
+			->where([["title", "==", $title["id"]], "AND", ["language.1", "==", $chLang["language"][1]]])
 			->orderBy(["volume" => "DESC"])
 			->orderBy(["number" => "DESC"])
 			->getQuery()
@@ -114,6 +114,8 @@ if (!empty($db["chapters"]->findOneBy(["title.id", "=", $title["id"]]))) {
 			$chapterLangs[$key]["language"]["chapters"] = array();
 			$chapterLangs[$key]["language"]["count"] = count($_chapters);
 			foreach ($_chapters as $_chapter) {
+				$uploader = $db["users"]->findById($_chapter["user"]);
+				$_chapter["user"] = $uploader;
 				// array_push($chapterLangs[$chLang[]], $_chapter);
 				array_push($chapterLangs[$key]["language"]["chapters"], $_chapter);
 				$chapterCount++;
@@ -122,7 +124,7 @@ if (!empty($db["chapters"]->findOneBy(["title.id", "=", $title["id"]]))) {
 	}
 }
 
-$comments = $db["titleComments"]->findBy(["title.id", "=", $title["id"]], ["id" => "DESC"]);
+$comments = $db["titleComments"]->findBy(["title", "==", $title["id"]], ["id" => "DESC"]);
 
 titleVisit($title);
 

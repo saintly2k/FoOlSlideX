@@ -14,6 +14,13 @@ $chapters = $db["chapters"]->createQueryBuilder()
     ->getQuery()
     ->fetch();
 
+foreach ($chapters as $key => $ch) {
+    $title = $db["titles"]->findById($ch["title"]);
+    $uploader = $db["users"]->findById($ch["user"]);
+    $chapters[$key]["title"] = $title;
+    $chapters[$key]["user"] = $uploader;
+}
+
 $pagis = array();
 $totalPages = $db["chapters"]->count() / $config["perpage"]["chapters"];
 for ($i = 0; $i < $totalPages; $i++) {

@@ -105,8 +105,8 @@ if (!empty($genres)) {
 if ($title != $title["title"])
 	if (!empty($db["titles"]->findOneBy(["title", "=", $title]))) die(je(["s" => false, "msg" => "Title already exists!"]));
 
-if (!file_exists("../../data/covers")) mkdir("../../data/covers", 0777, true);
-if (file_exists("../../data/tmp/" . $cover)) rename("../../data/tmp/" . $cover, "../../data/covers/" . $title["id"] . ".png");
+if (!file_exists(ps(__DIR__ . "/../../data/covers"))) mkdir(ps(__DIR__ . "/../../data/covers"), 0777, true);
+if (file_exists(ps(__DIR__ . "/../../data/tmp/" . $cover))) rename(ps(__DIR__ . "/../../data/tmp/" . $cover), ps(__DIR__ . "/../../data/covers/" . $title["id"] . ".png"));
 
 $data = array(
 	"title" => $name,

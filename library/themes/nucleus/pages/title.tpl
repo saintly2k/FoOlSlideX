@@ -480,7 +480,7 @@
 
 					<!-- Title Data-->
 					<input name="id" value="{$title.id}" hidden>
-					<input name="cover" value="{$title.cover}" hidden>
+					<input id="formCoverInput" name="cover" value="" hidden>
 					<input type="text" value="{$title.title}" placeholder="Title" name="title"
 						class="input w-full border border-black" title="Title">
 					<input type="text" value="{$title.alts}" placeholder="Alternate Names" name="alts"
@@ -622,43 +622,42 @@
 		$(function() {
 			$("#cover").change(function(e) {
 				e.preventDefault();
-				var fd = new FormData();
-				var files = $("#cover")[0].files;
-				if (files.length > 0) {
-					fd.append("cover", files[0]);
-					$.ajax({
-						type: "POST",
-						url: "ajax\\images\\tmp.php",
-						data: fd,
-						contentType: false,
-						processData: false,
-						success: function(msg) {
-							let result = JSON.parse(msg);
-							if (result.s == true) {
-								let preview = document.getElementById("imgpreview");
-								//preview.classList.remove("hidden");
-								preview.src = "data/tmp/" + result.msg;
-								document.querySelector("input[name='cover']").value =
-									result.msg;
-							} else {
-								alert(result.msg);
+				var allowedTypes = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
+				var file = this.files[0];
+				var fileType = file.type;
+				if (!allowedTypes.includes(fileType)) {
+					alert("Upload only supports JPG, JPEG, PNG and WEBP!");
+					$("#cover").val("");
+					return false;
+				} else {
+					var fd = new FormData();
+					var files = $("#cover")[0].files;
+					if (files.length > 0) {
+						fd.append("cover", files[0]);
+						$.ajax({
+							type: "POST",
+							url: "ajax\\images\\tmp.php",
+							data: fd,
+							contentType: false,
+							processData: false,
+							success: function(msg) {
+								let result = JSON.parse(msg);
+								if (result.s == true) {
+									let preview = document.getElementById("imgpreview");
+									preview.src = "data/tmp/" + result.msg;
+									document.querySelector("input[name='cover']").value =
+										result.msg;
+								} else {
+									alert(result.msg);
+								}
 							}
-						}
-					});
+						});
+					}
 				}
 			});
 		});
 
-		$("#cover").change(function(e) {
-			var allowedTypes = ["image/jpeg", "image/jpg", "image/png", "image/webp"];
-			var file = this.files[0];
-			var fileType = file.type;
-			if (!allowedTypes.includes(fileType)) {
-				alert("Upload only supports JPG, JPEG, PNG and WEBP!");
-				$("#cover").val("");
-				return false;
-			}
-		});
+		$("#cover").change(function(e) {});
 
 		$("#editTitleForm").submit(function(e) {
 			e.preventDefault();

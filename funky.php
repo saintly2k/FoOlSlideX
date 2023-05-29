@@ -1,6 +1,6 @@
 <?php
 
-function clean($data, $title = true)
+function clean($data, $title = false)
 {
     // This function is used, to completely sanitize user-input and make any form of scripts harmless and displayable
     $data = htmlspecialchars($data);
@@ -15,7 +15,7 @@ function clean($data, $title = true)
 
 function cat($title)
 {
-    // This function is used, to make all titles readable for the URL and links
+    // This function is used, to make all titles readable for the URL, Cookies and links
     return preg_replace('/[^A-Za-z0-9\-_,.]/', '', str_replace("&", "et", str_replace(' ', '-', strtolower($title))));
 }
 
