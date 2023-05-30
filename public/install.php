@@ -10,7 +10,7 @@ require_once "../config.php";
 if ($config["email"] == "saintly@h33t.moe")
     die("You haven't edited the config.php file yet.");
 
-require_once "../library/plugins/enabled/userLangs.php";
+require_once "../library/plugins/userLangs.php";
 
 $userlang = cat($_COOKIE[cat("fsx_lang")] ?? $config["default"]["lang"]);
 if (file_exists("../library/langs/" . $userlang . ".php"))
