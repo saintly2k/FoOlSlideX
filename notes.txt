@@ -1,0 +1,10 @@
+Levels
+0 = Admin
+10 = Mod
+14 = Senior Uploader (Can create titles, upload to everything)
+15 = Uploader (Can't create titles, upload only to selected titles)
+99 = Banned
+100 = User
+101 = Unverified(?)
+
+npx tailwindcss -o ./dist/output.css --watch

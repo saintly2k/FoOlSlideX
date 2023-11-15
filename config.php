@@ -1,15 +1,11 @@
 <?php
 
 $config["title"] = "FoOlSlideX";
-$config["divider"] = ".::.";
+$config["divider"] = " | ";
 $config["slogan"] = "Mangas for Fools!";
 $config["logs"] = true;
 $config["debug"] = true;
-$config["url"] = "http://localhost/fsx/public/";
-$config["email"] = "saintly@h33t.moe";
-$config["activation"] = false; // Activate account through email?
-$config["shareAnonymousAnalytics"] = true;
-$config["api"] = true; // not really working rn, still please let it enabled until newer versions
+$config["url"] = "http://localhost/";
 
 $config["db"]["type"] = "sleek"; // "sleek"
 $config["db"]["sleek"]["dir"] = "/database";
@@ -21,33 +17,26 @@ $config["db"]["sleek"]["config"] = array(
     "search" => array(
         "min_length" => 2,
         "mode" => "or",
-        "score_key" => "scoreKey"
+        "score_key" => "scoreKey",
     ),
-    "folder_permissions" => 0777
+    "folder_permissions" => 0777,
 );
 
 // MaxFileSize (in Bytes, visit https://www.gbmb.org/mb-to-bytes for help)
 $config["mfs"]["cover"] = 5242880; // 5MB
 $config["mfs"]["chapter"] = 52428800; // 50MB
 
-// Default-Variablen
-$config["default"]["theme"] = "nucleus";
+// Variablen
+$config["theme"] = "euphoria";
 $config["default"]["lang"] = "en";
 $config["default"]["avatar"] = "https://rav.h33t.moe/data/8c4f8647-4bec-420e-96e0-284125793baf.jpeg";
+$config["default"]["level"] = 100;
 
 // Captcha
 $config["captcha"]["enabled"] = false;
 $config["captcha"]["type"] = "hcaptcha"; // "hcaptcha"
 $config["captcha"]["hcaptcha"]["secret"] = "";
 $config["captcha"]["hcaptcha"]["sitekey"] = "";
-
-// Themes and Languages
-$config["themes"] = array(
-    "nucleus" => "Nucleus"
-);
-$config["langs"] = array(
-    "en" => "English",
-);
 
 // Avatars
 $config["avatars"] = array(
@@ -61,21 +50,11 @@ $config["avatars"] = array(
     "https://rav.shishnet.org/c6bbc472ba1ec7012620ac0c1b35491a.gif",
 );
 
-// X elements per page for pagination
-$config["perpage"]["titles"] = 25;
-$config["perpage"]["chapters"] = 36;
-
-$config["path"]["sleek"] = "/software/SleekDB";
-$config["path"]["parsedown"] = "/software";
-$config["path"]["langs"] = "/library/langs";
-$config["path"]["htmlpurifier"] = "/software/HTMLPurifier";
-$config["path"]["smarty"] = "/software/Smarty";
-$config["path"]["plugins"] = "/library/plugins";
-$config["path"]["phpmailer"] = "/software/PHPMailer";
-$config["path"]["imagescrambler"] = "/software";
+$config["path"]["langs"] = "/system/langs";
+$config["path"]["plugins"] = "/system/plugins";
 
 // Diese Software nutzt Smarty als Template-Engine. Dokumentation: https://smarty-php.github.io/smarty/
-$config["smarty"]["template"] = "/library/themes";
+$config["smarty"]["template"] = "/system/themes";
 $config["smarty"]["config"] = "/software/Smarty/config";
 $config["smarty"]["compile"] = "/software/Smarty/compile";
 $config["smarty"]["cache"] = "/software/Smarty/cache";
