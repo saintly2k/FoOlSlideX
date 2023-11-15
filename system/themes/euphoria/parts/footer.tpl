@@ -1,6 +1,6 @@
 </div>
 
-<footer class="my-4 bg-gray-50 dark:bg-gray-700">
+<footer class="mt-4 bg-gray-50 dark:bg-gray-700 mt-auto">
     <div class="w-full mx-auto max-w-screen-xl p-2 md:flex md:items-center md:justify-between">
         <span class="text-sm sm:text-center">
             Copyright &copy; {date("Y")} <a href="{$config.url}"

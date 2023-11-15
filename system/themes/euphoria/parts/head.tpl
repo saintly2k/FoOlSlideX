@@ -31,4 +31,4 @@
     </script>
 </head>
 
-<body class="bg-white dark:bg-gray-900 text-black dark:text-white">
+<body>
