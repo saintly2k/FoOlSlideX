@@ -8,8 +8,10 @@ if (!$logged || $user["level"] > 10) {
     die("No u");
 }
 
-$gitver = file_get_contents("https://github.com/saintly2k/FoOlSlideX/blob/master/version.txt");
+$gitver = file_get_contents("https://raw.githubusercontent.com/saintly2k/FoOlSlideX/master/version.txt");
+$devver = file_get_contents("https://raw.githubusercontent.com/saintly2k/FoOlSlideX/dev/version.txt");
 $smarty->assign("gitver", $gitver);
+$smarty->assign("devver", $devver);
 
 $smarty->display("parts/head.tpl");
 $smarty->display("parts/header.tpl");

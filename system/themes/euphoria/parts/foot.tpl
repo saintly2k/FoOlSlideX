@@ -1,3 +1,4 @@
+</div>
 {* <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script> *}
 <script src="{$config.url}node_modules/flowbite/dist/flowbite.min.js"></script>
 <script src="{$config.url}js/js.cookie.js"></script>
