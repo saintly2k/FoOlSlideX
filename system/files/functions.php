@@ -100,12 +100,14 @@ function formatBytes($size, $precision = 2)
     return round(pow(1024, $base - floor($base)), $precision) . $suffixes[floor($base)];
 }
 
+// Only supports SleekDB.
 function doLog(string $action, bool $success, string $value = null, int $user = null)
 {
     require ps(__DIR__ . "/../../config.php");
+    require ps(__DIR__ . "/../themes/{$config["theme"]}/info.php");
     if ($config["logs"]) {
         require_once ps(__DIR__ . "/../../software/SleekDB/Store.php");
-        $db = new \SleekDB\Store("logs", ps(__DIR__ . "/../../database"), $config["db"]); // Logs
+        $db = new \SleekDB\Store("logs", ps(__DIR__ . "/../..{$theme["config"]["sleek"]["dir"]}"), $theme["config"]["sleek"]["config"]); // Logs
         if (empty($action)) {
             return false;
         }
@@ -127,6 +129,15 @@ function doLog(string $action, bool $success, string $value = null, int $user = 
     return true;
 }
 
+function processAndTrimArray(&$array)
+{
+    if (!empty($array)) {
+        $_array = array_map('trim', array_filter($array));
+        $array = array_values($_array);
+    }
+}
+
+// This is used to organize statistics, ported over 1:1 from Holics. Probably useless here?
 function organizeDatabaseElements($array)
 {
     // Check if the array is empty and return an empty result

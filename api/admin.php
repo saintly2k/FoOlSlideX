@@ -8,6 +8,10 @@ $resp = [
     "msg" => "Error",
 ];
 
+if (!$logged || $user["level"] !== 0) {
+    die(json_encode($resp));
+}
+
 switch ($action) {
     case "menu":
         switch ($mode) {
@@ -88,10 +92,12 @@ switch ($action) {
                 break;
             default:
                 $resp["msg"] = "Index...!";
+                break;
         }
         break;
     default:
         $resp["msg"] = "Index...?";
+        break;
 }
 
 die(json_encode($resp));

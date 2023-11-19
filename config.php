@@ -1,26 +1,11 @@
 <?php
 
 $config["title"] = "FoOlSlideX";
-$config["divider"] = " | ";
+$config["divider"] = " - ";
 $config["slogan"] = "Mangas for Fools!";
 $config["logs"] = true;
 $config["debug"] = true;
 $config["url"] = "http://localhost/";
-
-$config["db"]["type"] = "sleek"; // "sleek"
-$config["db"]["sleek"]["dir"] = "/database";
-$config["db"]["sleek"]["config"] = array(
-    "auto_cache" => true,
-    "cache_lifetime" => null,
-    "timeout" => false, // deprecated! Set it to false!
-    "primary_key" => "id",
-    "search" => array(
-        "min_length" => 2,
-        "mode" => "or",
-        "score_key" => "scoreKey",
-    ),
-    "folder_permissions" => 0777,
-);
 
 // MaxFileSize (in Bytes, visit https://www.gbmb.org/mb-to-bytes for help)
 $config["mfs"]["cover"] = 5242880; // 5MB

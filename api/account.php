@@ -85,6 +85,8 @@ switch ($action) {
             "password" => $hPassword,
             "avatar" => $config["default"]["avatar"],
             "level" => $config["default"]["level"],
+            "uid" => genToken(),
+            "banned" => false,
         ];
         $user = $db["users"]->insert($data);
 
@@ -104,6 +106,7 @@ switch ($action) {
         break;
     default:
         $resp["msg"] = "Index...?";
+        break;
 }
 
 die(json_encode($resp));

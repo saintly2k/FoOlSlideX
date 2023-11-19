@@ -1,7 +1,6 @@
 <?php
 
 require_once __DIR__ . "/../autoload.php";
-$smarty->assign("pageTitle", titlify("Profile", $config["divider"], $config["title"]));
 
 if (!$logged && (!isset($id) || (isset($id) && empty($id)))) {
     header("Location: {$config["url"]}login");
@@ -22,6 +21,7 @@ if ($id == $user["id"]) {
     }
 }
 
+$smarty->assign("pageTitle", titlify("Profile of " . $res["username"], $config["divider"], $config["title"]));
 $smarty->assign("res", $res);
 
 $smarty->display("parts/head.tpl");

@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . "/../../autoload.php";
-$smarty->assign("pageTitle", titlify("Admin", $config["divider"], $config["title"]));
+$smarty->assign("pageTitle", titlify("Admin - Update-Center", $config["divider"], $config["title"]));
 
 if (!$logged || $user["level"] > 10) {
     header("Location: {$config["url"]}");

@@ -10,12 +10,9 @@ die("System not installed.");
 }*/
 
 $logged = false;
-require_once "config.php";
+require "config.php";
 $config["debug"] == true ? error_reporting(E_ALL) && ini_set('display_errors', 1) : error_reporting(0) && ini_set('display_errors', 0);
 require_once "system/files/functions.php";
-
-// SleekDB
-require_once ps(__DIR__ . "/software/SleekDB/Store.php");
 
 // Parsedown
 require_once ps(__DIR__ . "/software/Parsedown.php");
