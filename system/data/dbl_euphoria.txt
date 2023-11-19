@@ -1,1 +1,1 @@
-logs,titles,chapters,menu
+logs,projects,chapters,menu

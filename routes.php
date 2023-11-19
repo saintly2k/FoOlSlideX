@@ -1,39 +1,24 @@
 <?php
 
-require_once "router.php";
+require __DIR__ . "/config.php";
+require "router.php";
+if (!file_exists(__DIR__ . "/system/themes/{$config["theme"]}/routes.php")) {
+    die("Your theme doesn't have a routes-file!");
+}
+require __DIR__ . "/system/themes/{$config["theme"]}/routes.php";
 
 // ##################################################
 // ##################################################
 // ##################################################
 
-// Main
-get('/', 'views/index.php');
-get('/index', 'views/index.php');
-
-get('/other', 'views/other.php');
-
-// Account
-get('/login', 'views/login.php');
-get('/signup', 'views/signup.php');
-get('/logout', 'views/logout.php');
-get('/profile', 'views/profile.php');
-get('/profile/$id', 'views/profile.php');
-
-// Admin
-get('/admin', 'views/admin/index.php');
-get('/admin/menu', 'views/admin/menu.php');
-get('/admin/update', 'views/admin/update.php');
-
-// Custom (WIP)
-
-// API
-// post('/api/account/$action', 'api/account.php');
-post('/api/account/action/$action/username/$username/password/$password', 'api/account.php');
-post('/api/account/action/$action/username/$username/password/$password/password2/$password2', 'api/account.php');
-
-post('/api/admin/$action/$mode', 'api/admin.php');
-
-// Assets
-get("/instantclick", "views/assets/instantclick.php");
-
-any('/404', 'views/404.php');
+if (!empty($customRoutes)) {
+    foreach ($customRoutes as $key => $route) {
+        if ($route[0] == "get") {
+            get($route[1], $route[2]);
+        } elseif ($route[0] == "post") {
+            post($route[1], $route[2]);
+        } else {
+            any($route[1], $route[2]);
+        }
+    }
+}
