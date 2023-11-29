@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . "/../autoload.php";
+require_once ROOT . "autoload.php";
 $smarty->assign("pageTitle", titlify($config["title"], $config["divider"], $config["slogan"]));
 
 $smarty->display("parts/head.tpl");

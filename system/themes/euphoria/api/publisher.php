@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . "/../autoload.php";
+require_once ROOT . "autoload.php";
 header("Content-Type: application/json; charset=utf-8");
 
 $resp = [
@@ -44,8 +44,8 @@ switch ($action) {
                 // (array) $themes = isset($_POST["themes"]) && !empty($_POST["themes"]) && is_array($_POST["themes"]) ? $_POST["themes"] : [];
                 // (array) $genres = isset($_POST["genres"]) && !empty($_POST["genres"]) && is_array($_POST["genres"]) ? $_POST["genres"] : [];
                 $id = (isset($_POST["id"]) && is_numeric($_POST["id"])) ? (int) $_POST["id"] : null;
-                $cover = (isset($_POST["cover"])) ? clean($_POST["cover"]) : "";
-                $title = (isset($_POST["title"])) ? clean($_POST["title"]) : "";
+                $cover = isset($_POST["cover"]) ? clean($_POST["cover"]) : "";
+                $title = isset($_POST["title"]) ? clean($_POST["title"]) : "";
                 $alts = (isset($_POST["alts"])) ? clean($_POST["alts"]) : "";
                 $authors = (isset($_POST["authors"])) ? clean($_POST["authors"]) : "";
                 $artists = (isset($_POST["artists"])) ? clean($_POST["artists"]) : "";
@@ -56,20 +56,17 @@ switch ($action) {
                 $completion = (isset($_POST["completion"]) && is_numeric($_POST["completion"])) ? (int) $_POST["completion"] : date("Y");
                 $summary = (isset($_POST["summary"])) ? $_POST["summary"] : "";
 
-                $formats = (isset($_POST["formats"]) && is_array($_POST["formats"])) ? $_POST["formats"] : [];
+                $formats = (isset($_POST["format"]) && is_array($_POST["format"])) ? $_POST["format"] : [];
                 $warnings = (isset($_POST["warnings"]) && is_array($_POST["warnings"])) ? $_POST["warnings"] : [];
-                $themes = (isset($_POST["themes"]) && is_array($_POST["themes"])) ? $_POST["themes"] : [];
-                $genres = (isset($_POST["genres"]) && is_array($_POST["genres"])) ? $_POST["genres"] : [];
+                $themes = (isset($_POST["theme"]) && is_array($_POST["theme"])) ? $_POST["theme"] : [];
+                $genres = (isset($_POST["genre"]) && is_array($_POST["genre"])) ? $_POST["genre"] : [];
 
-                $requiredFields = [
-                    "title" => $title,
-                    "lang" => $lang,
-                ];
+                if (empty($title)) {
+                    die(json_encode(["done" => false, "msg" => "Requires Title."]));
+                }
 
-                foreach ($requiredFields as $field => $value) {
-                    if (empty($value)) {
-                        die(json_encode(["done" => false, "msg" => "Requires {$field}."]));
-                    }
+                if (empty($lang)) {
+                    die(json_encode(["done" => false, "msg" => "Requires Lang."]));
                 }
 
                 $originalStatus = in_array($originalStatus, [1, 2, 3, 4, 5]) ? $originalStatus : 2;
@@ -138,22 +135,24 @@ switch ($action) {
                         "user" => $user["id"],
                         "timestamp" => now(),
                     ],
-                    (is_null($id)) ?
-                    [
-                        "creator" => $user["id"],
-                        "timestamp" => now(),
-                        "uid" => genUuid(),
-                    ] : [],
+                    "public" => true,
                 ];
+
+                if (is_null($id)) {
+                    $data["creator"] = $user["id"];
+                    $data["timestamp"] = now();
+                    $data["uid"] = genUuid();
+                }
 
                 if (!empty($cover)) {
                     $data["cover"] = $cover;
                 }
 
-                $db["projects"]->updateOrInsert($data);
+                $res = $db["projects"]->updateOrInsert($data);
 
                 $resp["done"] = true;
                 $resp["msg"] = "Created!";
+                $resp["url"] = "{$config["url"]}project/{$res["id"]}/" . cat($data["title"]);
                 break;
             default:
                 // Huh?

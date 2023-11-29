@@ -12,19 +12,19 @@ die("System not installed.");
 $logged = false;
 require "config.php";
 $config["debug"] == true ? error_reporting(E_ALL) && ini_set('display_errors', 1) : error_reporting(0) && ini_set('display_errors', 0);
-require_once "system/files/functions.php";
+require_once ROOT . "system/files/functions.php";
 
 // Parsedown
-require_once ps(__DIR__ . "/software/Parsedown.php");
+require_once ROOT . "software/Parsedown.php";
 $parsedown = new Parsedown();
 $parsedown->setSafeMode(true);
 
 // HTML-Purifier
-require_once ps(__DIR__ . "/software/HTMLPurifier/HTMLPurifier.auto.php");
+require_once ROOT . "software/HTMLPurifier/HTMLPurifier.auto.php";
 $purifier = new HTMLPurifier(HTMLPurifier_Config::createDefault());
 
 // Smarty
-require_once ps(__DIR__ . "/software/Smarty/Smarty.class.php");
+require_once ROOT . "software/Smarty/Smarty.class.php";
 $smarty = new Smarty();
 $smarty->setTemplateDir(ps(__DIR__ . $config["smarty"]["template"] . "/" . $config["theme"]));
 
@@ -50,7 +50,7 @@ if (empty($config["salt"])) {
 // require_once ps(__DIR__ . "/system/languages/{$config["default"]["lang"]}.php");
 
 // Getting all plugins for the Theme
-require ps(__DIR__ . $config["smarty"]["template"] . "/{$config["theme"]}/info.php");
+require __DIR__ . "/system/themes/{$config["theme"]}/info.php";
 foreach ($theme["plugins"] as $reqPlugin) {
     if (!file_exists(ps(__DIR__ . "/system/plugins/" . $reqPlugin . ".php"))) {
         die("This theme requires following plugin: " . $reqPlugin);

@@ -1,5 +1,10 @@
 <?php
 
+// This Plugin only works with SleekDB
+if (!in_array("SleekDB", $theme["plugins"])) {
+    die("Plugin 'session' requires plugin 'SleekDB'! Make sure it is loaded before this plugin.");
+}
+
 $logged = false;
 $user = [];
 

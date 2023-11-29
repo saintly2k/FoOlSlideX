@@ -26,12 +26,68 @@
     <p class="text-2xl">
         Projects - Page {$page}
         {if $logged && $user.level <= 14}
-            <a type="button" href="{$config.url}publisher/add_title"
-                class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-sm p-1 dark:bg-blue-600 dark:hover:bg-blue-700">Add
+            <a type="button" href="{$config.url}publisher/validate_custom/title/create"
+                class="text-white bg-blue-700 hover:bg-blue-800 font-medium text-sm p-1 dark:bg-blue-600 dark:hover:bg-blue-700">Create
                 Title</a>
         {/if}
     </p>
+    <div class="grid grid-cols-6 gap-2 my-2" id="titlesDiv">
+        {foreach from=$projects item=item key=key name=name}
+            <div class="col-span-1">
+                <div>
+                    {if $item.cover}
+                        <img src="{$config.url}api/image/{$item.cover}/title" alt="Cover Image">
+                    {/if}
+                </div>
+                {$item.title}
+            </div>
+        {/foreach}
+    </div>
 </div>
+
+<script>
+    function getTitles() {
+        $.ajax({
+            url: "{$config.url}api/titles/{$page}",
+            method: 'GET',
+            dataType: 'json',
+            success: function(data) {
+                // Work with the JSON data here
+                console.log('Data from API:', data);
+
+                // Check if the data is an object
+                if (typeof data !== 'object') {
+                    console.error('Data is not in the expected format.');
+                    return;
+                }
+
+                // Loop through each array in the data and create checkboxes
+                Object.keys(data.msg).forEach(key => {
+                    const itemsArray = data[key] || [];
+
+                    // Create a container div for each array
+                    if (document.getElementById(key + "Div")) {
+                        $("#titlesDiv").empty();
+                        const containerDiv = document.getElementById("titlesDiv");
+                        if (containerDiv) {
+                            // Create checkboxes for each item in the array
+                            itemsArray.forEach(item => {
+                                containerDiv.appendChild(div);
+                            });
+                        }
+                    }
+                });
+
+                $("#loadingTagsText").addClass("hidden");
+            },
+            error: function(xhr, status, error) {
+                console.error('There was a problem fetching data:', error);
+            }
+        });
+    }
+
+    getTitles();
+</script>
 
 <nav class="flex px-2 py-1 text-gray-700 bg-gray-50 dark:bg-gray-800 my-4" aria-label="Breadcrumb">
     <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">

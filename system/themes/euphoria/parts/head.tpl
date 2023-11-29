@@ -12,6 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <style>
+        /* @import url('{$config.url}font'); */
         @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=PT+Serif&display=swap');
 
         * {

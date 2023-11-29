@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . "/../autoload.php";
+require_once ROOT . "autoload.php";
 
 if (!$logged && (!isset($id) || (isset($id) && empty($id)))) {
     header("Location: {$config["url"]}login");

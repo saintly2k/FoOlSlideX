@@ -6,7 +6,7 @@ $theme = [
         "dbLists",
         "menu",
         "session",
-        "valCustom",
+        "customTags",
         "readChapters",
         "readingMode",
     ],
@@ -16,6 +16,10 @@ $theme = [
             "dbl_euphoria",
             "dbl_session",
         ],
+        "customTags" => [
+            "ct_default",
+            "ct_euphoria",
+        ],
     ],
     "config" => [
         "last" => [
@@ -24,10 +28,10 @@ $theme = [
         ],
         "perpage" => [
             "title" => 15,
-            "chapter" => 20,
+            "chapter" => 50,
         ],
         "sleek" => [
-            "dir" => "/database/euphoria",
+            "dir" => "/database/euphoria", // From the root-dir
             "config" => [
                 "auto_cache" => true,
                 "cache_lifetime" => null,

@@ -1,7 +1,7 @@
 <?php
 
-require_once __DIR__ . "/../autoload.php";
-$smarty->assign("pageTitle", titlify("Login", $config["divider"], $config["title"]));
+require_once ROOT . "autoload.php";
+$smarty->assign("pageTitle", titlify("Signup", $config["divider"], $config["title"]));
 
 if ($logged) {
     header("Location: {$config["url"]}");
@@ -11,7 +11,7 @@ if ($logged) {
 $smarty->display("parts/head.tpl");
 $smarty->display("parts/header.tpl");
 
-$smarty->display("pages/login.tpl");
+$smarty->display("pages/signup.tpl");
 
 $smarty->display("parts/footer.tpl");
 $smarty->display("parts/foot.tpl");

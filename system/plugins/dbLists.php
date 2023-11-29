@@ -1,6 +1,10 @@
 <?php
 
 // This Plugin only works with SleekDB
+if (!in_array("SleekDB", $theme["plugins"])) {
+    die("Plugin 'dbLists' requires plugin 'SleekDB'! Make sure it is loaded before this plugin.");
+}
+
 if (isset($theme["lists"]["dbLists"]) && !empty($theme["lists"]["dbLists"])) {
     foreach ($theme["lists"]["dbLists"] as $tdbl) {
         if (!file_exists(ps(__DIR__ . "/../data/{$tdbl}.txt"))) {
@@ -11,7 +15,7 @@ if (isset($theme["lists"]["dbLists"]) && !empty($theme["lists"]["dbLists"])) {
         if (count($cDbs) > 0) {
             foreach ($cDbs as $cdb) {
                 if (!empty($cdb)) {
-                    $db[$cdb] = new \SleekDB\Store($cdb, ps(__DIR__ . "/../..{$theme["config"]["sleek"]["dir"]}"), $theme["config"]["sleek"]["config"]);
+                    $db[$cdb] = new \SleekDB\Store($cdb, ps(ROOT . "{$theme["config"]["sleek"]["dir"]}"), $theme["config"]["sleek"]["config"]);
                 }
             }
         }
