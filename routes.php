@@ -1,24 +1,60 @@
 <?php
 
-require __DIR__ . "/config.php";
-require "router.php";
-if (!file_exists(__DIR__ . "/system/themes/{$config["theme"]}/routes.php")) {
-    die("Your theme doesn't have a routes-file!");
-}
-require __DIR__ . "/system/themes/{$config["theme"]}/routes.php";
+$customRoutes = [
+    // Main
+    ["get", "/", "views/index.php"],
+    ["get", "/index", "views/index.php"],
+    ["get", "/other", "views/other"],
 
-// ##################################################
-// ##################################################
-// ##################################################
+    // Projects
+    ["get", "/projects", "views/projects.php"],
+    ["get", '/projects/$page', "views/projects.php"],
 
-if (!empty($customRoutes)) {
-    foreach ($customRoutes as $key => $route) {
-        if ($route[0] == "get") {
-            get($route[1], $route[2]);
-        } elseif ($route[0] == "post") {
-            post($route[1], $route[2]);
-        } else {
-            any($route[1], $route[2]);
-        }
-    }
-}
+    ["get", '/project/$uid', "views/project.php"],
+    ["get", '/project/$uid/$tab', "views/project.php"],
+
+    // Publisher
+    ["get", '/publisher/title/$action', "views/publisher/title.php"],
+    ["get", '/publisher/title/$action/$id', "views/publisher/title.php"],
+    ["get", '/publisher/chapter/$action', "views/publisher/chapter.php"],
+    ["get", '/publisher/chapter/$action/$id', "views/publisher/chapter.php"],
+
+    ["get", '/publisher/validate_custom', "views/publisher/validate_custom.php"],
+    ["get", '/publisher/validate_custom/$page/$action', "views/publisher/validate_custom.php"],
+    ["get", '/publisher/validate_custom/$page/$action/$id', "views/publisher/validate_custom.php"],
+
+    // Account
+    ["get", '/login', "views/login.php"],
+    ["get", '/signup', "views/signup.php"],
+    ["get", "/logout", "views/logout.php"],
+    ["get", "/profile", "views/profile.php"],
+    ["get", '/profile/$id', "views/profile.php"],
+
+    // Admin
+    ["get", "/admin", "views/admin/index.php"],
+    ["get", "/admin/users", "views/admin/users.php"],
+    ["get", "/admin/menu", "views/admin/menu.php"],
+    ["get", "/admin/update", "views/admin/update.php"],
+
+    // API
+    ["post", '/api/account/$action', "api/account.php"],
+    ["post", '/api/admin/$action/$mode', "api/admin.php"],
+    ["post", '/api/assets/$action', "api/assets.php"],
+    ["post", '/api/publisher/$action/$mode', "api/publisher.php"],
+
+    ["get", '/api/image/$file/$type', "api/image.php"],
+    ["get", '/api/tags', "api/tags.php"],
+    ["get", '/api/tags/$tags', "api/tags.php"],
+    ["get", '/api/titles/$page', "api/titles.php"],
+
+    // Assets
+    ["get", "/instantclick", "views/assets/instantclick.php"],
+    ["any", "/font", "views/assets/font.php"],
+
+    // Any?
+    ["any", "/404", "views/404.php"],
+];
+
+// TEMP!!!
+post('/api/account/action/$action/username/$username/password/$password', $roudir . 'api/account.php');
+post('/api/account/action/$action/username/$username/password/$password/password2/$password2', $roudir . 'api/account.php');
