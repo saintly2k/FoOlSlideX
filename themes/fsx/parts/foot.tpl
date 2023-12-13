@@ -6,7 +6,7 @@
     data-instant-track>
 </script>
 <script>
-    InstantClick.init('load');
+    InstantClick.init('mouseover');
 
     var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
     var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');

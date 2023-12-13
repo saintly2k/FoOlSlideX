@@ -27,7 +27,7 @@ $totalPages = $db["projects"]->count() / $perpage;
 for ($i = 0; $i < $totalPages; $i++) {
     array_push($pagis, $i + 1);
 }
-$smarty->assign("projects", $titles);
+// $smarty->assign("projects", $titles);
 $smarty->assign("pagination", $pagis);
 /**/
 

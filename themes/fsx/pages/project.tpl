@@ -58,6 +58,141 @@
         </ul>
     </div>
 
+    <div class="my-2">
+        {if $tab == "info"}
+            <div class="grid grid-cols-6 gap-x-2 mb-2">
+                {if !empty($project.cover)}
+                    <div class="col-span-1">
+                        <img src="{$config.url}api/image/{$project.cover}/title" class="w-full">
+                    </div>
+                {/if}
+                <div class="{if !empty($project.cover)}col-span-5{else}col-span-6{/if} w-full">
+                    <div class="w-full">
+                        {if !empty($project.summary)}
+                            <div id="summary">
+                                {$parsedown->text($project.summary)}
+                            </div>
+                            <hr class="h-px my-1 bg-gray-200 dark:bg-gray-700">
+                        {/if}
+                        {if !empty($project.alts)}
+                            <div>
+                                <b>Alternative Titles:</b> {$project.alts}
+                            </div>
+                        {/if}
+                        {if !empty($project.authors) || !empty($project.artists)}
+                            <div class="grid grid-cols-2 gap-x-2">
+                                {if !empty($project.authors)}
+                                    <div class="col-span-1">
+                                        <b>Author/s:</b> {$project.authors}
+                                    </div>
+                                {/if}
+                                {if !empty($project.artists)}
+                                    <div class="col-span-1">
+                                        <b>Artist/s:</b> {$project.artists}
+                                    </div>
+                                {/if}
+                            </div>
+                        {/if}
+                        <div class="grid grid-cols-3 gap-x-2">
+                            <div class="col-span-1">
+                                <b>Original Language:</b> {$project.lang}
+                            </div>
+                            <div class="col-span-1">
+                                <b>Original Status:</b>
+                                {if $project.status.original == 1}
+                                    Announced
+                                {elseif $project.status.original == 2}
+                                    Releasing
+                                {elseif $project.status.original == 3}
+                                    Hiatus
+                                {elseif $project.status.original == 4}
+                                    Completed
+                                {else}
+                                    Cancelled
+                                {/if}
+                            </div>
+                            <div class="col-span-1">
+                                <b>Upload Status:</b>
+                                {if $project.status.upload == 1}
+                                    Planned
+                                {elseif $project.status.upload == 2}
+                                    Ongoing
+                                {elseif $project.status.upload == 3}
+                                    Hiatus
+                                {elseif $project.status.upload == 4}
+                                    Completed
+                                {else}
+                                    Cancelled
+                                {/if}
+                            </div>
+                        </div>
+                        {if !empty($project.years)}
+                            <div class="grid grid-cols-2 gap-x-2">
+                                {if !empty($project.years.release)}
+                                    <div class="col-span-1">
+                                        <b>Released:</b> {$project.years.release}
+                                    </div>
+                                {/if}
+                                {if !empty($project.years.completion)}
+                                    <div class="col-span-1">
+                                        <b>Completed:</b> {$project.years.completion}
+                                    </div>
+                                {/if}
+                            </div>
+                        {/if}
+                        {if !empty($project.tags.format) || !empty($project.tags.genre) || !empty($project.tags.theme) || !empty($project.tags.warnings)}
+                            <div class="grid grid-cols-2 gap-x-2 mt-2" id="tags">
+                                {if !empty($project.tags.format)}
+                                    <div class="col-span-1">
+                                        <b>Formats:</b>
+                                    </div>
+                                {/if}
+                                {if !empty($project.tags.genre)}
+                                    <div class="col-span-1">
+                                        <b>Genres:</b>
+                                    </div>
+                                {/if}
+                                {if !empty($project.tags.theme)}
+                                    <div class="col-span-1">
+                                        <b>Themes:</b>
+                                    </div>
+                                {/if}
+                                {if !empty($project.tags.warnings)}
+                                    <div class="col-span-1">
+                                        <b>Warnings:</b>
+                                    </div>
+                                {/if}
+                            </div>
+                        {/if}
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                function addClassesToLinks(clss, blnk) {
+                    var summaryDiv = document.getElementById(clss);
+                    if (summaryDiv) {
+                        var links = summaryDiv.getElementsByTagName('a');
+                        for (var i = 0; i < links.length; i++) {
+                            links[i].classList.add('text-blue-500', 'dark:text-blue-600', 'hover:underline');
+                            if (blnk)
+                                links[i].setAttribute("target", "_blank");
+                        }
+                    }
+                }
+
+                {if !empty($project.summary)}
+                    addClassesToLinks("summary", true);
+                {/if}
+                {if !empty($project.tags.format) || !empty($project.tags.genre) || !empty($project.tags.theme) || !empty($project.tags.warnings)}
+                    addClassesToLinks("tags", false);
+                {/if}
+            </script>
+        {elseif $tab == "chapters"}
+
+        {else}
+        {/if}
+    </div>
 </div>
 
 <nav class="flex px-2 py-1 text-gray-700 bg-gray-50 dark:bg-gray-800 my-4" aria-label="Breadcrumb">
