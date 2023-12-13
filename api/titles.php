@@ -35,6 +35,7 @@ for ($i = 0; $i < $totalPages; $i++) {
 
 $resp["done"] = true;
 $resp["msg"] = $titles;
+$resp["totalpages"] = $totalPages;
 $resp["pagination"] = $pagis;
 
 die(json_encode($resp));

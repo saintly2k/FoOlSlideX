@@ -2,9 +2,11 @@
 
 $customRoutes = [
     // Main
-    ["get", "/", "views/index.php"],
-    ["get", "/index", "views/index.php"],
-    ["get", "/other", "views/other"],
+    ["get", "/", "views/releases.php"],
+    ["get", "/index", "views/releases.php"],
+    ["get", '/index/$page', "views/releases.php"],
+    ["get", "/releases", "views/releases.php"],
+    ["get", '/releases/$page', "views/releases.php"],
 
     // Projects
     ["get", "/projects", "views/projects.php"],

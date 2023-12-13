@@ -26,7 +26,7 @@ if (isset($tags) && !empty($tags) && !is_numeric($tags)) {
             if (count($items) > 0) {
                 foreach ($items as $item) {
                     if (!empty($item)) {
-                        if (is_numeric($tags)) {
+                        if (isset($tags) && is_numeric($tags) && !empty($tags)) {
                             $output[$item] = valCustomTags($item, $tags);
                         } else {
                             $output[$item] = valCustomTags($item);

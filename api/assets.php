@@ -29,7 +29,7 @@ switch ($action) {
         $md5Hash = md5_file($_FILES["cover"]["tmp_name"]);
         $imageFileType = strtolower(pathinfo($_FILES["cover"]["name"], PATHINFO_EXTENSION));
         $target_file = $tmpPath . $md5Hash . "." . $imageFileType;
-        $frontend_file = "assets/tmp/" . $md5Hash . "." . $imageFileType;
+        $frontend_file = "api/image/" . $md5Hash . "." . $imageFileType . "/tmp";
         $output_file = $md5Hash . "." . $imageFileType;
 
         // Check if image file is a actual image or fake image

@@ -19,7 +19,7 @@ if (empty($title)) {
 $smarty->assign("project", $title);
 $smarty->assign("uid", $uid);
 $smarty->assign("tab", $tab);
-$smarty->assign("pageTitle", titlify("Project", $config["divider"], $config["title"]));
+$smarty->assign("pageTitle", titlify("Projects - " . $title["title"], $config["divider"], $config["title"]));
 
 $smarty->display("parts/head.tpl");
 $smarty->display("parts/header.tpl");

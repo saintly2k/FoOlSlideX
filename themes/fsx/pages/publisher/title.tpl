@@ -50,9 +50,9 @@
                 </label>
             </div>
             <div class="col-span-2">
-                <img class="w-full" id="coverPreview" {if isset($res)}src="{$config.url}api/image/{$res.cover}/title"
+                <img class="w-full" id="coverPreview" {if isset($res) && !empty($res.cover)}src="{$config.url}api/image/{$res.cover}/title"
                     {/if}>
-                <input type="text" name="cover" class="hidden" readonly>
+                <input type="text" name="cover" class="hidden">
             </div>
             <div class="col-span-4"></div>
             <div class="col-span-5">
@@ -83,22 +83,22 @@
                 <select name="originalStatus"
                     class="select w-full text-sm text-gray-900 border border-gray-300 bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
                     <option disabled selected>Select original work status...</option>
-                    <option value="1">Announced</option>
-                    <option value="2">Releasing</option>
-                    <option value="3">Hiatus</option>
-                    <option value="4">Completed</option>
-                    <option value="5">Cancelled</option>
+                    <option value="1" {if isset($res) && $res.status.original == 1}selected{/if}>Announced</option>
+                    <option value="2" {if isset($res) && $res.status.original == 2}selected{/if}>Releasing</option>
+                    <option value="3" {if isset($res) && $res.status.original == 3}selected{/if}>Hiatus</option>
+                    <option value="4" {if isset($res) && $res.status.original == 4}selected{/if}>Completed</option>
+                    <option value="5" {if isset($res) && $res.status.original == 5}selected{/if}>Cancelled</option>
                 </select>
             </div>
             <div class="col-span-3">
                 <select name="uploadStatus"
                     class="select w-full text-sm text-gray-900 border border-gray-300 bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white">
                     <option disabled selected>Select scanlation status...</option>
-                    <option value="1">Planned</option>
-                    <option value="2">Ongoing</option>
-                    <option value="3">Hiatus</option>
-                    <option value="4">Completed</option>
-                    <option value="5">Cancelled</option>
+                    <option value="1" {if isset($res) && $res.status.upload == 1}selected{/if}>Planned</option>
+                    <option value="2" {if isset($res) && $res.status.upload == 2}selected{/if}>Ongoing</option>
+                    <option value="3" {if isset($res) && $res.status.upload == 3}selected{/if}>Hiatus</option>
+                    <option value="4" {if isset($res) && $res.status.upload == 4}selected{/if}>Completed</option>
+                    <option value="5" {if isset($res) && $res.status.upload == 5}selected{/if}>Cancelled</option>
                 </select>
             </div>
             <div class="col-span-2">
@@ -114,7 +114,7 @@
             <div class="col-span-10">
                 <textarea name="summary"
                     class="textarea w-full h-[250px] text-sm text-gray-900 border border-gray-300 bg-gray-50 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-                    placeholder="Summary (Supports BBCode)">{if isset($res)}{$res.summary}{/if}</textarea>
+                    placeholder="Summary (Supports MarkDown)">{if isset($res)}{$res.summary}{/if}</textarea>
             </div>
             <div class="col-span-10">
                 <p class="text-xl mb-2">
@@ -250,6 +250,7 @@
                             $("#coverPreview").removeClass("hidden");
                             $("#coverPreview").attr("src", "{$config.url}" + data.public);
                             $("input[name='cover']").val(data.image);
+                            // alert(data.image);
                         } else {
                             alert(data.msg);
                         }

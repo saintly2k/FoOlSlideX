@@ -78,25 +78,32 @@ switch ($action) {
                 }
 
                 // Ensure the covers directory exists
-                $coversDirectory = ps(__DIR__ . "/../assets/covers");
+                $coversDirectory = ROOT . "assets/covers";
                 if (!file_exists($coversDirectory)) {
                     mkdir($coversDirectory, 0777, true);
                 }
 
                 // Process cover file, if provided
                 if (!empty($cover)) {
-                    $oldFilePath = ps(__DIR__ . "/../assets/tmp/{$cover}");
+                    $oldFilePath = ROOT . "assets/tmp/{$cover}";
                     if (file_exists($oldFilePath)) {
                         $coverHash = md5_file($oldFilePath);
                         $ext = pathinfo($oldFilePath, PATHINFO_EXTENSION);
                         $cover = $coverHash . "." . $ext;
-                        $newFilePath = ps($coversDirectory . "/{$cover}");
+                        $newFilePath = ROOT . "assets/covers/{$cover}";
                         rename($oldFilePath, $newFilePath);
                     }
                 }
+                if (!empty($cover)) {
+                    $finalCover = $cover;
+                } elseif (!empty($check)) {
+                    $finalCover = $check["cover"];
+                } else {
+                    $finalCover = "";
+                }
 
                 $data = [
-                    "cover" => (!empty($cover) ? $cover : (!empty($check) ? $check["cover"] : "")),
+                    "cover" => $finalCover,
                     "title" => $title,
                     "alts" => $alts,
                     "authors" => $authors,
